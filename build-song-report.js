@@ -4,16 +4,17 @@ const data = JSON.parse(
   fs.readFileSync("./database/ernie-data.json", "utf8")
 );
 
-let songs = {};
 
 function parseDate(date) {
   const [day, month, year] = date.split("-");
+
   return {
     day: Number(day),
     month: Number(month),
     year: Number(year)
   };
 }
+
 
 function dateValue(date) {
   return (
@@ -23,9 +24,11 @@ function dateValue(date) {
   );
 }
 
+
 function outputDate(date) {
   return `${date.month}/${date.day}/${date.year}`;
 }
+
 
 function gapStatus(gap) {
   if (gap >= 50) return "Monster Gap";
@@ -34,14 +37,17 @@ function gapStatus(gap) {
 }
 
 
-// newest first
+let songs = {};
+
+
 const shows = data.sort((a,b) =>
-  dateValue(parseDate(b.eventDate)) -
-  dateValue(parseDate(a.eventDate))
+  dateValue(parseDate(a.eventDate)) -
+  dateValue(parseDate(b.eventDate))
 );
 
 
-shows.forEach((show, showIndex) => {
+
+shows.forEach((show,index)=>{
 
   const date = parseDate(show.eventDate);
 
@@ -49,39 +55,76 @@ shows.forEach((show, showIndex) => {
   const city = show.venue?.city?.name || "";
 
 
-  show.sets?.set?.forEach(set => {
+  let playedThisShow = new Set();
 
-    set.song?.forEach(song => {
+
+  show.sets?.set?.forEach(set=>{
+
+    set.song?.forEach(song=>{
 
       const name = song.name.trim();
 
 
+      // prevents split/reprise from counting twice
+      if (playedThisShow.has(name)) return;
+
+      playedThisShow.add(name);
+
+
+
       if (!songs[name]) {
+
         songs[name] = {
+
           name,
           plays: 0,
+
           firstPlayed: date,
+          firstVenue: venue,
+          firstCity: city,
+
           lastPlayed: date,
-          lastShowIndex: showIndex,
-          venue,
-          city
+          lastVenue: venue,
+          lastCity: city,
+
+          showNumbers: [],
+
+          venues: new Set(),
+          cities: new Set()
+
         };
+
       }
 
 
-      songs[name].plays++;
+      const entry = songs[name];
 
 
-      if (dateValue(date) < dateValue(songs[name].firstPlayed)) {
-        songs[name].firstPlayed = date;
+      entry.plays++;
+
+      entry.showNumbers.push(index + 1);
+
+      entry.venues.add(venue);
+      entry.cities.add(city);
+
+
+
+      if (dateValue(date) < dateValue(entry.firstPlayed)) {
+
+        entry.firstPlayed = date;
+        entry.firstVenue = venue;
+        entry.firstCity = city;
+
       }
 
 
-      if (dateValue(date) > dateValue(songs[name].lastPlayed)) {
-        songs[name].lastPlayed = date;
-        songs[name].lastShowIndex = showIndex;
-        songs[name].venue = venue;
-        songs[name].city = city;
+
+      if (dateValue(date) > dateValue(entry.lastPlayed)) {
+
+        entry.lastPlayed = date;
+        entry.lastVenue = venue;
+        entry.lastCity = city;
+
       }
 
 
@@ -92,27 +135,81 @@ shows.forEach((show, showIndex) => {
 });
 
 
-const sortedSongs = Object.values(songs)
-.sort((a,b)=>b.plays-a.plays);
+
+let rows = [];
 
 
-let csv =
-"Song,Total Plays,First Played,Last Played,Shows Since Last Play,Gap Status,Most Recent Venue,Most Recent City\n";
+Object.values(songs).forEach(song=>{
 
 
-sortedSongs.forEach(song => {
+  let gaps = [];
 
-  csv += `"${song.name}",${song.plays},"${outputDate(song.firstPlayed)}","${outputDate(song.lastPlayed)}",${song.lastShowIndex},"${gapStatus(song.lastShowIndex)}","${song.venue}","${song.city}"\n`;
+
+  for (let i = 1; i < song.showNumbers.length; i++) {
+
+    gaps.push(
+      song.showNumbers[i] -
+      song.showNumbers[i-1]
+    );
+
+  }
+
+
+  const averageGap = gaps.length
+    ? (gaps.reduce((a,b)=>a+b,0) / gaps.length).toFixed(1)
+    : "";
+
+
+  const longestGap = gaps.length
+    ? Math.max(...gaps)
+    : "";
+
+
+  rows.push({
+
+    ...song,
+
+    showsSinceLastPlay:
+      shows.length -
+      song.showNumbers[song.showNumbers.length - 1],
+
+    averageGap,
+    longestGap
+
+  });
+
 
 });
 
 
+
+rows.sort((a,b)=>b.plays-a.plays);
+
+
+
+let csv =
+"Song,Total Plays,First Played,First Venue,First City,Last Played,Last Venue,Last City,Shows Since Last Play,Gap Status,Average Shows Between Plays,Longest Gap,Venues Played,Cities Played\n";
+
+
+
+rows.forEach(song=>{
+
+
+csv +=
+`"${song.name}",${song.plays},"${outputDate(song.firstPlayed)}","${song.firstVenue}","${song.firstCity}","${outputDate(song.lastPlayed)}","${song.lastVenue}","${song.lastCity}",${song.showsSinceLastPlay},"${gapStatus(song.showsSinceLastPlay)}",${song.averageGap},${song.longestGap},${song.venues.size},${song.cities.size}\n`;
+
+
+});
+
+
+
 fs.mkdirSync("./reports",{recursive:true});
 
+
 fs.writeFileSync(
-"./reports/Songs.csv",
-csv
+  "./reports/Songs.csv",
+  csv
 );
 
 
-console.log(`✅ Created Songs.csv (${sortedSongs.length} songs)`);
+console.log(`✅ Created Songs.csv (${rows.length} songs)`);
