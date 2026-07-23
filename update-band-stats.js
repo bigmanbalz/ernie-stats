@@ -13,7 +13,7 @@ async function fetchSetlists() {
     console.log(`Fetching page ${page}...`);
 
     const response = await fetch(
-      `https://api.setlist.fm/rest/1.0/artist/${config.ARTIST_ID}/setlists?page=${page}`,
+      `https://api.setlist.fm/rest/1.0/artist/${config.ARTIST_ID}/setlists?p=${page}`,
       {
         headers: {
           "Accept": "application/json",
