@@ -1,0 +1,125 @@
+Show #,Date,Venue,City,State,Country,Unique Songs,Song Entries
+"1","12/31/2022","Beau’s Bar","Greenlawn","New York","United States",24,26
+"2","1/15/2023","The Warehouse","Amityville","New York","United States",8,8
+"3","1/27/2023","Blue Point Brewery","Patchogue","New York","United States",22,22
+"4","3/4/2023","Southernside Brewing Co.","Greenville","North Carolina","United States",10,10
+"5","3/10/2023","Industry Lounge & Gallery","Huntington","New York","United States",14,16
+"6","3/11/2023","89 North","Patchogue","New York","United States",11,12
+"7","3/29/2023","Blue Point Brewery","Patchogue","New York","United States",22,22
+"8","4/1/2023","Beau’s Bar","Greenlawn","New York","United States",18,20
+"9","4/5/2023","Blue Point Brewery","Patchogue","New York","United States",21,22
+"10","4/12/2023","Blue Point Brewery","Patchogue","New York","United States",23,23
+"11","4/20/2023","Blue Point Brewery","Patchogue","New York","United States",9,9
+"12","4/20/2023","Bobbique","Patchogue","New York","United States",4,4
+"13","5/20/2023","Blue Point Brewery","Patchogue","New York","United States",24,26
+"14","6/5/2023","89 North","Patchogue","New York","United States",14,14
+"15","6/10/2023","Blue Point Brewery","Patchogue","New York","United States",20,21
+"16","7/18/2023","The Eagle’s Dare","Wilmington","North Carolina","United States",11,11
+"17","7/19/2023","The Eagle’s Dare","Wilmington","North Carolina","United States",14,15
+"18","7/22/2023","Shorefront Park","Patchogue","New York","United States",5,5
+"19","7/26/2023","The Mann Center Parking Lot","Philadelphia","Pennsylvania","United States",14,14
+"20","8/3/2023","Mercury Lounge","New York","New York","United States",6,6
+"21","8/10/2023","Birdies","Patchogue","New York","United States",20,22
+"22","8/14/2023","89 North","Patchogue","New York","United States",21,21
+"23","8/27/2023","Beau’s Bar","Greenlawn","New York","United States",13,13
+"24","9/15/2023","Blue Point Brewery","Patchogue","New York","United States",23,26
+"25","9/30/2023","Baja Boathouse","Patchogue","New York","United States",11,11
+"26","10/2/2023","Beach Club Estate","Lake Ronkonkoma","New York","United States",21,22
+"27","10/20/2023","89 North","Patchogue","New York","United States",11,12
+"28","10/22/2023","Jamesport Farm Brewery","Riverhead","New York","United States",30,36
+"29","10/28/2023","Beau’s Bar","Greenlawn","New York","United States",26,30
+"30","10/31/2023","Blue Point Brewery","Patchogue","New York","United States",20,22
+"31","11/22/2023","Bobbique","Patchogue","New York","United States",20,21
+"32","11/25/2023","Industry Lounge & Gallery","Huntington","New York","United States",20,21
+"33","12/1/2023","Blue Point Brewery","Patchogue","New York","United States",21,22
+"34","12/13/2023","Blue Point Brewery","Patchogue","New York","United States",14,14
+"35","12/27/2023","Sayville Theater","Sayville","New York","United States",18,19
+"36","1/13/2024","Stella Blues","New Haven","Connecticut","United States",15,17
+"37","1/27/2024","Blue Point Brewery","Patchogue","New York","United States",28,30
+"38","2/2/2024","Long Island Glass","Holtsville","New York","United States",24,30
+"39","2/10/2024","The Warehouse","Amityville","New York","United States",12,13
+"40","2/18/2024","89 North","Patchogue","New York","United States",12,14
+"41","2/29/2024","Birdies","Patchogue","New York","United States",21,24
+"42","3/9/2024","Blue Point Brewery","Patchogue","New York","United States",22,25
+"43","4/20/2024","Blue Point Brewery","Patchogue","New York","United States",8,8
+"44","4/28/2024","Port Jeff Brewing Company","Port Jefferson","New York","United States",12,13
+"45","5/4/2024","Thatch Meadow Farm","Saint James","New York","United States",13,13
+"46","5/7/2024","Blue Point Brewery","Patchogue","New York","United States",22,25
+"47","5/10/2024","Industry Lounge & Gallery","Huntington","New York","United States",22,26
+"48","5/17/2024","People's Pub","Bayport","New York","United States",20,23
+"49","6/15/2024","Brooklyn Music Kitchen","Brooklyn","New York","United States",4,4
+"50","6/21/2024","Cabernet Frank's","Parksville","New York","United States",12,12
+"51","6/22/2024","Arrowhead Ranch","Parksville","New York","United States",21,23
+"52","6/27/2024","Stella Blues","New Haven","Connecticut","United States",21,24
+"53","6/28/2024","Muddy River Farm Brewery","Unadilla","New York","United States",6,6
+"54","6/29/2024","The Night Drop","Syracuse","New York","United States",9,11
+"55","7/20/2024","Shorefront Park","Patchogue","New York","United States",4,4
+"56","8/21/2024","Electric Haze","Worcester","Massachusetts","United States",3,3
+"57","8/22/2024","Aeronaut Allston","Boston","Massachusetts","United States",13,16
+"58","8/23/2024","Ophelia's","Albany","New York","United States",19,21
+"59","8/24/2024","Beau’s Bar","Greenlawn","New York","United States",17,19
+"60","8/26/2024","89 North","Patchogue","New York","United States",17,19
+"61","8/30/2024","Blue Point Brewery","Patchogue","New York","United States",14,15
+"62","9/1/2024","Camp Pa-Qua-Tuck","Center Moriches","New York","United States",7,7
+"63","9/6/2024","89 North","Patchogue","New York","United States",9,9
+"64","9/7/2024","H.O.G. Farm","Brookhaven","New York","United States",11,11
+"65","9/20/2024","Stereo Garden","Patchogue","New York","United States",4,4
+"66","10/11/2024","Ophelia's","Albany","New York","United States",12,15
+"67","10/12/2024","Port Jeff Brewing Company","Port Jefferson","New York","United States",8,8
+"68","10/22/2024","Blue Point Brewery","Patchogue","New York","United States",18,21
+"69","10/31/2024","Sayville Theater","Sayville","New York","United States",24,26
+"70","11/29/2024","Industry Lounge & Gallery","Huntington","New York","United States",13,16
+"71","11/30/2024","Industry Lounge & Gallery","Huntington","New York","United States",13,14
+"72","12/1/2024","Long Island Music and Entertainment Hall of Fame","Stony Brook","New York","United States",5,5
+"73","12/28/2024","Woods Valley Ski Area","Westernville","New York","United States",14,15
+"74","12/31/2024","Blue Point Brewery","Patchogue","New York","United States",17,19
+"75","1/18/2025","Mr. Beery's","Bethpage","New York","United States",17,20
+"76","1/19/2025","89 North","Patchogue","New York","United States",8,8
+"77","2/17/2025","Funk 'n Waffles","Syracuse","New York","United States",19,21
+"78","2/21/2025","The Hollow Bar","Albany","New York","United States",7,7
+"79","2/22/2025","Alfie's Wild Ride","Stowe","Vermont","United States",36,39
+"80","3/28/2025","Beau’s Bar","Greenlawn","New York","United States",23,23
+"81","4/16/2025","Blue Point Brewery","Patchogue","New York","United States",17,17
+"82","5/17/2025","Blue Point Brewery","Patchogue","New York","United States",5,5
+"83","6/3/2025","Blue Point Brewery","Patchogue","New York","United States",18,20
+"84","6/18/2025","Port Jeff Brewing Company","Port Jefferson","New York","United States",13,15
+"85","6/28/2025","Arrowhead Ranch","Parksville","New York","United States",10,11
+"86","6/29/2025","Arrowhead Ranch","Parksville","New York","United States",16,17
+"87","7/13/2025","Baby's All Right","Brooklyn","New York","United States",5,5
+"88","7/18/2025","Blue Point Brewery","Patchogue","New York","United States",13,14
+"89","7/19/2025","Blue Point Brewery","Patchogue","New York","United States",12,14
+"90","7/20/2025","Blue Point Brewery","Patchogue","New York","United States",19,23
+"91","8/1/2025","Stella Blues","New Haven","Connecticut","United States",17,18
+"92","8/2/2025","Ophelia's","Albany","New York","United States",10,11
+"93","8/8/2025","Black Oak Tavern","Oneonta","New York","United States",14,15
+"94","8/9/2025","Nietzsche's","Buffalo","New York","United States",7,8
+"95","8/14/2025","Downtown","Patchogue","New York","United States",18,19
+"96","8/29/2025","Blue Point Brewery","Patchogue","New York","United States",15,17
+"97","8/31/2025","Camp Pa-Qua-Tuck","Center Moriches","New York","United States",7,7
+"98","9/13/2025","Blue Point Brewery","Patchogue","New York","United States",13,15
+"99","9/29/2025","89 North","Patchogue","New York","United States",16,16
+"100","10/8/2025","The Warehouse","Amityville","New York","United States",18,19
+"101","10/21/2025","Blue Point Brewery","Patchogue","New York","United States",13,13
+"102","11/8/2025","Black Oak Tavern","Oneonta","New York","United States",9,10
+"103","11/15/2025","Funk 'n Waffles","Syracuse","New York","United States",10,11
+"104","11/26/2025","The Warehouse","Amityville","New York","United States",11,12
+"105","12/27/2025","Sayville Theater","Sayville","New York","United States",18,21
+"106","1/3/2026","Port Jeff Brewing Company","Port Jefferson","New York","United States",7,8
+"107","1/10/2026","Blue Point Brewery","Patchogue","New York","United States",14,17
+"108","1/16/2026","Hubbards Cupboard","Port Chester","New York","United States",13,17
+"109","1/18/2026","89 North","Patchogue","New York","United States",11,15
+"110","2/13/2026","Blue Point Brewery","Patchogue","New York","United States",14,15
+"111","2/27/2026","People's Pub","Bayport","New York","United States",17,19
+"112","3/2/2026","89 North","Patchogue","New York","United States",14,15
+"113","3/13/2026","Blue Point Brewery","Patchogue","New York","United States",14,15
+"114","3/27/2026","Zapp Factory","Philadelphia","Pennsylvania","United States",6,6
+"115","4/9/2026","89 North","Patchogue","New York","United States",12,14
+"116","4/10/2026","Blue Point Brewery","Patchogue","New York","United States",15,17
+"117","4/19/2026","The Warehouse","Amityville","New York","United States",7,8
+"118","4/25/2026","The Eleven at Lark Hall","Albany","New York","United States",5,5
+"119","5/8/2026","Blue Point Brewery","Patchogue","New York","United States",15,16
+"120","6/20/2026","Thatch Meadow Farm","Saint James","New York","United States",5,5
+"121","6/27/2026","Arrowhead Ranch","Parksville","New York","United States",15,15
+"122","6/28/2026","Arrowhead Ranch","Parksville","New York","United States",9,10
+"123","7/11/2026","Ulster County Fairgrounds","New Paltz","New York","United States",7,9
+"124","7/11/2026","The Lemon Squeeze","New Paltz","New York","United States",18,21
