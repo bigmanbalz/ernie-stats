@@ -4,7 +4,6 @@ const data = JSON.parse(
   fs.readFileSync("./database/ernie-data.json", "utf8")
 );
 
-
 function parseDate(date) {
   const [day, month, year] = date.split("-");
 
@@ -15,7 +14,6 @@ function parseDate(date) {
   };
 }
 
-
 function dateValue(date) {
   return (
     date.year * 10000 +
@@ -24,61 +22,80 @@ function dateValue(date) {
   );
 }
 
-
 function outputDate(date) {
   return `${date.month}/${date.day}/${date.year}`;
 }
 
+let venues = {};
 
-// Oldest to newest
-const shows = data.sort((a,b) =>
-  dateValue(parseDate(a.eventDate)) -
-  dateValue(parseDate(b.eventDate))
-);
+data.forEach(show => {
 
+  const venue = show.venue?.name || "Unknown Venue";
+  const city = show.venue?.city?.name || "";
+  const state = show.venue?.city?.state || "";
 
-let csv =
-"Show #,Date,Venue,City,State,Country,Unique Songs,Song List\n";
+  const date = parseDate(show.eventDate);
 
+  if (!venues[venue]) {
+    venues[venue] = {
+      venue,
+      city,
+      state,
+      shows: 0,
+      firstPlayed: date,
+      lastPlayed: date,
+      songs: new Set(),
+      songCount: 0
+    };
+  }
 
-shows.forEach((show,index)=>{
+  const v = venues[venue];
 
-  let uniqueSongs = new Set();
+  v.shows++;
 
+  if (dateValue(date) < dateValue(v.firstPlayed)) {
+    v.firstPlayed = date;
+  }
 
-  show.sets?.set?.forEach(set=>{
+  if (dateValue(date) > dateValue(v.lastPlayed)) {
+    v.lastPlayed = date;
+  }
 
-    set.song?.forEach(song=>{
+  show.sets?.set?.forEach(set => {
 
-      uniqueSongs.add(song.name.trim());
+    set.song?.forEach(song => {
+
+      v.songs.add(song.name.trim());
+      v.songCount++;
 
     });
 
   });
 
-
-  const venue = show.venue?.name || "";
-  const city = show.venue?.city?.name || "";
-  const state = show.venue?.city?.state || "";
-  const country = show.venue?.city?.country?.name || "";
+});
 
 
-  const songList = Array.from(uniqueSongs).join("; ");
+let rows = Object.values(venues)
+.sort((a,b) => b.shows - a.shows);
 
+
+let csv =
+"Venue,City,State,Shows Played,First Played,Last Played,Unique Songs Played,Total Song Performances\n";
+
+
+rows.forEach(v => {
 
   csv +=
-  `"${index + 1}","${outputDate(parseDate(show.eventDate))}","${venue}","${city}","${state}","${country}",${uniqueSongs.size},"${songList}"\n`;
+  `"${v.venue}","${v.city}","${v.state}",${v.shows},"${outputDate(v.firstPlayed)}","${outputDate(v.lastPlayed)}",${v.songs.size},${v.songCount}\n`;
 
 });
 
 
 fs.mkdirSync("./reports",{recursive:true});
 
-
 fs.writeFileSync(
   "./reports/Venues.csv",
   csv
 );
 
-
-console.log(`✅ Created Venues.csv (${shows.length} venue appearances)`);
+console.log(`✅ Created Venues.csv (${rows.length} unique venues)`);
