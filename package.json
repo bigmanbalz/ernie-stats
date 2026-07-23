@@ -1,0 +1,26 @@
+{
+  "name": "ernie-stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigmanbalz/ernie-stats.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigmanbalz/ernie-stats/issues"
+  },
+  "homepage": "https://github.com/bigmanbalz/ernie-stats#readme",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}
