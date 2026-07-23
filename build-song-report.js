@@ -15,7 +15,20 @@ function outputDate(date) {
   return `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`;
 }
 
-data.forEach(show => {
+function gapStatus(gap) {
+  if (gap >= 50) return "Monster Gap";
+  if (gap >= 25) return "Bust Out";
+  return "Regular";
+}
+
+
+// newest show first
+const shows = data.sort((a,b) =>
+  parseDate(b.eventDate) - parseDate(a.eventDate)
+);
+
+
+shows.forEach((show, showIndex) => {
 
   const date = parseDate(show.eventDate);
 
@@ -34,6 +47,7 @@ data.forEach(show => {
           plays: 0,
           firstPlayed: date,
           lastPlayed: date,
+          lastShowIndex: showIndex,
           venue,
           city
         };
@@ -47,6 +61,7 @@ data.forEach(show => {
 
       if (date > songs[name].lastPlayed) {
         songs[name].lastPlayed = date;
+        songs[name].lastShowIndex = showIndex;
         songs[name].venue = venue;
         songs[name].city = city;
       }
@@ -59,16 +74,18 @@ data.forEach(show => {
 
 
 const sortedSongs = Object.values(songs)
-.sort((a,b)=>b.plays-a.plays);
+  .sort((a,b) => b.plays - a.plays);
 
 
 let csv =
-"Song,Total Plays,First Played,Last Played,Most Recent Venue,Most Recent City\n";
+"Song,Total Plays,First Played,Last Played,Shows Since Last Play,Gap Status,Most Recent Venue,Most Recent City\n";
 
 
 sortedSongs.forEach(song => {
 
-csv += `"${song.name}",${song.plays},"${outputDate(song.firstPlayed)}","${outputDate(song.lastPlayed)}","${song.venue}","${song.city}"\n`;
+  const gap = song.lastShowIndex;
+
+  csv += `"${song.name}",${song.plays},"${outputDate(song.firstPlayed)}","${outputDate(song.lastPlayed)}",${gap},"${gapStatus(gap)}","${song.venue}","${song.city}"\n`;
 
 });
 
@@ -76,9 +93,8 @@ csv += `"${song.name}",${song.plays},"${outputDate(song.firstPlayed)}","${output
 fs.mkdirSync("./reports",{recursive:true});
 
 fs.writeFileSync(
-"./reports/Songs.csv",
-csv
+  "./reports/Songs.csv",
+  csv
 );
-
 
 console.log(`✅ Created Songs.csv (${sortedSongs.length} songs)`);
