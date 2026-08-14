@@ -1,5 +1,61 @@
 [
   {
+    "id": "4370832f",
+    "versionId": "g302b5ab",
+    "eventDate": "25-07-2026",
+    "lastUpdated": "2026-07-26T05:41:12.038+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "3bd4946c",
+      "name": "Shorefront Park",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/shorefront-park-patchogue-ny-usa-3bd4946c.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Feel Free"
+            },
+            {
+              "name": "Qué Lástima",
+              "info": ">"
+            },
+            {
+              "name": "Crescent Sun",
+              "info": "unfinished [>]"
+            },
+            {
+              "name": "You and Me"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "Half-hour set played between Soundswell and Quinn Sullivan on the Clamshell Bandshell.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/shorefront-park-patchogue-ny-4370832f.html"
+  },
+  {
     "id": "137339e1",
     "versionId": "g63049a5f",
     "eventDate": "11-07-2026",
@@ -61,7 +117,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -178,7 +234,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -576,6 +632,96 @@
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/thatch-meadow-farm-saint-james-ny-2b72c026.html"
   },
   {
+    "id": "737186e9",
+    "versionId": "g23006c2f",
+    "eventDate": "23-05-2026",
+    "lastUpdated": "2026-08-14T14:40:45.400+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "1bdfc5b4",
+      "name": "Pat Cav's Backyard",
+      "city": {
+        "id": "5136421",
+        "name": "Sayville",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7359317,
+          "long": -73.0820556
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/pat-cavs-backyard-sayville-ny-usa-1bdfc5b4.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Beautiful Buzz"
+            },
+            {
+              "name": "Bubbles"
+            },
+            {
+              "name": "A Thousand Faces"
+            },
+            {
+              "name": "Lonely Star"
+            },
+            {
+              "name": "Sand",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ Kevin Griffin on Guitar; Riders on the Storm jam, That Girl is Poison tease by Nick & NFL on FOX"
+            },
+            {
+              "name": "Summertime",
+              "info": ">"
+            },
+            {
+              "name": "Rise"
+            },
+            {
+              "name": "Stay Easy"
+            }
+          ]
+        },
+        {
+          "encore": 1,
+          "song": [
+            {
+              "name": "Promontory Rider",
+              "cover": {
+                "mbid": "e9b419b5-ab8f-425c-8214-a7259e6efe10",
+                "name": "Robert Hunter",
+                "sortName": "Hunter, Robert",
+                "disambiguation": "American lyricist, non‐performing member of the Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/robert-hunter-3d6add7.html"
+              },
+              "info": "w/ Jimmy Fleming on Violin"
+            }
+          ]
+        }
+      ]
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/pat-cavs-backyard-sayville-ny-737186e9.html"
+  },
+  {
     "id": "1b74dd68",
     "versionId": "g4b061b0a",
     "eventDate": "08-05-2026",
@@ -934,7 +1080,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "w/ Hypnotize teases by John [->]"
@@ -2665,7 +2811,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -2680,7 +2826,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -2691,7 +2837,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -4156,7 +4302,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -5647,7 +5793,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -5658,7 +5804,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -5695,6 +5841,113 @@
     },
     "info": "Toasted Tuesday! DJ Moodmaker before & between sets.",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2025/blue-point-brewery-patchogue-ny-2b76cc42.html"
+  },
+  {
+    "id": "6b7186e2",
+    "versionId": "g23006c07",
+    "eventDate": "25-05-2025",
+    "lastUpdated": "2026-08-14T14:46:09.260+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "1bdfc5b4",
+      "name": "Pat Cav's Backyard",
+      "city": {
+        "id": "5136421",
+        "name": "Sayville",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7359317,
+          "long": -73.0820556
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/pat-cavs-backyard-sayville-ny-usa-1bdfc5b4.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "China Cat Sunflower",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Dead Man Walking teases [->]"
+            },
+            {
+              "name": "Dead Man Walking"
+            },
+            {
+              "name": "No Rest"
+            },
+            {
+              "name": "Deal",
+              "cover": {
+                "mbid": "1ecff755-607d-4130-9a8a-8873f27e5de5",
+                "name": "Jerry Garcia",
+                "sortName": "Garcia, Jerry",
+                "disambiguation": "guitarist / vocalist in Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/jerry-garcia-bd6adce.html"
+              },
+              "info": "w/ Down With Disease jam"
+            },
+            {
+              "name": "Gotta Jibboo",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ Sneaking Sally teases [->]"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "Angel From Montgomery",
+              "cover": {
+                "mbid": "e86492c1-0376-4df0-8042-8ba058c83960",
+                "name": "John Prine",
+                "sortName": "Prine, John",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/john-prine-7bd656f4.html"
+              }
+            },
+            {
+              "name": "Promontory Rider",
+              "cover": {
+                "mbid": "e9b419b5-ab8f-425c-8214-a7259e6efe10",
+                "name": "Robert Hunter",
+                "sortName": "Hunter, Robert",
+                "disambiguation": "American lyricist, non‐performing member of the Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/robert-hunter-3d6add7.html"
+              }
+            },
+            {
+              "name": "Feel Free",
+              "info": "w/ 2001 jam"
+            }
+          ]
+        }
+      ]
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2025/pat-cavs-backyard-sayville-ny-6b7186e2.html"
   },
   {
     "id": "4b47dfea",
@@ -6033,7 +6286,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -6303,7 +6556,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -6377,7 +6630,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -7980,7 +8233,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -7995,7 +8248,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "LTP 2021 [>]"
@@ -8006,7 +8259,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -8024,7 +8277,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover [>]"
@@ -8046,7 +8299,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover [>]"
@@ -8115,7 +8368,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover [>]"
@@ -8137,7 +8390,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover [>]"
@@ -8148,7 +8401,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover"
@@ -8320,7 +8573,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "w/ Batman Theme teases by John [>]"
@@ -8533,7 +8786,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -8544,7 +8797,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -10072,7 +10325,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -10861,6 +11114,140 @@
     },
     "info": "45 minute set on a multi-band showcase.",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2024/brooklyn-music-kitchen-brooklyn-ny-4b76df86.html"
+  },
+  {
+    "id": "737186dd",
+    "versionId": "g3b006cd0",
+    "eventDate": "26-05-2024",
+    "lastUpdated": "2026-08-14T14:54:01.106+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "1bdfc5b4",
+      "name": "Pat Cav's Backyard",
+      "city": {
+        "id": "5136421",
+        "name": "Sayville",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7359317,
+          "long": -73.0820556
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/pat-cavs-backyard-sayville-ny-usa-1bdfc5b4.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Bubbles"
+            },
+            {
+              "name": "Gotta Jibboo",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": ">"
+            },
+            {
+              "name": "Jack Straw",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": ">"
+            },
+            {
+              "name": "Crescent Sun",
+              "info": "w/ New Speedway Boogie teases by John [>]"
+            },
+            {
+              "name": "Jack Straw",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": ">"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "I'm the Man Who Loves You",
+              "cover": {
+                "mbid": "9e53f84d-ef44-4c16-9677-5fd4d78cbd7d",
+                "name": "Wilco",
+                "sortName": "Wilco",
+                "disambiguation": "American alternative rock band",
+                "url": "https://www.setlist.fm/setlists/wilco-23d6982b.html"
+              }
+            },
+            {
+              "name": "Everybody"
+            },
+            {
+              "name": "Dead Man Walking",
+              "info": "w/ Kevin Griffin on Guitar & Mike Katzman on Keys; unfinished [->]"
+            },
+            {
+              "name": "China Cat Sunflower",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Kevin Griffin on Guitar & Mike Katzman on Keys [->]"
+            },
+            {
+              "name": "Promontory Rider",
+              "cover": {
+                "mbid": "e9b419b5-ab8f-425c-8214-a7259e6efe10",
+                "name": "Robert Hunter",
+                "sortName": "Hunter, Robert",
+                "disambiguation": "American lyricist, non‐performing member of the Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/robert-hunter-3d6add7.html"
+              },
+              "info": "w/ Kevin Griffin on Guitar & Mike Katzman on Keys"
+            },
+            {
+              "name": "Beautiful Buzz",
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "First Tube jam",
+              "info": "->"
+            },
+            {
+              "name": "Stay Easy"
+            }
+          ]
+        }
+      ]
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2024/pat-cavs-backyard-sayville-ny-737186dd.html"
   },
   {
     "id": "3b76e09c",
@@ -12707,7 +13094,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -13103,7 +13490,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "w/ Rappers Delight tease by Rob; Not Fade Away tease by Nick [->]"
@@ -13307,9 +13694,9 @@
   },
   {
     "id": "5376e7b5",
-    "versionId": "g3b138cf8",
+    "versionId": "g3303b8fd",
     "eventDate": "13-12-2023",
-    "lastUpdated": "2026-04-05T01:42:15.227+0000",
+    "lastUpdated": "2026-08-02T14:26:12.045+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -13382,7 +13769,7 @@
               }
             },
             {
-              "name": "All Night Long",
+              "name": "All Night Long (All Night)",
               "cover": {
                 "mbid": "3cb25fb2-5547-4b05-adec-1a5e37830d46",
                 "name": "Lionel Richie",
@@ -13798,7 +14185,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "w/ Another One Bites the Dust & China Cat teases [->]"
@@ -14434,7 +14821,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -14639,9 +15026,9 @@
   },
   {
     "id": "5b76ef68",
-    "versionId": "g7b13a670",
+    "versionId": "g4b03d716",
     "eventDate": "22-10-2023",
-    "lastUpdated": "2026-04-04T10:23:43.549+0000",
+    "lastUpdated": "2026-08-05T12:33:03.089+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -14954,7 +15341,7 @@
               "info": "->"
             },
             {
-              "name": "No One Left To Run With",
+              "name": "No One to Run With",
               "cover": {
                 "mbid": "72359492-22be-4ed9-aaa0-efa434fb2b01",
                 "name": "The Allman Brothers Band",
@@ -15245,7 +15632,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -15256,7 +15643,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -15846,9 +16233,9 @@
   },
   {
     "id": "2b76ecd6",
-    "versionId": "g23138c63",
+    "versionId": "g5303d715",
     "eventDate": "14-08-2023",
-    "lastUpdated": "2026-04-05T01:25:15.671+0000",
+    "lastUpdated": "2026-08-05T12:33:03.113+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -15935,7 +16322,7 @@
               "info": "w/ Jack Straw tease by John) (>"
             },
             {
-              "name": "No One Left To Run With",
+              "name": "No One to Run With",
               "cover": {
                 "mbid": "72359492-22be-4ed9-aaa0-efa434fb2b01",
                 "name": "The Allman Brothers Band",
@@ -16897,7 +17284,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               }
             }
@@ -17479,7 +17866,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -17787,7 +18174,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "verses only [->]"
@@ -18363,7 +18750,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -19662,7 +20049,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "(->)"
@@ -19681,7 +20068,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "",
+                "disambiguation": "English Rock Band",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "(->)"

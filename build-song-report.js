@@ -1,15 +1,30 @@
 const fs = require("fs");
-const config = require("./config");
 
 const data = JSON.parse(
   fs.readFileSync("./database/ernie-data.json", "utf8")
 );
 
+const config = require("./config");
+
+const BUST_OUT_SHOWS =
+  config.SETTINGS?.BUST_OUT_SHOWS ?? 50;
+
+const MONSTER_GAP_SHOWS =
+  config.SETTINGS?.MONSTER_GAP_SHOWS ?? 100;
+
+
+// --------------------------------------------------
+// DATE HELPERS
+// --------------------------------------------------
+
 function parseDate(date) {
   if (!date) return null;
 
+  let parts;
+
   if (date.includes("-")) {
-    const parts = date.split("-");
+    parts = date.split("-");
+
     return new Date(
       Number(parts[2]),
       Number(parts[1]) - 1,
@@ -18,7 +33,8 @@ function parseDate(date) {
   }
 
   if (date.includes("/")) {
-    const parts = date.split("/");
+    parts = date.split("/");
+
     return new Date(
       Number(parts[2]),
       Number(parts[0]) - 1,
@@ -28,6 +44,7 @@ function parseDate(date) {
 
   return null;
 }
+
 
 function formatDate(date) {
   if (!date) return "";
@@ -42,231 +59,340 @@ function formatDate(date) {
 }
 
 
-// Normalize split songs / jammed song entries
-function cleanSongName(name) {
-  return name
-    .replace(/\s*>+.*$/, "")
-    .replace(/\s+\(.*?\)$/, "")
-    .trim();
+// --------------------------------------------------
+// CSV HELPER
+// --------------------------------------------------
+
+function csvValue(value) {
+  if (value === null || value === undefined) {
+    return "";
+  }
+
+  return String(value).replace(/"/g, '""');
 }
 
 
-// All shows, sorted chronologically
+// --------------------------------------------------
+// SHOW LIST
+// --------------------------------------------------
+
 const allShows = data
-  .map(show => parseDate(show.eventDate))
-  .filter(date => date)
-  .sort((a, b) => a - b);
+  .map((show, index) => ({
+    show,
+    index,
+    date: parseDate(show.eventDate)
+  }))
+  .filter(item => item.date)
+  .sort((a, b) => a.date - b.date);
 
 
-// Count the number of complete shows between two dates
-function showsBetween(firstDate, secondDate) {
-  return allShows.filter(
-    show => show > firstDate && show < secondDate
-  ).length;
-}
+// --------------------------------------------------
+// SONG DATABASE
+// --------------------------------------------------
 
+const songs = {};
 
-// Number of shows since a song was last played
-function showsSince(date) {
-  return allShows.filter(show => show > date).length;
-}
+allShows.forEach((item, showIndex) => {
 
-
-let songs = {};
-
-
-// Process every show
-data.forEach(show => {
-
-  const showDate = parseDate(show.eventDate);
-
-  if (!showDate) return;
-
-
-  // Keep each song only once per show.
-  // This preserves the correct count when a song is split into
-  // multiple setlist entries during the same show.
-  const songsThisShow = {};
-
+  const show = item.show;
+  const showDate = item.date;
 
   show.sets?.set?.forEach(set => {
 
     set.song?.forEach(song => {
 
-      const name = cleanSongName(song.name);
+      const name = song.name.trim();
 
-      if (!name) return;
+      if (!songs[name]) {
 
+        songs[name] = {
+          Song: name,
 
-      if (!songsThisShow[name]) {
-        songsThisShow[name] = {
-          cover: song.cover
+          Type: song.cover
+            ? "Cover"
+            : "Original",
+
+          CoverArtist:
+            song.cover?.name || "",
+
+          TotalPlays: 0,
+
+          FirstPlayed: showDate,
+          FirstVenue:
+            show.venue?.name || "",
+          FirstCity:
+            show.venue?.city?.name || "",
+
+          LastPlayed: showDate,
+          LastVenue:
+            show.venue?.name || "",
+          LastCity:
+            show.venue?.city?.name || "",
+
+          Venues: new Set(),
+          Cities: new Set(),
+
+          // Every actual performance entry
+          PerformanceDates: [],
+
+          // Each show only once
+          ShowIndexes: []
         };
+
+      }
+
+      const entry = songs[name];
+
+      // ------------------------------------------------
+      // PERFORMANCE COUNT
+      // ------------------------------------------------
+
+      entry.TotalPlays++;
+
+      entry.PerformanceDates.push(showDate);
+
+
+      // ------------------------------------------------
+      // SHOW TRACKING
+      // ------------------------------------------------
+
+      if (
+        entry.ShowIndexes[
+          entry.ShowIndexes.length - 1
+        ] !== showIndex
+      ) {
+
+        entry.ShowIndexes.push(showIndex);
+
+      }
+
+
+      // ------------------------------------------------
+      // VENUES / CITIES
+      // ------------------------------------------------
+
+      entry.Venues.add(
+        show.venue?.name || ""
+      );
+
+      entry.Cities.add(
+        show.venue?.city?.name || ""
+      );
+
+
+      // ------------------------------------------------
+      // FIRST PLAYED
+      // ------------------------------------------------
+
+      if (showDate < entry.FirstPlayed) {
+
+        entry.FirstPlayed = showDate;
+
+        entry.FirstVenue =
+          show.venue?.name || "";
+
+        entry.FirstCity =
+          show.venue?.city?.name || "";
+
+      }
+
+
+      // ------------------------------------------------
+      // LAST PLAYED
+      // ------------------------------------------------
+
+      if (showDate > entry.LastPlayed) {
+
+        entry.LastPlayed = showDate;
+
+        entry.LastVenue =
+          show.venue?.name || "";
+
+        entry.LastCity =
+          show.venue?.city?.name || "";
+
       }
 
     });
 
   });
 
-
-  Object.entries(songsThisShow).forEach(([name, info]) => {
-
-    if (!songs[name]) {
-
-      songs[name] = {
-        Song: name,
-        Type: info.cover ? "Cover" : "Original",
-
-        TotalPlays: 0,
-
-        FirstPlayed: showDate,
-        FirstVenue: show.venue?.name || "",
-        FirstCity: show.venue?.city?.name || "",
-
-        LastPlayed: showDate,
-        LastVenue: show.venue?.name || "",
-        LastCity: show.venue?.city?.name || "",
-
-        Venues: new Set(),
-        Cities: new Set(),
-
-        Dates: []
-      };
-
-    }
-
-
-    const entry = songs[name];
-
-    entry.TotalPlays++;
-    entry.Dates.push(showDate);
-
-    entry.Venues.add(show.venue?.name || "");
-    entry.Cities.add(show.venue?.city?.name || "");
-
-
-    if (showDate < entry.FirstPlayed) {
-
-      entry.FirstPlayed = showDate;
-      entry.FirstVenue = show.venue?.name || "";
-      entry.FirstCity = show.venue?.city?.name || "";
-
-    }
-
-
-    if (showDate > entry.LastPlayed) {
-
-      entry.LastPlayed = showDate;
-      entry.LastVenue = show.venue?.name || "";
-      entry.LastCity = show.venue?.city?.name || "";
-
-    }
-
-  });
-
 });
 
 
-// Calculate gap statistics for a song
-function calculateGaps(dates) {
+// --------------------------------------------------
+// GAP CALCULATIONS
+// --------------------------------------------------
 
-  if (dates.length < 2) {
-    return {
-      average: 0,
-      longest: 0
-    };
-  }
+Object.values(songs).forEach(song => {
+
+  const indexes = song.ShowIndexes;
 
 
-  const sortedDates = dates
-    .slice()
-    .sort((a, b) => a - b);
+  // -----------------------------------------------
+  // CURRENT GAP
+  // -----------------------------------------------
 
+  const lastShowIndex =
+    indexes[indexes.length - 1];
+
+  song.CurrentGap =
+    allShows.length - 1 - lastShowIndex;
+
+
+  // -----------------------------------------------
+  // HISTORICAL GAPS
+  // -----------------------------------------------
 
   const gaps = [];
 
+  for (let i = 1; i < indexes.length; i++) {
 
-  for (let i = 1; i < sortedDates.length; i++) {
-
-    const gap = showsBetween(
-      sortedDates[i - 1],
-      sortedDates[i]
-    );
+    const gap =
+      indexes[i] - indexes[i - 1] - 1;
 
     gaps.push(gap);
 
   }
 
 
-  const total = gaps.reduce(
-    (sum, gap) => sum + gap,
-    0
-  );
+  // -----------------------------------------------
+  // PREVIOUS GAP
+  // -----------------------------------------------
 
+  if (gaps.length >= 2) {
 
-  return {
-    average:
-      Math.round((total / gaps.length) * 10) / 10,
+    song.PreviousGap =
+      gaps[gaps.length - 2];
 
-    longest:
-      Math.max(...gaps)
-  };
+  } else {
 
-}
+    song.PreviousGap = 0;
 
-
-// Determine bust-out status
-function gapStatus(longestGap) {
-
-  if (
-    longestGap >=
-    config.SETTINGS.MONSTER_GAP_SHOWS
-  ) {
-    return "Monster Gap";
   }
 
 
-  if (
-    longestGap >=
-    config.SETTINGS.BUST_OUT_SHOWS
-  ) {
-    return "Bust Out";
+  // -----------------------------------------------
+  // AVERAGE GAP
+  // -----------------------------------------------
+
+  if (gaps.length > 0) {
+
+    const total =
+      gaps.reduce(
+        (sum, gap) => sum + gap,
+        0
+      );
+
+    song.AverageGap =
+      Math.round(
+        (total / gaps.length) * 10
+      ) / 10;
+
+  } else {
+
+    song.AverageGap = 0;
+
   }
 
 
-  return "Regular";
+  // -----------------------------------------------
+  // LONGEST GAP
+  // -----------------------------------------------
 
-}
+  song.LongestGap =
+    gaps.length > 0
+      ? Math.max(...gaps)
+      : 0;
 
 
-// CSV header
+  // -----------------------------------------------
+  // GAP STATUS
+  // -----------------------------------------------
+
+  if (
+    song.CurrentGap >= MONSTER_GAP_SHOWS
+  ) {
+
+    song.GapStatus = "Monster Gap";
+
+  } else if (
+    song.CurrentGap >= BUST_OUT_SHOWS
+  ) {
+
+    song.GapStatus = "Bust Out";
+
+  } else {
+
+    song.GapStatus = "Regular";
+
+  }
+
+});
+
+
+// --------------------------------------------------
+// CSV
+// --------------------------------------------------
+
 let csv =
-  "Song,Type,Total Plays,First Played,First Venue,First City,Last Played,Last Venue,Last City,Shows Since Last Play,Gap Status,Average Shows Between Plays,Longest Gap,Venues Played,Cities Played\n";
+  "Song,Type,Cover Artist,Total Plays," +
+  "First Played,First Venue,First City," +
+  "Last Played,Last Venue,Last City," +
+  "Shows Since Last Play,Gap Status," +
+  "Previous Gap,Average Shows Between Plays," +
+  "Longest Gap,Venues Played,Cities Played\n";
 
 
-// Build rows
 Object.values(songs)
-  .sort((a, b) => b.TotalPlays - a.TotalPlays)
+
+  .sort((a, b) => {
+
+    if (b.TotalPlays !== a.TotalPlays) {
+      return b.TotalPlays - a.TotalPlays;
+    }
+
+    return a.Song.localeCompare(b.Song);
+
+  })
+
   .forEach(song => {
 
-    const gaps = calculateGaps(song.Dates);
-
     csv +=
-      `"${song.Song}","${song.Type}",${song.TotalPlays},"${formatDate(song.FirstPlayed)}","${song.FirstVenue}","${song.FirstCity}","${formatDate(song.LastPlayed)}","${song.LastVenue}","${song.LastCity}",${showsSince(song.LastPlayed)},"${gapStatus(gaps.longest)}",${gaps.average},${gaps.longest},${song.Venues.size},${song.Cities.size}\n`;
+      `"${csvValue(song.Song)}",` +
+      `"${csvValue(song.Type)}",` +
+      `"${csvValue(song.CoverArtist)}",` +
+      `${song.TotalPlays},` +
+      `"${formatDate(song.FirstPlayed)}",` +
+      `"${csvValue(song.FirstVenue)}",` +
+      `"${csvValue(song.FirstCity)}",` +
+      `"${formatDate(song.LastPlayed)}",` +
+      `"${csvValue(song.LastVenue)}",` +
+      `"${csvValue(song.LastCity)}",` +
+      `${song.CurrentGap},` +
+      `"${song.GapStatus}",` +
+      `${song.PreviousGap},` +
+      `${song.AverageGap},` +
+      `${song.LongestGap},` +
+      `${song.Venues.size},` +
+      `${song.Cities.size}\n`;
 
   });
 
 
-fs.mkdirSync("./reports", {
-  recursive: true
-});
+// --------------------------------------------------
+// SAVE
+// --------------------------------------------------
 
+fs.mkdirSync(
+  "./reports",
+  { recursive: true }
+);
 
 fs.writeFileSync(
   "./reports/Songs.csv",
   csv
 );
-
 
 console.log(
   `✅ Created Songs.csv (${Object.keys(songs).length} songs)`
