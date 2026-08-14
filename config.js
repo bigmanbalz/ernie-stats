@@ -3,7 +3,7 @@ module.exports = {
   ARTIST_ID: "9589937a-535c-4dae-b2c4-112d9b4588c8",
 
   SETTINGS: {
-    BUST_OUT_SHOWS: 25,
-    MONSTER_GAP_SHOWS: 50
+    BUST_OUT_SHOWS: 50,
+    MONSTER_GAP_SHOWS: 100
   }
 };
