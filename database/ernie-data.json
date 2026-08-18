@@ -1,5 +1,103 @@
 [
   {
+    "id": "2b71f466",
+    "versionId": "g6b01ba9a",
+    "eventDate": "15-08-2026",
+    "lastUpdated": "2026-08-16T02:59:53.181+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "1bd04554",
+      "name": "Hallockville",
+      "city": {
+        "id": "5133926",
+        "name": "Riverhead",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.9170435,
+          "long": -72.6620402
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/hallockville-riverhead-ny-usa-1bd04554.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Dead Man Walking",
+              "info": "w/ Rift teases"
+            },
+            {
+              "name": "Get Down",
+              "info": "w/ Black & Comfortably Numb teases [->]"
+            },
+            {
+              "name": "Breathe (In the Air)",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "English Rock Band",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": ">"
+            },
+            {
+              "name": "Breathe (Reprise)",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "English Rock Band",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": ">"
+            },
+            {
+              "name": "On The Run jam",
+              "info": "->"
+            },
+            {
+              "name": "Get Down"
+            },
+            {
+              "name": "Money Man",
+              "info": "->"
+            },
+            {
+              "name": "Comfortably Numb",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "English Rock Band",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": "Debut Cover"
+            },
+            {
+              "name": "Summertime",
+              "info": "w/ Tom & Dave of Mr. Rooster on Keys & Guitar; Mississippi Half Step Uptown Todeloo teases"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "Purely Green, Westlake, Dysfunktone & Mr. Rooster opened the show. Nick did a short acoustic set of “old timey numbers” on a flatbed with Tom & Dave before Dysfunktone.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/hallockville-riverhead-ny-2b71f466.html"
+  },
+  {
     "id": "4370832f",
     "versionId": "g302b5ab",
     "eventDate": "25-07-2026",

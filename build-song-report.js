@@ -1,70 +1,89 @@
 const fs = require("fs");
 
+
+// ==================================================
+// CONFIG
+// ==================================================
+
+const BUST_OUT_SHOWS = 25;
+const MONSTER_GAP_SHOWS = 50;
+
+const DATA_FILE = "./database/ernie-data.json";
+const OUTPUT_FILE = "./reports/Songs.csv";
+
+
+// ==================================================
+// ONE-OFF EXCEPTION
+// ==================================================
+//
+// Normally:
+// A song counts ONLY ONCE per show.
+//
+// Exception:
+// On July 20, 2025 at Blue Point Brewery,
+// "You and Me" was genuinely performed twice.
+//
+// That specific song/show combination counts as 2 plays.
+//
+// ==================================================
+
+const EXCEPTION_DATE = "20-07-2025";
+const EXCEPTION_VENUE = "Blue Point Brewery";
+const EXCEPTION_SONG = "You and Me";
+
+
+// ==================================================
+// LOAD DATA
+// ==================================================
+
 const data = JSON.parse(
-  fs.readFileSync("./database/ernie-data.json", "utf8")
+  fs.readFileSync(DATA_FILE, "utf8")
 );
 
-const config = require("./config");
 
-const BUST_OUT_SHOWS =
-  config.SETTINGS?.BUST_OUT_SHOWS ?? 50;
-
-const MONSTER_GAP_SHOWS =
-  config.SETTINGS?.MONSTER_GAP_SHOWS ?? 100;
-
-
-// --------------------------------------------------
+// ==================================================
 // DATE HELPERS
-// --------------------------------------------------
+// ==================================================
 
-function parseDate(date) {
-  if (!date) return null;
+function parseDate(value) {
 
-  let parts;
+  if (!value) return null;
 
-  if (date.includes("-")) {
-    parts = date.split("-");
+  const parts = value.split("-");
 
-    return new Date(
-      Number(parts[2]),
-      Number(parts[1]) - 1,
-      Number(parts[0])
-    );
-  }
+  if (parts.length !== 3) return null;
 
-  if (date.includes("/")) {
-    parts = date.split("/");
+  const day = Number(parts[0]);
+  const month = Number(parts[1]) - 1;
+  const year = Number(parts[2]);
 
-    return new Date(
-      Number(parts[2]),
-      Number(parts[0]) - 1,
-      Number(parts[1])
-    );
-  }
-
-  return null;
+  return new Date(year, month, day);
 }
 
 
 function formatDate(date) {
+
   if (!date) return "";
 
-  return (
-    (date.getMonth() + 1) +
-    "/" +
-    date.getDate() +
-    "/" +
-    date.getFullYear()
-  );
+  const month =
+    String(date.getMonth() + 1).padStart(2, "0");
+
+  const day =
+    String(date.getDate()).padStart(2, "0");
+
+  const year =
+    date.getFullYear();
+
+  return `${month}/${day}/${year}`;
 }
 
 
-// --------------------------------------------------
-// CSV HELPER
-// --------------------------------------------------
-
 function csvValue(value) {
-  if (value === null || value === undefined) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
     return "";
   }
 
@@ -72,161 +91,290 @@ function csvValue(value) {
 }
 
 
-// --------------------------------------------------
+// ==================================================
 // SHOW LIST
-// --------------------------------------------------
+// ==================================================
 
 const allShows = data
-  .map((show, index) => ({
+
+  .map((show, originalIndex) => ({
+
     show,
-    index,
-    date: parseDate(show.eventDate)
+
+    originalIndex,
+
+    date:
+      parseDate(show.eventDate)
+
   }))
+
   .filter(item => item.date)
-  .sort((a, b) => a.date - b.date);
+
+  .sort(
+    (a, b) =>
+      a.date - b.date
+  );
 
 
-// --------------------------------------------------
+// ==================================================
 // SONG DATABASE
-// --------------------------------------------------
+// ==================================================
 
 const songs = {};
+
+
+// ==================================================
+// PROCESS EACH SHOW
+// ==================================================
 
 allShows.forEach((item, showIndex) => {
 
   const show = item.show;
+
   const showDate = item.date;
+
+  const eventDate =
+    show.eventDate;
+
+  const venueName =
+    show.venue?.name || "";
+
+  const cityName =
+    show.venue?.city?.name || "";
+
+
+  // ------------------------------------------------
+  // Is this the one special show?
+  // ------------------------------------------------
+
+  const isExceptionShow =
+    eventDate === EXCEPTION_DATE &&
+    venueName === EXCEPTION_VENUE;
+
+
+  // ------------------------------------------------
+  // Gather every song entry from this show
+  // ------------------------------------------------
+
+  const songEntries = [];
 
   show.sets?.set?.forEach(set => {
 
     set.song?.forEach(song => {
 
-      const name = song.name.trim();
+      const name =
+        (song.name || "").trim();
 
-      if (!songs[name]) {
+      if (!name) return;
 
-        songs[name] = {
-          Song: name,
+      songEntries.push({
+        name,
+        song
+      });
 
-          Type: song.cover
+    });
+
+  });
+
+
+  // ------------------------------------------------
+  // Track songs already counted in this show
+  // ------------------------------------------------
+
+  const songsCountedThisShow =
+    new Set();
+
+
+  // ------------------------------------------------
+  // PROCESS SONGS
+  // ------------------------------------------------
+
+  songEntries.forEach(({ name, song }) => {
+
+
+    // ----------------------------------------------
+    // NORMAL RULE
+    // ----------------------------------------------
+    //
+    // A song appearing multiple times in one show
+    // normally counts as ONE play.
+    //
+    // ----------------------------------------------
+
+    if (
+      songsCountedThisShow.has(name)
+    ) {
+
+      // --------------------------------------------
+      // ONE-OFF EXCEPTION
+      // --------------------------------------------
+      //
+      // Blue Point — 7/20/2025 — You and Me
+      //
+      // This was genuinely played twice.
+      //
+      // --------------------------------------------
+
+      if (
+        isExceptionShow &&
+        name === EXCEPTION_SONG
+      ) {
+
+        const entry =
+          songs[name];
+
+        entry.TotalPlays++;
+
+      }
+
+      return;
+    }
+
+
+    // ----------------------------------------------
+    // First occurrence of this song in this show
+    // ----------------------------------------------
+
+    songsCountedThisShow.add(name);
+
+
+    // ----------------------------------------------
+    // CREATE SONG RECORD
+    // ----------------------------------------------
+
+    if (!songs[name]) {
+
+      songs[name] = {
+
+        Song: name,
+
+        Type:
+          song.cover
             ? "Cover"
             : "Original",
 
-          CoverArtist:
-            song.cover?.name || "",
+        CoverArtist:
+          song.cover?.name || "",
 
-          TotalPlays: 0,
+        TotalPlays: 0,
 
-          FirstPlayed: showDate,
-          FirstVenue:
-            show.venue?.name || "",
-          FirstCity:
-            show.venue?.city?.name || "",
+        FirstPlayed:
+          showDate,
 
-          LastPlayed: showDate,
-          LastVenue:
-            show.venue?.name || "",
-          LastCity:
-            show.venue?.city?.name || "",
+        FirstVenue:
+          venueName,
 
-          Venues: new Set(),
-          Cities: new Set(),
+        FirstCity:
+          cityName,
 
-          // Every actual performance entry
-          PerformanceDates: [],
+        LastPlayed:
+          showDate,
 
-          // Each show only once
-          ShowIndexes: []
-        };
+        LastVenue:
+          venueName,
 
-      }
+        LastCity:
+          cityName,
 
-      const entry = songs[name];
+        Venues:
+          new Set(),
 
-      // ------------------------------------------------
-      // PERFORMANCE COUNT
-      // ------------------------------------------------
+        Cities:
+          new Set(),
 
-      entry.TotalPlays++;
+        ShowIndexes:
+          []
 
-      entry.PerformanceDates.push(showDate);
+      };
+
+    }
 
 
-      // ------------------------------------------------
-      // SHOW TRACKING
-      // ------------------------------------------------
-
-      if (
-        entry.ShowIndexes[
-          entry.ShowIndexes.length - 1
-        ] !== showIndex
-      ) {
-
-        entry.ShowIndexes.push(showIndex);
-
-      }
+    const entry =
+      songs[name];
 
 
-      // ------------------------------------------------
-      // VENUES / CITIES
-      // ------------------------------------------------
+    // ----------------------------------------------
+    // COUNT PLAY
+    // ----------------------------------------------
 
-      entry.Venues.add(
-        show.venue?.name || ""
-      );
-
-      entry.Cities.add(
-        show.venue?.city?.name || ""
-      );
+    entry.TotalPlays++;
 
 
-      // ------------------------------------------------
-      // FIRST PLAYED
-      // ------------------------------------------------
+    // ----------------------------------------------
+    // COUNT SHOW
+    // ----------------------------------------------
 
-      if (showDate < entry.FirstPlayed) {
-
-        entry.FirstPlayed = showDate;
-
-        entry.FirstVenue =
-          show.venue?.name || "";
-
-        entry.FirstCity =
-          show.venue?.city?.name || "";
-
-      }
+    entry.ShowIndexes.push(
+      showIndex
+    );
 
 
-      // ------------------------------------------------
-      // LAST PLAYED
-      // ------------------------------------------------
+    // ----------------------------------------------
+    // VENUES / CITIES
+    // ----------------------------------------------
 
-      if (showDate > entry.LastPlayed) {
+    entry.Venues.add(
+      venueName
+    );
 
-        entry.LastPlayed = showDate;
+    entry.Cities.add(
+      cityName
+    );
 
-        entry.LastVenue =
-          show.venue?.name || "";
 
-        entry.LastCity =
-          show.venue?.city?.name || "";
+    // ----------------------------------------------
+    // FIRST PLAYED
+    // ----------------------------------------------
 
-      }
+    if (
+      showDate < entry.FirstPlayed
+    ) {
 
-    });
+      entry.FirstPlayed =
+        showDate;
+
+      entry.FirstVenue =
+        venueName;
+
+      entry.FirstCity =
+        cityName;
+
+    }
+
+
+    // ----------------------------------------------
+    // LAST PLAYED
+    // ----------------------------------------------
+
+    if (
+      showDate > entry.LastPlayed
+    ) {
+
+      entry.LastPlayed =
+        showDate;
+
+      entry.LastVenue =
+        venueName;
+
+      entry.LastCity =
+        cityName;
+
+    }
 
   });
 
 });
 
 
-// --------------------------------------------------
+// ==================================================
 // GAP CALCULATIONS
-// --------------------------------------------------
+// ==================================================
 
 Object.values(songs).forEach(song => {
 
-  const indexes = song.ShowIndexes;
+  const indexes =
+    song.ShowIndexes;
 
 
   // -----------------------------------------------
@@ -237,7 +385,9 @@ Object.values(songs).forEach(song => {
     indexes[indexes.length - 1];
 
   song.CurrentGap =
-    allShows.length - 1 - lastShowIndex;
+    allShows.length -
+    1 -
+    lastShowIndex;
 
 
   // -----------------------------------------------
@@ -246,10 +396,17 @@ Object.values(songs).forEach(song => {
 
   const gaps = [];
 
-  for (let i = 1; i < indexes.length; i++) {
+
+  for (
+    let i = 1;
+    i < indexes.length;
+    i++
+  ) {
 
     const gap =
-      indexes[i] - indexes[i - 1] - 1;
+      indexes[i] -
+      indexes[i - 1] -
+      1;
 
     gaps.push(gap);
 
@@ -260,7 +417,9 @@ Object.values(songs).forEach(song => {
   // PREVIOUS GAP
   // -----------------------------------------------
 
-  if (gaps.length >= 2) {
+  if (
+    gaps.length >= 2
+  ) {
 
     song.PreviousGap =
       gaps[gaps.length - 2];
@@ -276,11 +435,14 @@ Object.values(songs).forEach(song => {
   // AVERAGE GAP
   // -----------------------------------------------
 
-  if (gaps.length > 0) {
+  if (
+    gaps.length > 0
+  ) {
 
     const total =
       gaps.reduce(
-        (sum, gap) => sum + gap,
+        (sum, gap) =>
+          sum + gap,
         0
       );
 
@@ -311,78 +473,116 @@ Object.values(songs).forEach(song => {
   // -----------------------------------------------
 
   if (
-    song.CurrentGap >= MONSTER_GAP_SHOWS
+    song.CurrentGap >=
+    MONSTER_GAP_SHOWS
   ) {
 
-    song.GapStatus = "Monster Gap";
+    song.GapStatus =
+      "Monster Gap";
 
   } else if (
-    song.CurrentGap >= BUST_OUT_SHOWS
+    song.CurrentGap >=
+    BUST_OUT_SHOWS
   ) {
 
-    song.GapStatus = "Bust Out";
+    song.GapStatus =
+      "Bust Out";
 
   } else {
 
-    song.GapStatus = "Regular";
+    song.GapStatus =
+      "Regular";
 
   }
 
 });
 
 
-// --------------------------------------------------
-// CSV
-// --------------------------------------------------
+// ==================================================
+// CSV HEADER
+// ==================================================
 
 let csv =
   "Song,Type,Cover Artist,Total Plays," +
   "First Played,First Venue,First City," +
   "Last Played,Last Venue,Last City," +
-  "Shows Since Last Play,Gap Status," +
+  "Shows Played,Shows Since Last Play,Gap Status," +
   "Previous Gap,Average Shows Between Plays," +
   "Longest Gap,Venues Played,Cities Played\n";
 
+
+// ==================================================
+// SORT + WRITE CSV
+// ==================================================
 
 Object.values(songs)
 
   .sort((a, b) => {
 
-    if (b.TotalPlays !== a.TotalPlays) {
-      return b.TotalPlays - a.TotalPlays;
+    if (
+      b.TotalPlays !==
+      a.TotalPlays
+    ) {
+
+      return (
+        b.TotalPlays -
+        a.TotalPlays
+      );
+
     }
 
-    return a.Song.localeCompare(b.Song);
+    return a.Song.localeCompare(
+      b.Song
+    );
 
   })
 
   .forEach(song => {
 
     csv +=
+
       `"${csvValue(song.Song)}",` +
+
       `"${csvValue(song.Type)}",` +
+
       `"${csvValue(song.CoverArtist)}",` +
+
       `${song.TotalPlays},` +
+
       `"${formatDate(song.FirstPlayed)}",` +
+
       `"${csvValue(song.FirstVenue)}",` +
+
       `"${csvValue(song.FirstCity)}",` +
+
       `"${formatDate(song.LastPlayed)}",` +
+
       `"${csvValue(song.LastVenue)}",` +
+
       `"${csvValue(song.LastCity)}",` +
+
+      `${song.ShowIndexes.length},` +
+
       `${song.CurrentGap},` +
+
       `"${song.GapStatus}",` +
+
       `${song.PreviousGap},` +
+
       `${song.AverageGap},` +
+
       `${song.LongestGap},` +
+
       `${song.Venues.size},` +
+
       `${song.Cities.size}\n`;
 
   });
 
 
-// --------------------------------------------------
+// ==================================================
 // SAVE
-// --------------------------------------------------
+// ==================================================
 
 fs.mkdirSync(
   "./reports",
@@ -390,10 +590,54 @@ fs.mkdirSync(
 );
 
 fs.writeFileSync(
-  "./reports/Songs.csv",
+  OUTPUT_FILE,
   csv
 );
 
+
+// ==================================================
+// VERIFY THE EXCEPTION
+// ==================================================
+
+const youAndMe =
+  songs["You and Me"];
+
+console.log("");
+console.log("========================================");
+console.log(" SONG REPORT V2");
+console.log("========================================");
+
 console.log(
-  `✅ Created Songs.csv (${Object.keys(songs).length} songs)`
+  `Shows processed: ${allShows.length}`
 );
+
+console.log(
+  `Songs found: ${Object.keys(songs).length}`
+);
+
+console.log(
+  `Output: ${OUTPUT_FILE}`
+);
+
+console.log("");
+
+if (youAndMe) {
+
+  console.log(
+    `"You and Me" total plays: ${youAndMe.TotalPlays}`
+  );
+
+  console.log(
+    `"You and Me" shows played: ${youAndMe.ShowIndexes.length}`
+  );
+
+}
+
+console.log("");
+
+console.log(
+  "Exception: Blue Point Brewery — 7/20/2025 — You and Me = 2 plays"
+);
+
+console.log("========================================");
+console.log("");
