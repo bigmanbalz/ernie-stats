@@ -5,6 +5,95 @@ let shows = [];
 let songs = [];
 
 /* ==================================================
+   TEMPORARY PASSWORD GATE
+================================================== */
+
+function normalizePassword(value) {
+    return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z]/g, "");
+}
+
+function showPasswordGate() {
+
+    const existing =
+        document.getElementById("passwordGate");
+
+    if (existing) return;
+
+    document.body.insertAdjacentHTML(
+        "afterbegin",
+        `
+        <div id="passwordGate">
+
+            <div class="password-box">
+
+                <h1>Life is better with a...</h1>
+
+                <p>Enter the answer to continue.</p>
+
+                <input
+                    id="passwordInput"
+                    type="text"
+                    autocomplete="off"
+                    onkeydown="if(event.key === 'Enter') checkPassword()"
+                >
+
+                <button onclick="checkPassword()">
+                    Enter
+                </button>
+
+                <div
+                    id="passwordError"
+                    class="password-error"
+                ></div>
+
+            </div>
+
+        </div>
+        `
+    );
+
+    document
+        .getElementById("passwordInput")
+        .focus();
+}
+
+function checkPassword() {
+
+    const input =
+        document.getElementById("passwordInput");
+
+    const answer =
+        normalizePassword(input.value);
+
+    if (answer === "bottleofwine") {
+
+        const gate =
+            document.getElementById("passwordGate");
+
+        if (gate) {
+            gate.remove();
+        }
+
+        loadData();
+
+        return;
+    }
+
+    document
+        .getElementById("passwordError")
+        .textContent =
+            "Not quite. Try again.";
+
+    input.select();
+}
+
+function startApp() {
+    showPasswordGate();
+}
+
+/* ==================================================
    LOAD DATA
 ================================================== */
 
@@ -277,7 +366,71 @@ function navigation() {
     `;
 }
 
-function showPage(page) {
+function navigateHistory(state, render) {
+
+    history.pushState(state, "");
+
+    render();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+}
+
+function restoreHistory(state) {
+
+    if (!state) return;
+
+    if (state.type === "page") {
+        showPage(state.page, false);
+        return;
+    }
+
+    if (state.type === "song") {
+        openSong(state.name, false);
+        return;
+    }
+
+    if (state.type === "show") {
+        openShow(state.identifier, false);
+        return;
+    }
+
+    if (state.type === "venue") {
+        openVenue(state.key, false);
+        return;
+    }
+
+    if (state.type === "city") {
+        openCity(state.key, false);
+    }
+}
+
+window.addEventListener("popstate", event => {
+
+    restoreHistory(
+        event.state
+    );
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+
+});
+
+function showPage(page, addHistory = true) {
+
+    if (addHistory) {
+        history.pushState(
+            {
+                type: "page",
+                page
+            },
+            ""
+        );
+    }
 
     if (page === "dashboard") {
         renderDashboard();
@@ -681,7 +834,7 @@ function songRow(song) {
    SONG DETAIL
 ================================================== */
 
-function openSong(name) {
+function openSong(name, addHistory = true) {
 
     const song =
         songs.find(
@@ -690,7 +843,22 @@ function openSong(name) {
 
     if (!song) return;
 
+    if (addHistory) {
+        history.pushState(
+            {
+                type: "song",
+                name
+            },
+            ""
+        );
+    }
+
     renderSongDetail(song);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
 }
 
 function renderSongDetail(song) {
@@ -752,8 +920,7 @@ function renderSongDetail(song) {
 
             </div>
 
-            <div class="stats-grid"
-                 style="padding:20px;margin:0">
+            <div class="stats-grid detail-stats">
 
                 <div class="stat-card">
 
@@ -793,21 +960,13 @@ function renderSongDetail(song) {
 
             </div>
 
-            <div style="
-                padding:20px;
-                border-top:1px solid #303030;
-            ">
+            <div class="detail-info">
 
-                <div style="
-                    display:grid;
-                    grid-template-columns:
-                        repeat(auto-fit,minmax(180px,1fr));
-                    gap:20px;
-                ">
+                <div class="detail-info-grid">
 
                     <div>
 
-                        <div class="song-meta">
+                        <div class="detail-label">
                             FIRST PLAYED
                         </div>
 
@@ -842,7 +1001,7 @@ function renderSongDetail(song) {
 
                     <div>
 
-                        <div class="song-meta">
+                        <div class="detail-label">
                             LAST PLAYED
                         </div>
 
@@ -877,7 +1036,7 @@ function renderSongDetail(song) {
 
                     <div>
 
-                        <div class="song-meta">
+                        <div class="detail-label">
                             AVERAGE GAP
                         </div>
 
@@ -895,7 +1054,7 @@ function renderSongDetail(song) {
 
                     <div>
 
-                        <div class="song-meta">
+                        <div class="detail-label">
                             LONGEST GAP
                         </div>
 
@@ -933,10 +1092,7 @@ function renderSongDetail(song) {
                             )
                             .join("")
                         : `
-                            <div style="
-                                padding:20px;
-                                color:#888;
-                            ">
+                            <div class="detail-info">
                                 No appearance data found.
                             </div>
                           `
@@ -1303,6 +1459,12 @@ function showRow(show) {
 
                 </span>
 
+                ${show.eventName ? `
+                    <div class="show-event">
+                        ${escapeHtml(show.eventName)}
+                    </div>
+                ` : ""}
+
             </div>
 
             <div class="show-date">
@@ -1323,7 +1485,7 @@ function showRow(show) {
    SHOW DETAIL
 ================================================== */
 
-function openShow(identifier) {
+function openShow(identifier, addHistory = true) {
 
     const show =
         shows.find(
@@ -1336,7 +1498,22 @@ function openShow(identifier) {
 
     if (!show) return;
 
+    if (addHistory) {
+        history.pushState(
+            {
+                type: "show",
+                identifier
+            },
+            ""
+        );
+    }
+
     renderShowDetail(show);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
 }
 
 function renderShowDetail(show) {
@@ -1672,7 +1849,7 @@ function renderVenues() {
     `;
 }
 
-function openVenue(key) {
+function openVenue(key, addHistory = true) {
 
     const venue =
         buildVenueData()
@@ -1683,7 +1860,22 @@ function openVenue(key) {
 
     if (!venue) return;
 
+    if (addHistory) {
+        history.pushState(
+            {
+                type: "venue",
+                key
+            },
+            ""
+        );
+    }
+
     renderVenueDetail(venue);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
 }
 
 function renderVenueDetail(venue) {
@@ -1741,11 +1933,7 @@ function renderVenueDetail(venue) {
                         )}
                     </h2>
 
-                    <div style="
-                        color:#999;
-                        margin-top:6px;
-                        font-size:13px;
-                    ">
+                    <div class="detail-subtitle">
 
                         ${escapeHtml(
                             venue.city
@@ -1761,8 +1949,7 @@ function renderVenueDetail(venue) {
 
             </div>
 
-            <div class="stats-grid"
-                 style="padding:20px;margin:0">
+            <div class="stats-grid detail-stats">
 
                 <div class="stat-card">
 
@@ -2015,7 +2202,7 @@ function renderCities() {
    CITY DETAIL
 ================================================== */
 
-function openCity(key) {
+function openCity(key, addHistory = true) {
 
     const city =
         buildCityData()
@@ -2026,7 +2213,22 @@ function openCity(key) {
 
     if (!city) return;
 
+    if (addHistory) {
+        history.pushState(
+            {
+                type: "city",
+                key
+            },
+            ""
+        );
+    }
+
     renderCityDetail(city);
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
 }
 
 function renderCityDetail(city) {
@@ -2103,14 +2305,8 @@ function renderCityDetail(city) {
                         ${escapeHtml(city.city)}
                     </h2>
 
-                    <div style="
-                        color:#999;
-                        margin-top:6px;
-                        font-size:13px;
-                    ">
-
+                    <div class="detail-subtitle">
                         City Statistics
-
                     </div>
 
                 </div>
@@ -2121,8 +2317,7 @@ function renderCityDetail(city) {
 
             </div>
 
-            <div class="stats-grid"
-                 style="padding:20px;margin:0">
+            <div class="stats-grid detail-stats">
 
                 <div class="stat-card">
 
@@ -2549,4 +2744,4 @@ function escapeJs(value) {
    START
 ================================================== */
 
-loadData();
+startApp();

@@ -595,3 +595,217 @@ button:hover {
     border-bottom: 1px solid var(--border);
 }
 
+
+/* DETAIL PAGES */
+
+.detail-subtitle {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.detail-event {
+    color: var(--accent);
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.detail-notes {
+    color: var(--muted);
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.detail-meta {
+    padding: 18px 20px;
+    color: var(--muted);
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-stats {
+    padding: 20px;
+    margin: 0;
+}
+
+.detail-info {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.detail-label {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.detail-value {
+    margin-top: 4px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.detail-location {
+    color: #777;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.detail-link {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.detail-link:hover {
+    color: var(--accent);
+}
+
+.detail-set-header {
+    padding: 15px 20px;
+    background: var(--card2);
+    border-bottom: 1px solid var(--border);
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.detail-song-cover {
+    color: var(--muted);
+    font-size: 11px;
+    margin-left: 7px;
+}
+
+.detail-song-info {
+    color: #777;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+
+/* FORM CONTROLS */
+
+.search-box select,
+.song-filters select {
+    padding: 11px 13px;
+
+    border: 1px solid #444;
+    border-radius: 5px;
+
+    background: #101010;
+    color: var(--text);
+
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.search-box select:focus,
+.song-filters select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.search-box select:hover,
+.song-filters select:hover {
+    border-color: #666;
+}
+
+
+/* SHOW EVENT / FESTIVAL NAME */
+
+.show-event {
+    margin-top: 4px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+/* ==================================================
+   TEMPORARY PASSWORD GATE
+================================================== */
+
+#passwordGate {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #101010;
+}
+
+.password-box {
+    width: min(420px, calc(100% - 40px));
+    padding: 35px;
+
+    text-align: center;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.password-box h1 {
+    margin: 0 0 10px;
+
+    color: var(--text);
+    font-family: Georgia, serif;
+    font-size: 28px;
+}
+
+.password-box p {
+    margin: 0 0 24px;
+
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.password-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #444;
+    border-radius: 5px;
+
+    background: #101010;
+    color: var(--text);
+
+    font-size: 16px;
+    text-align: center;
+}
+
+.password-box input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.password-box button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.password-error {
+    min-height: 18px;
+    margin-top: 10px;
+
+    color: #c66;
+    font-size: 12px;
+}
