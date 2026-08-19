@@ -363,3 +363,59 @@ button:hover {
         display: none;
     }
 }
+
+/* PUBLIC-FACING TYPE REFINEMENT */
+
+.show-row span {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.show-date {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.show-row strong {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.show-row > div:first-child {
+    line-height: 1.25;
+}
+
+
+.song-filters {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.song-filters select {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+
+    border: 1px solid #444;
+    border-radius: 5px;
+
+    background: #101010;
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+.song-filters select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+@media (max-width: 700px) {
+
+    .song-filters {
+        flex-direction: column;
+    }
+
+}
+

@@ -217,6 +217,18 @@ function normalizeSong(song) {
     };
 }
 
+function cityWithState(city) {
+
+    if (!city) return "";
+
+    const name = city.name || "";
+    const state = city.stateCode || "";
+
+    return state
+        ? name + ", " + state
+        : name;
+}
+
 function number(value) {
 
     const n =
@@ -253,6 +265,10 @@ function navigation() {
                 Venues
             </button>
 
+            <button onclick="showPage('cities')">
+                Cities
+            </button>
+
             <button onclick="showPage('gaps')">
                 Gaps
             </button>
@@ -280,6 +296,11 @@ function showPage(page) {
 
     if (page === "venues") {
         renderVenues();
+        return;
+    }
+
+    if (page === "cities") {
+        renderCities();
         return;
     }
 
@@ -476,6 +497,56 @@ function renderSongs() {
                     oninput="filterSongs()"
                 >
 
+                <div class="song-filters">
+
+                    <select
+                        id="songTypeFilter"
+                        onchange="filterSongs()"
+                    >
+
+                        <option value="all">
+                            All Songs
+                        </option>
+
+                        <option value="originals">
+                            Originals
+                        </option>
+
+                        <option value="covers">
+                            Covers
+                        </option>
+
+                    </select>
+
+                    <select
+                        id="songSort"
+                        onchange="filterSongs()"
+                    >
+
+                        <option value="plays">
+                            Most Played
+                        </option>
+
+                        <option value="least">
+                            Least Played
+                        </option>
+
+                        <option value="recent">
+                            Most Recently Played
+                        </option>
+
+                        <option value="gap">
+                            Longest Current Gap
+                        </option>
+
+                        <option value="alpha">
+                            Alphabetical
+                        </option>
+
+                    </select>
+
+                </div>
+
             </div>
 
             <div id="songResults">
@@ -498,12 +569,69 @@ function filterSongs() {
             .value
             .toLowerCase();
 
-    const filtered =
-        songs.filter(song =>
-            song.name
-                .toLowerCase()
-                .includes(query)
+    const type =
+        document
+            .getElementById("songTypeFilter")
+            .value;
+
+    const sort =
+        document
+            .getElementById("songSort")
+            .value;
+
+    let filtered =
+        songs.filter(song => {
+
+            const matchesSearch =
+                song.name
+                    .toLowerCase()
+                    .includes(query);
+
+            const matchesType =
+                type === "all" ||
+                (type === "covers" &&
+                    song.type === "Cover") ||
+                (type === "originals" &&
+                    song.type !== "Cover");
+
+            return matchesSearch &&
+                   matchesType;
+        });
+
+    filtered.sort((a, b) => {
+
+        if (sort === "least") {
+            return (
+                a.performances -
+                b.performances
+            );
+        }
+
+        if (sort === "recent") {
+            return (
+                parseDate(b.lastPlayed) -
+                parseDate(a.lastPlayed)
+            );
+        }
+
+        if (sort === "gap") {
+            return (
+                b.showsSinceLastPlay -
+                a.showsSinceLastPlay
+            );
+        }
+
+        if (sort === "alpha") {
+            return a.name.localeCompare(
+                b.name
+            );
+        }
+
+        return (
+            b.performances -
+            a.performances
         );
+    });
 
     document.getElementById("songResults")
         .innerHTML =
@@ -933,7 +1061,7 @@ function getSongAppearances(songName) {
                     "Unknown Venue",
 
                 city:
-                    show.venue?.city?.name ||
+                    cityWithState(show.venue?.city) ||
                     "",
 
                 performanceCount
@@ -1003,6 +1131,23 @@ function renderShows() {
                     parseDate(a.eventDate)
             );
 
+    const months = [...new Set(
+        sortedShows.map(show => {
+
+            const date =
+                parseDate(show.eventDate);
+
+            if (isNaN(date.getTime())) {
+                return null;
+            }
+
+            return `${date.getFullYear()}-${String(
+                date.getMonth() + 1
+            ).padStart(2, "0")}`;
+
+        }).filter(Boolean)
+    )];
+
     document.getElementById("content").innerHTML = `
 
         <section class="panel">
@@ -1017,7 +1162,59 @@ function renderShows() {
 
             </div>
 
-            <div class="show-list">
+            <div class="search-box">
+
+                <select
+                    id="showDateFilter"
+                    onchange="filterShowsByDate()"
+                >
+
+                    <option value="all">
+                        Jump to date
+                    </option>
+
+                    ${months
+                        .map(month => {
+
+                            const parts =
+                                month.split("-");
+
+                            const year =
+                                Number(parts[0]);
+
+                            const monthNumber =
+                                Number(parts[1]);
+
+                            const label =
+                                new Date(
+                                    year,
+                                    monthNumber - 1,
+                                    1
+                                ).toLocaleDateString(
+                                    "en-US",
+                                    {
+                                        month: "long",
+                                        year: "numeric"
+                                    }
+                                );
+
+                            return `
+                                <option value="${month}">
+                                    ${label}
+                                </option>
+                            `;
+
+                        })
+                        .join("")}
+
+                </select>
+
+            </div>
+
+            <div
+                id="showResults"
+                class="show-list"
+            >
 
                 ${sortedShows
                     .map(show => showRow(show))
@@ -1027,6 +1224,50 @@ function renderShows() {
 
         </section>
     `;
+}
+
+function filterShowsByDate() {
+
+    const selected =
+        document
+            .getElementById("showDateFilter")
+            .value;
+
+    let filtered = [...shows]
+        .sort(
+            (a, b) =>
+                parseDate(b.eventDate) -
+                parseDate(a.eventDate)
+        );
+
+    if (selected !== "all") {
+
+        filtered =
+            filtered.filter(show => {
+
+                const date =
+                    parseDate(
+                        show.eventDate
+                    );
+
+                if (isNaN(date.getTime())) {
+                    return false;
+                }
+
+                const key =
+                    `${date.getFullYear()}-${String(
+                        date.getMonth() + 1
+                    ).padStart(2, "0")}`;
+
+                return key === selected;
+            });
+    }
+
+    document.getElementById("showResults")
+        .innerHTML =
+            filtered
+                .map(show => showRow(show))
+                .join("");
 }
 
 function showRow(show) {
@@ -1054,7 +1295,7 @@ function showRow(show) {
                 <span>
 
                     ${escapeHtml(
-                        show.venue?.city?.name ||
+                        cityWithState(show.venue?.city) ||
                         ""
                     )}
 
@@ -1132,7 +1373,7 @@ function renderShowDetail(show) {
                     ">
 
                         ${escapeHtml(
-                            show.venue?.city?.name ||
+                            cityWithState(show.venue?.city) ||
                             ""
                         )}
 
@@ -1304,7 +1545,7 @@ function buildVenueData() {
             "Unknown Venue";
 
         const city =
-            show.venue?.city?.name ||
+            cityWithState(show.venue?.city) ||
             "";
 
         const key =
@@ -1590,19 +1831,520 @@ function renderVenueDetail(venue) {
 }
 
 /* ==================================================
+   CITIES
+================================================== */
+
+function buildCityData() {
+
+    const cityMap = {};
+
+    shows.forEach(show => {
+
+        const city =
+            cityWithState(show.venue?.city) ||
+            "Unknown City";
+
+        const state =
+            show.venue?.city?.stateCode ||
+            "";
+
+        const key =
+            `${city} — ${state}`;
+
+        if (!cityMap[key]) {
+
+            cityMap[key] = {
+                key,
+                city,
+                state,
+                shows: [],
+                venues: new Set(),
+                songs: new Set()
+            };
+        }
+
+        cityMap[key].shows.push(show);
+
+        const venue =
+            show.venue?.name ||
+            "Unknown Venue";
+
+        cityMap[key].venues.add(venue);
+
+        const sets =
+            show.sets?.set || [];
+
+        sets.forEach(set => {
+
+            (set.song || []).forEach(song => {
+
+                const name =
+                    song.name?.trim();
+
+                if (name) {
+                    cityMap[key].songs.add(name);
+                }
+
+            });
+
+        });
+
+    });
+
+    return Object.values(cityMap);
+}
+
+function renderCities() {
+
+    const cities =
+        buildCityData()
+            .sort(
+                (a, b) =>
+                    b.shows.length -
+                    a.shows.length
+            );
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>Cities</h2>
+
+                <button onclick="showPage('dashboard')">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+            <div class="venue-list">
+
+                ${cities
+                    .map(
+                        city => `
+
+                            <div
+                                class="song-row"
+                                onclick="openCity('${escapeJs(city.key)}')"
+                                style="cursor:pointer"
+                            >
+
+                                <div class="song-name">
+
+                                    ${escapeHtml(
+                                        city.city
+                                    )}
+
+                                    <div class="song-meta">
+
+                                        ${escapeHtml(
+                                            city.state
+                                        )}
+
+                                        ·
+
+                                        ${city.venues.size}
+                                        ${city.venues.size === 1
+                                            ? "venue"
+                                            : "venues"}
+
+                                        ·
+
+                                        ${city.songs.size}
+                                        ${city.songs.size === 1
+                                            ? "song"
+                                            : "songs"}
+
+                                    </div>
+
+                                </div>
+
+                                <div class="song-count">
+
+                                    ${city.shows.length}
+
+                                </div>
+
+                            </div>
+
+                        `
+                    )
+                    .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+/* ==================================================
+   CITY DETAIL
+================================================== */
+
+function openCity(key) {
+
+    const city =
+        buildCityData()
+            .find(
+                item =>
+                    item.key === key
+            );
+
+    if (!city) return;
+
+    renderCityDetail(city);
+}
+
+function renderCityDetail(city) {
+
+    const songCounts = {};
+    const venueMap = {};
+
+    city.shows.forEach(show => {
+
+        const venueName =
+            show.venue?.name ||
+            "Unknown Venue";
+
+        if (!venueMap[venueName]) {
+            venueMap[venueName] = [];
+        }
+
+        venueMap[venueName].push(show);
+
+        const sets =
+            show.sets?.set || [];
+
+        sets.forEach(set => {
+
+            (set.song || []).forEach(song => {
+
+                const name =
+                    song.name?.trim();
+
+                if (!name) return;
+
+                songCounts[name] =
+                    (songCounts[name] || 0) + 1;
+
+            });
+
+        });
+
+    });
+
+    const rankedSongs =
+        Object.entries(songCounts)
+            .sort(
+                (a, b) =>
+                    b[1] - a[1] ||
+                    a[0].localeCompare(b[0])
+            );
+
+    const venues =
+        Object.entries(venueMap)
+            .sort(
+                (a, b) =>
+                    b[1].length -
+                    a[1].length
+            );
+
+    const recentShows =
+        [...city.shows]
+            .sort(
+                (a, b) =>
+                    parseDate(b.eventDate) -
+                    parseDate(a.eventDate)
+            );
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        ${escapeHtml(city.city)},
+                        ${escapeHtml(city.state)}
+                    </h2>
+
+                    <div style="
+                        color:#999;
+                        margin-top:6px;
+                        font-size:13px;
+                    ">
+
+                        City Statistics
+
+                    </div>
+
+                </div>
+
+                <button onclick="showPage('cities')">
+                    ← Cities
+                </button>
+
+            </div>
+
+            <div class="stats-grid"
+                 style="padding:20px;margin:0">
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${city.shows.length}
+                    </div>
+
+                    <div class="stat-label">
+                        Shows
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${venues.length}
+                    </div>
+
+                    <div class="stat-label">
+                        Venues
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${rankedSongs.length}
+                    </div>
+
+                    <div class="stat-label">
+                        Songs Played
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    Most Played Here
+                </h2>
+
+            </div>
+
+            <div class="song-list">
+
+                ${rankedSongs
+                    .slice(0, 50)
+                    .map(
+                        ([name, count]) => `
+
+                            <div
+                                class="song-row"
+                                onclick="openSong('${escapeJs(name)}')"
+                                style="cursor:pointer"
+                            >
+
+                                <div class="song-name">
+
+                                    ${escapeHtml(name)}
+
+                                </div>
+
+                                <div class="song-count">
+
+                                    ${count}
+
+                                </div>
+
+                            </div>
+
+                        `
+                    )
+                    .join("")}
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    Venues
+                </h2>
+
+            </div>
+
+            <div class="song-list">
+
+                ${venues
+                    .map(
+                        ([name, venueShows]) => {
+
+                            const key =
+                                `${name} — ${city.city}`;
+
+                            return `
+
+                                <div
+                                    class="song-row"
+                                    onclick="openVenue('${escapeJs(key)}')"
+                                    style="cursor:pointer"
+                                >
+
+                                    <div class="song-name">
+
+                                        ${escapeHtml(name)}
+
+                                    </div>
+
+                                    <div class="song-meta">
+
+                                        ${venueShows.length}
+                                        ${venueShows.length === 1
+                                            ? "show"
+                                            : "shows"}
+
+                                    </div>
+
+                                    <div class="song-count">
+
+                                        ${venueShows.length}
+
+                                    </div>
+
+                                </div>
+
+                            `;
+
+                        }
+                    )
+                    .join("")}
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    Shows
+                </h2>
+
+            </div>
+
+            <div class="show-list">
+
+                ${recentShows
+                    .map(show => showRow(show))
+                    .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+/* ==================================================
    GAPS
 ================================================== */
 
 function renderGaps() {
 
-    const gapSongs =
+    const sortedSongs =
         [...songs]
             .sort(
                 (a, b) =>
                     b.showsSinceLastPlay -
                     a.showsSinceLastPlay
+            );
+
+    const gapSongs =
+        sortedSongs.slice(0, 50);
+
+    const bustoutSongs =
+        sortedSongs.filter(
+            song =>
+                song.showsSinceLastPlay >= 40 &&
+                song.showsSinceLastPlay <= 49
+        );
+
+    const monsterSongs =
+        sortedSongs.filter(
+            song =>
+                song.showsSinceLastPlay >= 90 &&
+                song.showsSinceLastPlay <= 99
+        );
+
+    function gapList(songList) {
+
+        if (!songList.length) {
+
+            return `
+                <div style="
+                    padding:20px;
+                    color:#888;
+                ">
+                    Nothing currently in this range.
+                </div>
+            `;
+        }
+
+        return songList
+            .map(
+                song => `
+
+                    <div
+                        class="song-row"
+                        onclick="openSong('${escapeJs(
+                            song.name
+                        )}')"
+                        style="cursor:pointer"
+                    >
+
+                        <div class="song-name">
+
+                            ${escapeHtml(
+                                song.name
+                            )}
+
+                        </div>
+
+                        <div class="song-meta">
+
+                            Last:
+                            ${escapeHtml(
+                                song.lastPlayed
+                            )}
+
+                        </div>
+
+                        <div class="song-count">
+
+                            ${song.showsSinceLastPlay}
+
+                        </div>
+
+                    </div>
+
+                `
             )
-            .slice(0, 50);
+            .join("");
+    }
 
     document.getElementById("content").innerHTML = `
 
@@ -1620,49 +2362,55 @@ function renderGaps() {
 
             <div class="song-list">
 
-                ${gapSongs
-                    .map(
-                        song => `
+                ${gapList(gapSongs)}
 
-                            <div
-                                class="song-row"
-                                onclick="openSong('${escapeJs(
-                                    song.name
-                                )}')"
-                                style="cursor:pointer"
-                            >
+            </div>
 
-                                <div class="song-name">
+        </section>
 
-                                    ${escapeHtml(
-                                        song.name
-                                    )}
+        <section class="panel">
 
-                                </div>
+            <div class="panel-header">
 
-                                <div class="song-meta">
+                <div>
 
-                                    Last:
-                                    ${escapeHtml(
-                                        song.lastPlayed
-                                    )}
+                    <h2>Bustout Watch</h2>
 
-                                </div>
+                    <div class="song-meta">
+                        40–49 shows since last played
+                    </div>
 
-                                <div class="song-count">
+                </div>
 
-                                    ${
-                                        song
-                                            .showsSinceLastPlay
-                                    }
+            </div>
 
-                                </div>
+            <div class="song-list">
 
-                            </div>
+                ${gapList(bustoutSongs)}
 
-                        `
-                    )
-                    .join("")}
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>Monster Gap Watch</h2>
+
+                    <div class="song-meta">
+                        90–99 shows since last played
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="song-list">
+
+                ${gapList(monsterSongs)}
 
             </div>
 
