@@ -1,0 +1,1772 @@
+const SONGS_URL = "Songs.csv";
+const DATA_URL = "ernie-data.json";
+
+let shows = [];
+let songs = [];
+
+/* ==================================================
+   LOAD DATA
+================================================== */
+
+async function loadData() {
+    try {
+
+        const [songsResponse, dataResponse] =
+            await Promise.all([
+                fetch(SONGS_URL),
+                fetch(DATA_URL)
+            ]);
+
+        if (!songsResponse.ok) {
+            throw new Error("Could not load Songs.csv");
+        }
+
+        if (!dataResponse.ok) {
+            throw new Error("Could not load ernie-data.json");
+        }
+
+        const songsText =
+            await songsResponse.text();
+
+        const rawData =
+            await dataResponse.json();
+
+        songs = parseSongsCSV(songsText);
+        shows = rawData;
+
+        const performanceCounts = calculatePerformanceCounts();
+
+        songs.forEach(song => {
+            song.performances = performanceCounts[song.name] || 0;
+        });
+
+        renderDashboard();
+
+    } catch (error) {
+
+        console.error(error);
+
+        document.getElementById("app").innerHTML = `
+            <div class="error">
+                <h2>Couldn't load Ernie's data</h2>
+                <p>${escapeHtml(error.message)}</p>
+            </div>
+        `;
+    }
+}
+
+/* ==================================================
+   CSV PARSER
+================================================== */
+
+function parseSongsCSV(text) {
+
+    const rows = [];
+    let row = [];
+    let cell = "";
+    let insideQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+
+        const char = text[i];
+        const next = text[i + 1];
+
+        if (char === '"' && insideQuotes && next === '"') {
+
+            cell += '"';
+            i++;
+            continue;
+        }
+
+        if (char === '"') {
+
+            insideQuotes =
+                !insideQuotes;
+
+            continue;
+        }
+
+        if (char === "," && !insideQuotes) {
+
+            row.push(cell);
+            cell = "";
+
+            continue;
+        }
+
+        if (
+            (char === "\n" || char === "\r") &&
+            !insideQuotes
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+                i++;
+            }
+
+            row.push(cell);
+            cell = "";
+
+            if (row.some(value => value !== "")) {
+                rows.push(row);
+            }
+
+            row = [];
+
+            continue;
+        }
+
+        cell += char;
+    }
+
+    if (cell !== "" || row.length) {
+
+        row.push(cell);
+
+        if (row.some(value => value !== "")) {
+            rows.push(row);
+        }
+    }
+
+    if (!rows.length) {
+        return [];
+    }
+
+    const headers = rows[0];
+
+    return rows
+        .slice(1)
+        .map(values => {
+
+            const song = {};
+
+            headers.forEach((header, index) => {
+
+                song[header] =
+                    values[index] ?? "";
+
+            });
+
+            return normalizeSong(song);
+
+        });
+}
+
+/* ==================================================
+   SONG NORMALIZATION
+================================================== */
+
+function normalizeSong(song) {
+
+    return {
+
+        name: song.Song || "",
+
+        type: song.Type || "",
+
+        coverArtist:
+            song["Cover Artist"] || "",
+
+        performances:
+            0,
+
+        firstPlayed:
+            song["First Played"] || "",
+
+        firstVenue:
+            song["First Venue"] || "",
+
+        firstCity:
+            song["First City"] || "",
+
+        lastPlayed:
+            song["Last Played"] || "",
+
+        lastVenue:
+            song["Last Venue"] || "",
+
+        lastCity:
+            song["Last City"] || "",
+
+        showsPlayed:
+            number(song["Shows Played"]),
+
+        showsSinceLastPlay:
+            number(song["Shows Since Last Play"]),
+
+        gapStatus:
+            song["Gap Status"] || "",
+
+        previousGap:
+            number(song["Previous Gap"]),
+
+        averageGap:
+            song["Average Shows Between Plays"] || "0",
+
+        longestGap:
+            number(song["Longest Gap"]),
+
+        venuesPlayed:
+            number(song["Venues Played"]),
+
+        citiesPlayed:
+            number(song["Cities Played"])
+
+    };
+}
+
+function number(value) {
+
+    const n =
+        Number(value);
+
+    return Number.isFinite(n)
+        ? n
+        : 0;
+}
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+function navigation() {
+
+    return `
+
+        <nav class="nav">
+
+            <button onclick="showPage('dashboard')">
+                Dashboard
+            </button>
+
+            <button onclick="showPage('songs')">
+                Songs
+            </button>
+
+            <button onclick="showPage('shows')">
+                Shows
+            </button>
+
+            <button onclick="showPage('venues')">
+                Venues
+            </button>
+
+            <button onclick="showPage('gaps')">
+                Gaps
+            </button>
+
+        </nav>
+    `;
+}
+
+function showPage(page) {
+
+    if (page === "dashboard") {
+        renderDashboard();
+        return;
+    }
+
+    if (page === "songs") {
+        renderSongs();
+        return;
+    }
+
+    if (page === "shows") {
+        renderShows();
+        return;
+    }
+
+    if (page === "venues") {
+        renderVenues();
+        return;
+    }
+
+    if (page === "gaps") {
+        renderGaps();
+        return;
+    }
+}
+
+/* ==================================================
+   DASHBOARD
+================================================== */
+
+function renderDashboard() {
+
+    const mostPlayed =
+        [...songs]
+            .sort(
+                (a, b) =>
+                    b.performances -
+                    a.performances
+            )
+            .slice(0, 10);
+
+    const recentShows =
+        [...shows]
+            .sort(
+                (a, b) =>
+                    parseDate(b.eventDate) -
+                    parseDate(a.eventDate)
+            )
+            .slice(0, 5);
+
+    document.getElementById("app").innerHTML = `
+
+        <header class="hero">
+
+            <div class="hero-logo">
+
+                <img
+                    src="images/ernie_clam.png"
+                    class="clam"
+                    alt="Ernie & The Band"
+                >
+
+            </div>
+
+            <div class="hero-text">
+
+                <h1>ERNIE &amp; THE BAND</h1>
+
+                <p>
+                    Setlist &amp; Show Statistics
+                </p>
+
+            </div>
+
+        </header>
+
+        ${navigation()}
+
+        <main id="content">
+
+            <section class="stats-grid">
+
+                <div
+                    class="stat-card"
+                    onclick="showPage('shows')"
+                    style="cursor:pointer"
+                >
+
+                    <div class="stat-number">
+                        ${shows.length}
+                    </div>
+
+                    <div class="stat-label">
+                        Shows
+                    </div>
+
+                </div>
+
+                <div
+                    class="stat-card"
+                    onclick="showPage('songs')"
+                    style="cursor:pointer"
+                >
+
+                    <div class="stat-number">
+                        ${songs.length}
+                    </div>
+
+                    <div class="stat-label">
+                        Songs
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${getTotalPerformances()}
+                    </div>
+
+                    <div class="stat-label">
+                        Total Plays
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <h2>Most Played</h2>
+
+                    <button onclick="showPage('songs')">
+                        View All
+                    </button>
+
+                </div>
+
+                <div class="song-list">
+
+                    ${mostPlayed
+                        .map(song => songRow(song))
+                        .join("")}
+
+                </div>
+
+            </section>
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <h2>Recent Shows</h2>
+
+                    <button onclick="showPage('shows')">
+                        View All
+                    </button>
+
+                </div>
+
+                <div class="show-list">
+
+                    ${recentShows
+                        .map(show => showRow(show))
+                        .join("")}
+
+                </div>
+
+            </section>
+
+        </main>
+    `;
+}
+
+/* ==================================================
+   SONGS
+================================================== */
+
+function renderSongs() {
+
+    const sortedSongs =
+        [...songs]
+            .sort(
+                (a, b) =>
+                    b.performances -
+                    a.performances
+            );
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>All Songs</h2>
+
+                <button onclick="showPage('dashboard')">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+            <div class="search-box">
+
+                <input
+                    id="songSearch"
+                    type="text"
+                    placeholder="Search songs..."
+                    oninput="filterSongs()"
+                >
+
+            </div>
+
+            <div id="songResults">
+
+                ${sortedSongs
+                    .map(song => songRow(song))
+                    .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+function filterSongs() {
+
+    const query =
+        document
+            .getElementById("songSearch")
+            .value
+            .toLowerCase();
+
+    const filtered =
+        songs.filter(song =>
+            song.name
+                .toLowerCase()
+                .includes(query)
+        );
+
+    document.getElementById("songResults")
+        .innerHTML =
+            filtered
+                .map(song => songRow(song))
+                .join("");
+}
+
+function songRow(song) {
+
+    return `
+
+        <div
+            class="song-row"
+            onclick="openSong('${escapeJs(song.name)}')"
+            style="cursor:pointer"
+        >
+
+            <div class="song-name">
+
+                ${escapeHtml(song.name)}
+
+            </div>
+
+            <div class="song-meta">
+
+                ${song.showsPlayed}
+                ${song.showsPlayed === 1
+                    ? "show"
+                    : "shows"}
+
+            </div>
+
+            <div class="song-count">
+
+                ${song.performances}
+
+            </div>
+
+        </div>
+    `;
+}
+
+/* ==================================================
+   SONG DETAIL
+================================================== */
+
+function openSong(name) {
+
+    const song =
+        songs.find(
+            item => item.name === name
+        );
+
+    if (!song) return;
+
+    renderSongDetail(song);
+}
+
+function renderSongDetail(song) {
+
+    const appearances =
+        getSongAppearances(song.name);
+
+    const venueCounts = {};
+
+    appearances.forEach(appearance => {
+
+        const key =
+            `${appearance.venue} — ${appearance.city}`;
+
+        venueCounts[key] =
+            (venueCounts[key] || 0) + 1;
+    });
+
+    const venues =
+        Object.entries(venueCounts)
+            .sort((a, b) => b[1] - a[1]);
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        ${escapeHtml(song.name)}
+                    </h2>
+
+                    <div style="
+                        color:#999;
+                        margin-top:6px;
+                        font-size:12px;
+                    ">
+
+                        ${song.type === "Cover"
+                            ? `Cover${
+                                song.coverArtist
+                                    ? " · " +
+                                      escapeHtml(
+                                        song.coverArtist
+                                      )
+                                    : ""
+                              }`
+                            : "Original"}
+
+                    </div>
+
+                </div>
+
+                <button onclick="showPage('songs')">
+                    ← Songs
+                </button>
+
+            </div>
+
+            <div class="stats-grid"
+                 style="padding:20px;margin:0">
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${song.performances}
+                    </div>
+
+                    <div class="stat-label">
+                        Total Plays
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${song.showsPlayed}
+                    </div>
+
+                    <div class="stat-label">
+                        Shows Played
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${song.showsSinceLastPlay}
+                    </div>
+
+                    <div class="stat-label">
+                        Current Gap
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div style="
+                padding:20px;
+                border-top:1px solid #303030;
+            ">
+
+                <div style="
+                    display:grid;
+                    grid-template-columns:
+                        repeat(auto-fit,minmax(180px,1fr));
+                    gap:20px;
+                ">
+
+                    <div>
+
+                        <div class="song-meta">
+                            FIRST PLAYED
+                        </div>
+
+                        <strong>
+                            ${escapeHtml(
+                                song.firstPlayed
+                            )}
+                        </strong>
+
+                        <div style="
+                            color:#777;
+                            font-size:11px;
+                            margin-top:4px;
+                        ">
+
+                            ${escapeHtml(
+                                song.firstVenue
+                            )}
+
+                            ${
+                                song.firstCity
+                                    ? " · " +
+                                      escapeHtml(
+                                        song.firstCity
+                                      )
+                                    : ""
+                            }
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <div class="song-meta">
+                            LAST PLAYED
+                        </div>
+
+                        <strong>
+                            ${escapeHtml(
+                                song.lastPlayed
+                            )}
+                        </strong>
+
+                        <div style="
+                            color:#777;
+                            font-size:11px;
+                            margin-top:4px;
+                        ">
+
+                            ${escapeHtml(
+                                song.lastVenue
+                            )}
+
+                            ${
+                                song.lastCity
+                                    ? " · " +
+                                      escapeHtml(
+                                        song.lastCity
+                                      )
+                                    : ""
+                            }
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <div class="song-meta">
+                            AVERAGE GAP
+                        </div>
+
+                        <strong>
+                            ${escapeHtml(
+                                String(
+                                    song.averageGap
+                                )
+                            )}
+
+                            shows
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <div class="song-meta">
+                            LONGEST GAP
+                        </div>
+
+                        <strong>
+                            ${song.longestGap}
+                            shows
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>Play History</h2>
+
+            </div>
+
+            <div class="show-list">
+
+                ${
+                    appearances.length
+                        ? appearances
+                            .map(
+                                appearance =>
+                                    songAppearanceRow(
+                                        appearance
+                                    )
+                            )
+                            .join("")
+                        : `
+                            <div style="
+                                padding:20px;
+                                color:#888;
+                            ">
+                                No appearance data found.
+                            </div>
+                          `
+                }
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>Venues</h2>
+
+            </div>
+
+            <div class="song-list">
+
+                ${venues
+                    .map(([venue, count]) => {
+
+                        const parts =
+                            venue.split(" — ");
+
+                        const venueName =
+                            parts[0];
+
+                        const city =
+                            parts.slice(1).join(" — ");
+
+                        return `
+
+                            <div
+                                class="song-row"
+                                onclick="openVenue(
+                                    '${escapeJs(venue)}'
+                                )"
+                                style="cursor:pointer"
+                            >
+
+                                <div class="song-name">
+
+                                    ${escapeHtml(
+                                        venueName
+                                    )}
+
+                                    <div class="song-meta">
+
+                                        ${escapeHtml(
+                                            city
+                                        )}
+
+                                    </div>
+
+                                </div>
+
+                                <div class="song-count">
+
+                                    ${count}
+
+                                </div>
+
+                            </div>
+                        `;
+                    })
+                    .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+/* ==================================================
+   SONG APPEARANCES
+================================================== */
+
+function getSongAppearances(songName) {
+
+    const appearances = [];
+
+    shows.forEach(show => {
+
+        const sets =
+            show.sets?.set || [];
+
+        let found = false;
+
+        let performanceCount = 0;
+
+        sets.forEach(set => {
+
+            (set.song || [])
+                .forEach(song => {
+
+                    if (
+                        song.name?.trim() ===
+                        songName
+                    ) {
+
+                        found = true;
+                        performanceCount++;
+
+                    }
+                });
+        });
+
+        if (found) {
+
+            appearances.push({
+
+                showId:
+                    show.id ||
+                    show.eventDate,
+
+                date:
+                    parseDate(
+                        show.eventDate
+                    ),
+
+                venue:
+                    show.venue?.name ||
+                    "Unknown Venue",
+
+                city:
+                    show.venue?.city?.name ||
+                    "",
+
+                performanceCount
+
+            });
+        }
+    });
+
+    return appearances.sort(
+        (a, b) =>
+            b.date - a.date
+    );
+}
+
+function songAppearanceRow(appearance) {
+
+    return `
+
+        <div
+            class="show-row"
+            onclick="openShow('${escapeJs(
+                appearance.showId
+            )}')"
+            style="cursor:pointer"
+        >
+
+            <div>
+
+                <strong>
+                    ${escapeHtml(
+                        appearance.venue
+                    )}
+                </strong>
+
+                <span>
+                    ${escapeHtml(
+                        appearance.city
+                    )}
+                </span>
+
+
+            </div>
+
+            <div class="show-date">
+
+                ${formatDate(
+                    appearance.date
+                )}
+
+            </div>
+
+        </div>
+    `;
+}
+
+/* ==================================================
+   SHOWS
+================================================== */
+
+function renderShows() {
+
+    const sortedShows =
+        [...shows]
+            .sort(
+                (a, b) =>
+                    parseDate(b.eventDate) -
+                    parseDate(a.eventDate)
+            );
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>Shows</h2>
+
+                <button onclick="showPage('dashboard')">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+            <div class="show-list">
+
+                ${sortedShows
+                    .map(show => showRow(show))
+                    .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+function showRow(show) {
+
+    return `
+
+        <div
+            class="show-row"
+            onclick="openShow('${escapeJs(
+                show.id ||
+                show.eventDate
+            )}')"
+            style="cursor:pointer"
+        >
+
+            <div>
+
+                <strong>
+                    ${escapeHtml(
+                        show.venue?.name ||
+                        "Unknown Venue"
+                    )}
+                </strong>
+
+                <span>
+
+                    ${escapeHtml(
+                        show.venue?.city?.name ||
+                        ""
+                    )}
+
+                </span>
+
+            </div>
+
+            <div class="show-date">
+
+                ${formatDate(
+                    parseDate(
+                        show.eventDate
+                    )
+                )}
+
+            </div>
+
+        </div>
+    `;
+}
+
+/* ==================================================
+   SHOW DETAIL
+================================================== */
+
+function openShow(identifier) {
+
+    const show =
+        shows.find(
+            item =>
+                String(
+                    item.id ||
+                    item.eventDate
+                ) === String(identifier)
+        );
+
+    if (!show) return;
+
+    renderShowDetail(show);
+}
+
+function renderShowDetail(show) {
+
+    const sets =
+        show.sets?.set || [];
+
+    let totalPerformances = 0;
+
+    sets.forEach(set => {
+
+        totalPerformances +=
+            (set.song || []).length;
+
+    });
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        ${escapeHtml(
+                            show.venue?.name ||
+                            "Unknown Venue"
+                        )}
+                    </h2>
+
+                    <div style="
+                        color:#999;
+                        margin-top:6px;
+                        font-size:13px;
+                    ">
+
+                        ${escapeHtml(
+                            show.venue?.city?.name ||
+                            ""
+                        )}
+
+                        ·
+
+                        ${formatDate(
+                            parseDate(
+                                show.eventDate
+                            )
+                        )}
+
+                    </div>
+
+                </div>
+
+                <button onclick="showPage('shows')">
+                    ← Shows
+                </button>
+
+            </div>
+
+            <div style="
+                padding:18px 20px;
+                color:#999;
+                font-size:13px;
+                border-bottom:1px solid #303030;
+            ">
+
+                ${sets.length}
+                ${sets.length === 1
+                    ? "set"
+                    : "sets"}
+
+
+            </div>
+
+            ${sets
+                .map(
+                    (set, index) =>
+                        renderSet(
+                            set,
+                            index
+                        )
+                )
+                .join("")}
+
+        </section>
+    `;
+}
+
+function renderSet(set, index) {
+
+    const songsInSet =
+        set.song || [];
+
+    return `
+
+        <div>
+
+            <div style="
+                padding:15px 20px;
+                background:#202020;
+                border-bottom:1px solid #303030;
+                color:#d58b45;
+                font-family:Georgia,serif;
+                font-size:18px;
+                font-weight:bold;
+            ">
+
+                ${getSetTitle(
+                    set,
+                    index
+                )}
+
+            </div>
+
+            ${songsInSet
+                .map(
+                    (song, songIndex) => `
+
+                        <div
+                            class="song-row"
+                            onclick="openSong('${escapeJs(
+                                song.name || ""
+                            )}')"
+                            style="cursor:pointer"
+                        >
+
+                            <div class="song-rank">
+                                ${songIndex + 1}
+                            </div>
+
+                            <div class="song-name">
+
+                                ${escapeHtml(
+                                    song.name || ""
+                                )}
+
+                                ${
+                                    song.cover
+                                        ? `
+                                            <span style="
+                                                color:#999;
+                                                font-size:11px;
+                                                margin-left:7px;
+                                            ">
+                                                ${escapeHtml(
+                                                    song.cover.name ||
+                                                    "Cover"
+                                                )}
+                                            </span>
+                                          `
+                                        : ""
+                                }
+
+                                ${
+                                    song.info
+                                        ? `
+                                            <div style="
+                                                color:#777;
+                                                font-size:11px;
+                                                margin-top:4px;
+                                            ">
+                                                ${escapeHtml(
+                                                    song.info
+                                                )}
+                                            </div>
+                                          `
+                                        : ""
+                                }
+
+                            </div>
+
+                        </div>
+
+                    `
+                )
+                .join("")}
+
+        </div>
+    `;
+}
+
+function getSetTitle(set, index) {
+
+    if (set.encore) {
+        return `Encore ${set.encore > 1 ? set.encore : ""}`.trim();
+    }
+
+    if (set.name) {
+        return escapeHtml(set.name);
+    }
+
+    return `Set ${index + 1}`;
+}
+
+/* ==================================================
+   VENUES
+================================================== */
+
+function buildVenueData() {
+
+    const venueMap = {};
+
+    shows.forEach(show => {
+
+        const name =
+            show.venue?.name ||
+            "Unknown Venue";
+
+        const city =
+            show.venue?.city?.name ||
+            "";
+
+        const key =
+            `${name} — ${city}`;
+
+        if (!venueMap[key]) {
+
+            venueMap[key] = {
+                key,
+                name,
+                city,
+                shows: []
+            };
+        }
+
+        venueMap[key].shows.push(show);
+    });
+
+    return Object.values(venueMap);
+}
+
+function renderVenues() {
+
+    const venues =
+        buildVenueData()
+            .sort(
+                (a, b) =>
+                    b.shows.length -
+                    a.shows.length
+            );
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>Venues</h2>
+
+                <button onclick="showPage('dashboard')">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+            <div class="venue-list">
+
+                ${venues
+                    .map(
+                        venue => `
+
+                            <div
+                                class="song-row"
+                                onclick="openVenue('${escapeJs(
+                                    venue.key
+                                )}')"
+                                style="cursor:pointer"
+                            >
+
+                                <div class="song-name">
+
+                                    ${escapeHtml(
+                                        venue.name
+                                    )}
+
+                                    <div class="song-meta">
+
+                                        ${escapeHtml(
+                                            venue.city
+                                        )}
+
+                                    </div>
+
+                                </div>
+
+                                <div class="song-count">
+
+                                    ${venue.shows.length}
+
+                                </div>
+
+                            </div>
+
+                        `
+                    )
+                    .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+function openVenue(key) {
+
+    const venue =
+        buildVenueData()
+            .find(
+                item =>
+                    item.key === key
+            );
+
+    if (!venue) return;
+
+    renderVenueDetail(venue);
+}
+
+function renderVenueDetail(venue) {
+
+    const venueSongs = {};
+
+    venue.shows.forEach(show => {
+
+        const sets =
+            show.sets?.set || [];
+
+        sets.forEach(set => {
+
+            (set.song || [])
+                .forEach(song => {
+
+                    const name =
+                        song.name?.trim();
+
+                    if (!name) return;
+
+                    venueSongs[name] =
+                        (venueSongs[name] || 0) + 1;
+
+                });
+        });
+    });
+
+    const rankedSongs =
+        Object.entries(venueSongs)
+            .sort(
+                (a, b) =>
+                    b[1] - a[1]
+            );
+
+    const recentShows =
+        [...venue.shows]
+            .sort(
+                (a, b) =>
+                    parseDate(b.eventDate) -
+                    parseDate(a.eventDate)
+            );
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        ${escapeHtml(
+                            venue.name
+                        )}
+                    </h2>
+
+                    <div style="
+                        color:#999;
+                        margin-top:6px;
+                        font-size:13px;
+                    ">
+
+                        ${escapeHtml(
+                            venue.city
+                        )}
+
+                    </div>
+
+                </div>
+
+                <button onclick="showPage('venues')">
+                    ← Venues
+                </button>
+
+            </div>
+
+            <div class="stats-grid"
+                 style="padding:20px;margin:0">
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${venue.shows.length}
+                    </div>
+
+                    <div class="stat-label">
+                        Shows
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        ${rankedSongs.length}
+                    </div>
+
+                    <div class="stat-label">
+                        Songs Played
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    Most Played Here
+                </h2>
+
+            </div>
+
+            <div class="song-list">
+
+                ${rankedSongs
+                    .slice(0, 50)
+                    .map(
+                        ([name, count]) => `
+
+                            <div
+                                class="song-row"
+                                onclick="openSong('${escapeJs(
+                                    name
+                                )}')"
+                                style="cursor:pointer"
+                            >
+
+                                <div class="song-name">
+
+                                    ${escapeHtml(
+                                        name
+                                    )}
+
+                                </div>
+
+                                <div class="song-count">
+
+                                    ${count}
+
+                                </div>
+
+                            </div>
+
+                        `
+                    )
+                    .join("")}
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    Shows Here
+                </h2>
+
+            </div>
+
+            <div class="show-list">
+
+                ${recentShows
+                    .map(show => showRow(show))
+                    .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+/* ==================================================
+   GAPS
+================================================== */
+
+function renderGaps() {
+
+    const gapSongs =
+        [...songs]
+            .sort(
+                (a, b) =>
+                    b.showsSinceLastPlay -
+                    a.showsSinceLastPlay
+            )
+            .slice(0, 50);
+
+    document.getElementById("content").innerHTML = `
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>Longest Current Gaps</h2>
+
+                <button onclick="showPage('dashboard')">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+            <div class="song-list">
+
+                ${gapSongs
+                    .map(
+                        song => `
+
+                            <div
+                                class="song-row"
+                                onclick="openSong('${escapeJs(
+                                    song.name
+                                )}')"
+                                style="cursor:pointer"
+                            >
+
+                                <div class="song-name">
+
+                                    ${escapeHtml(
+                                        song.name
+                                    )}
+
+                                </div>
+
+                                <div class="song-meta">
+
+                                    Last:
+                                    ${escapeHtml(
+                                        song.lastPlayed
+                                    )}
+
+                                </div>
+
+                                <div class="song-count">
+
+                                    ${
+                                        song
+                                            .showsSinceLastPlay
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        `
+                    )
+                    .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+/* ==================================================
+   HELPERS
+================================================== */
+
+function calculatePerformanceCounts() {
+
+    const counts = {};
+
+    shows.forEach(show => {
+
+        const sets = show.sets?.set || [];
+
+        sets.forEach(set => {
+
+            (set.song || []).forEach(song => {
+
+                const name = song.name?.trim();
+
+                if (!name) return;
+
+                counts[name] = (counts[name] || 0) + 1;
+            });
+        });
+    });
+
+    return counts;
+}
+
+function getTotalPerformances() {
+
+    return songs.reduce(
+        (total, song) =>
+            total +
+            song.performances,
+        0
+    );
+}
+
+function parseDate(value) {
+
+    if (!value) {
+        return new Date(0);
+    }
+
+    const parts =
+        value.split("-");
+
+    if (parts.length === 3) {
+
+        return new Date(
+            Number(parts[2]),
+            Number(parts[1]) - 1,
+            Number(parts[0])
+        );
+    }
+
+    return new Date(value);
+}
+
+function formatDate(date) {
+
+    if (
+        !date ||
+        date.getTime() === 0
+    ) {
+        return "—";
+    }
+
+    return date.toLocaleDateString(
+        "en-US",
+        {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+        }
+    );
+}
+
+function escapeHtml(value) {
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function escapeJs(value) {
+
+    return String(value)
+        .replaceAll("\\", "\\\\")
+        .replaceAll("'", "\\'");
+}
+
+/* ==================================================
+   START
+================================================== */
+
+loadData();
