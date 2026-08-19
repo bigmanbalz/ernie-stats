@@ -440,7 +440,9 @@ function renderDashboard() {
 
                     <h2>Recent Shows</h2>
 
-                    <button onclick="showPage('shows')">
+
+
+                <button onclick="showPage('shows')">
                         View All
                     </button>
 
@@ -1359,23 +1361,47 @@ function renderShowDetail(show) {
 
                 <div>
 
-                    <h2>
+                    <h2
+                        onclick="openVenue(
+                            (this.dataset.venueKey)
+                        )"
+                        data-venue-key="${escapeHtml(
+                            (show.venue?.name || "Unknown Venue") +
+                            " — " +
+                            (cityWithState(show.venue?.city) || "")
+                        )}"
+                        style="
+                            cursor:pointer;
+                            text-decoration:underline;
+                            text-underline-offset:3px;
+                        "
+                    >
                         ${escapeHtml(
                             show.venue?.name ||
                             "Unknown Venue"
                         )}
                     </h2>
 
-                    <div style="
-                        color:#999;
-                        margin-top:6px;
-                        font-size:13px;
-                    ">
+                    <div class="detail-subtitle">
 
-                        ${escapeHtml(
-                            cityWithState(show.venue?.city) ||
-                            ""
-                        )}
+                        <span
+                            onclick="openCity(
+                                this.dataset.cityKey
+                            )"
+                            data-city-key="${escapeHtml(
+                                cityWithState(show.venue?.city) || ""
+                            )}"
+                            style="
+                                cursor:pointer;
+                                text-decoration:underline;
+                                text-underline-offset:3px;
+                            "
+                        >
+                            ${escapeHtml(
+                                cityWithState(show.venue?.city) ||
+                                ""
+                            )}
+                        </span>
 
                         ·
 
@@ -1387,6 +1413,18 @@ function renderShowDetail(show) {
 
                     </div>
 
+                    ${show.eventName ? `
+                        <div class="detail-event">
+                            ${escapeHtml(show.eventName)}
+                        </div>
+                    ` : ""}
+
+                    ${show.info ? `
+                        <div class="detail-notes">
+                            ${escapeHtml(show.info)}
+                        </div>
+                    ` : ""}
+
                 </div>
 
                 <button onclick="showPage('shows')">
@@ -1395,12 +1433,7 @@ function renderShowDetail(show) {
 
             </div>
 
-            <div style="
-                padding:18px 20px;
-                color:#999;
-                font-size:13px;
-                border-bottom:1px solid #303030;
-            ">
+            <div class="detail-meta">
 
                 ${sets.length}
                 ${sets.length === 1
@@ -1849,7 +1882,7 @@ function buildCityData() {
             "";
 
         const key =
-            `${city} — ${state}`;
+            city;
 
         if (!cityMap[key]) {
 
@@ -2067,8 +2100,7 @@ function renderCityDetail(city) {
                 <div>
 
                     <h2>
-                        ${escapeHtml(city.city)},
-                        ${escapeHtml(city.state)}
+                        ${escapeHtml(city.city)}
                     </h2>
 
                     <div style="

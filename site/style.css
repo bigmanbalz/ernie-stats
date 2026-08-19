@@ -419,3 +419,179 @@ button:hover {
 
 }
 
+
+/* ==================================================
+   SHARED DETAIL / DRILLDOWN STYLES
+================================================== */
+
+.detail-subtitle {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.detail-meta {
+    padding: 18px 20px;
+    color: var(--muted);
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-event {
+    color: var(--accent);
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.detail-notes {
+    color: var(--muted);
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.detail-section-title {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+}
+
+.detail-stat-grid {
+    padding: 20px;
+    margin: 0;
+}
+
+.detail-info-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.detail-info-label {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.detail-info-value {
+    display: block;
+    margin-top: 3px;
+    font-weight: bold;
+}
+
+.detail-info-meta {
+    color: #777;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.clickable {
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.clickable:hover {
+    color: var(--accent);
+}
+
+.set-header {
+    padding: 15px 20px;
+    background: var(--card2);
+    border-bottom: 1px solid var(--border);
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.song-cover {
+    color: var(--muted);
+    font-size: 11px;
+    margin-left: 7px;
+}
+
+.song-info {
+    color: #777;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        gap: 18px;
+        padding: 25px 18px;
+    }
+
+    .hero-logo {
+        width: 95px;
+        height: 95px;
+        flex-basis: 95px;
+    }
+
+    .clam {
+        width: 95px;
+        height: 95px;
+    }
+
+    main {
+        width: min(100% - 24px, 1100px);
+        padding-top: 20px;
+    }
+
+    .panel-header {
+        padding: 15px;
+    }
+
+    .song-row,
+    .show-row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .song-meta {
+        white-space: normal;
+    }
+
+}
+
+
+/* SHOW DETAIL */
+
+.detail-subtitle {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.detail-event {
+    color: var(--accent);
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.detail-notes {
+    color: var(--muted);
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.detail-meta {
+    padding: 18px 20px;
+    color: var(--muted);
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
