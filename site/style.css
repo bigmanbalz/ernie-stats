@@ -809,3 +809,291 @@ button:hover {
     color: #c66;
     font-size: 12px;
 }
+
+/* ==================================================
+   GAP EXPLORER
+================================================== */
+
+.gap-header {
+    align-items: center;
+}
+
+.gap-heading {
+    min-width: 0;
+}
+
+.gap-heading h2 {
+    overflow-wrap: anywhere;
+}
+
+.gap-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.gap-controls label {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gap-select {
+    min-width: 210px;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    background: #181818;
+    color: var(--text);
+    padding: 9px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gap-column-head,
+.gap-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 170px 70px;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.gap-column-head {
+    padding: 10px 20px;
+    background: #181818;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.gap-column-head div:last-child {
+    text-align: right;
+}
+
+.gap-row {
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background .15s ease;
+}
+
+.gap-row:last-child {
+    border-bottom: 0;
+}
+
+.gap-row:hover {
+    background: #242424;
+}
+
+.gap-song {
+    min-width: 0;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.gap-last {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    color: #ddd;
+    font-size: 12px;
+}
+
+.gap-label {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gap-count {
+    text-align: right;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.gap-empty {
+    padding: 25px 20px;
+    color: var(--muted);
+}
+
+.gap-back {
+    margin-top: -10px;
+    margin-bottom: 24px;
+    text-align: right;
+}
+
+
+/* ==================================================
+   RESPONSIVE GAP LAYOUT
+================================================== */
+
+@media (max-width: 700px) {
+
+    .gap-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .gap-controls {
+        width: 100%;
+    }
+
+    .gap-select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .gap-column-head {
+        display: none;
+    }
+
+    .gap-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "song count"
+            "last count";
+        column-gap: 12px;
+        row-gap: 4px;
+        padding: 14px 16px;
+    }
+
+    .gap-song {
+        grid-area: song;
+    }
+
+    .gap-last {
+        grid-area: last;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .gap-count {
+        grid-area: count;
+        align-self: center;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .gap-header {
+        padding: 15px;
+    }
+
+    .gap-heading h2 {
+        font-size: 20px;
+    }
+
+    .gap-select {
+        width: 100%;
+    }
+
+    .gap-row {
+        padding: 13px 14px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE ROW VISIBILITY FIX
+   Keep secondary row data visible on narrow screens.
+================================================== */
+
+@media (max-width: 700px) {
+
+    /* Dashboard / Songs / Venue rows */
+
+    .song-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        align-items: center;
+        column-gap: 12px;
+    }
+
+    .song-row .song-name {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .song-row .song-meta {
+        display: block;
+        min-width: 55px;
+        white-space: nowrap;
+        text-align: right;
+    }
+
+    .song-row .song-count {
+        min-width: 28px;
+        white-space: nowrap;
+        text-align: right;
+    }
+
+    /* Venue rows use the same row structure */
+
+    .venue-list .song-row {
+        grid-template-columns: minmax(0, 1fr) auto auto;
+    }
+
+    .venue-list .song-meta {
+        display: block;
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+}
+
+
+/* Very narrow phones */
+
+@media (max-width: 420px) {
+
+    .song-row {
+        column-gap: 8px;
+    }
+
+    .song-row .song-meta {
+        min-width: 48px;
+    }
+
+}
+
+
+/* Venue rows keep city underneath venue name */
+
+@media (max-width: 700px) {
+
+    .venue-list .song-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .venue-list .song-name {
+        min-width: 0;
+    }
+
+    .venue-list .song-name .song-meta {
+        display: block;
+        min-width: 0;
+        margin-top: 4px;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .venue-list .song-count {
+        white-space: nowrap;
+        text-align: right;
+    }
+
+}

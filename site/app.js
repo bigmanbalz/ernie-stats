@@ -2158,12 +2158,6 @@ function renderCities() {
 
                                     <div class="song-meta">
 
-                                        ${escapeHtml(
-                                            city.state
-                                        )}
-
-                                        ·
-
                                         ${city.venues.size}
                                         ${city.venues.size === 1
                                             ? "venue"
@@ -2492,159 +2486,278 @@ function renderCityDetail(city) {
 
 function renderGaps() {
 
-    const sortedSongs =
-        [...songs]
-            .sort(
-                (a, b) =>
+    const GAP_BUSTOUT = 50;
+    const GAP_MONSTER = 100;
+
+    const gapModes = {
+
+        longest: {
+            title: "Longest Current Gaps",
+            description: "Songs with the most shows since last played",
+            songs: [...songs]
+                .sort((a, b) =>
                     b.showsSinceLastPlay -
                     a.showsSinceLastPlay
-            );
+                )
+                .slice(0, 50)
+        },
 
-    const gapSongs =
-        sortedSongs.slice(0, 50);
+        bustoutEligible: {
+            title: "All Songs Eligible for Bustout",
+            description: "50+ shows since last played · 3+ total plays",
+            songs: [...songs]
+                .filter(song =>
+                    song.showsSinceLastPlay >= GAP_BUSTOUT &&
+                    song.performances >= 3
+                )
+                .sort((a, b) =>
+                    b.showsSinceLastPlay -
+                    a.showsSinceLastPlay
+                )
+        },
 
-    const bustoutSongs =
-        sortedSongs.filter(
-            song =>
-                song.showsSinceLastPlay >= 40 &&
-                song.showsSinceLastPlay <= 49
-        );
+        bustoutWatch: {
+            title: "Bustout Watch",
+            description: "40–49 shows since last played",
+            songs: [...songs]
+                .filter(song =>
+                    song.showsSinceLastPlay >= 40 &&
+                    song.showsSinceLastPlay < GAP_BUSTOUT
+                )
+                .sort((a, b) =>
+                    b.showsSinceLastPlay -
+                    a.showsSinceLastPlay
+                )
+        },
 
-    const monsterSongs =
-        sortedSongs.filter(
-            song =>
-                song.showsSinceLastPlay >= 90 &&
-                song.showsSinceLastPlay <= 99
-        );
+        monsterEligible: {
+            title: "All Songs Eligible for Monster Gap",
+            description: "100+ shows since last played · 3+ total plays",
+            songs: [...songs]
+                .filter(song =>
+                    song.showsSinceLastPlay >= GAP_MONSTER &&
+                    song.performances >= 3
+                )
+                .sort((a, b) =>
+                    b.showsSinceLastPlay -
+                    a.showsSinceLastPlay
+                )
+        },
 
-    function gapList(songList) {
+        monsterWatch: {
+            title: "Monster Gap Watch",
+            description: "90–99 shows since last played",
+            songs: [...songs]
+                .filter(song =>
+                    song.showsSinceLastPlay >= 90 &&
+                    song.showsSinceLastPlay < GAP_MONSTER
+                )
+                .sort((a, b) =>
+                    b.showsSinceLastPlay -
+                    a.showsSinceLastPlay
+                )
+        },
+
+        recent: {
+            title: "Most Recently Played",
+            description: "Songs ordered by most recent performance",
+            songs: [...songs]
+                .sort((a, b) =>
+                    parseDate(b.lastPlayed) -
+                    parseDate(a.lastPlayed)
+                )
+        },
+
+        mostPlayed: {
+            title: "Most Played",
+            description: "Songs ordered by total performances",
+            songs: [...songs]
+                .sort((a, b) =>
+                    b.performances -
+                    a.performances
+                )
+        },
+
+        neverOne: {
+            title: "Never / One-Time Played",
+            description: "Songs with one or fewer total performances",
+            songs: [...songs]
+                .filter(song =>
+                    song.performances <= 1
+                )
+                .sort((a, b) =>
+                    a.name.localeCompare(b.name)
+                )
+        }
+
+    };
+
+    function renderGapList(songList) {
 
         if (!songList.length) {
-
             return `
-                <div style="
-                    padding:20px;
-                    color:#888;
-                ">
-                    Nothing currently in this range.
+                <div class="gap-empty">
+                    Nothing currently in this category.
                 </div>
             `;
         }
 
         return songList
-            .map(
-                song => `
+            .map(song => `
+                <div
+                    class="gap-row"
+                    onclick="openSong('${escapeJs(song.name)}')"
+                >
 
-                    <div
-                        class="song-row"
-                        onclick="openSong('${escapeJs(
-                            song.name
-                        )}')"
-                        style="cursor:pointer"
-                    >
+                    <div class="gap-song">
+                        ${escapeHtml(song.name)}
+                    </div>
 
-                        <div class="song-name">
+                    <div class="gap-last">
 
-                            ${escapeHtml(
-                                song.name
-                            )}
+                        <span class="gap-label">
+                            Last Played
+                        </span>
 
-                        </div>
-
-                        <div class="song-meta">
-
-                            Last:
-                            ${escapeHtml(
-                                song.lastPlayed
-                            )}
-
-                        </div>
-
-                        <div class="song-count">
-
-                            ${song.showsSinceLastPlay}
-
-                        </div>
+                        <span>
+                            ${escapeHtml(song.lastPlayed)}
+                        </span>
 
                     </div>
 
-                `
-            )
+                    <div class="gap-count">
+                        ${song.showsSinceLastPlay}
+                    </div>
+
+                </div>
+            `)
             .join("");
+
+    }
+
+    function renderMode(mode) {
+
+        const selected =
+            gapModes[mode] ||
+            gapModes.longest;
+
+        document.getElementById("gap-results")
+            .innerHTML =
+                renderGapList(selected.songs);
+
+        document.getElementById("gap-title")
+            .textContent =
+                selected.title;
+
+        document.getElementById("gap-description")
+            .textContent =
+                selected.description;
+
     }
 
     document.getElementById("content").innerHTML = `
+        <section class="panel gap-panel">
 
-        <section class="panel">
+            <div class="panel-header gap-header">
 
-            <div class="panel-header">
+                <div class="gap-heading">
 
-                <h2>Longest Current Gaps</h2>
+                    <h2 id="gap-title">
+                        Longest Current Gaps
+                    </h2>
 
-                <button onclick="showPage('dashboard')">
-                    ← Dashboard
-                </button>
-
-            </div>
-
-            <div class="song-list">
-
-                ${gapList(gapSongs)}
-
-            </div>
-
-        </section>
-
-        <section class="panel">
-
-            <div class="panel-header">
-
-                <div>
-
-                    <h2>Bustout Watch</h2>
-
-                    <div class="song-meta">
-                        40–49 shows since last played
+                    <div
+                        id="gap-description"
+                        class="song-meta"
+                    >
+                        Songs with the most shows since last played
                     </div>
+
+                </div>
+
+                <div class="gap-controls">
+
+                    <label for="gap-mode">
+                        View
+                    </label>
+
+                    <select
+                        id="gap-mode"
+                        class="gap-select"
+                    >
+
+                        <option value="longest">
+                            Longest Current Gaps
+                        </option>
+
+                        <option value="bustoutEligible">
+                            All Songs Eligible for Bustout
+                        </option>
+
+                        <option value="bustoutWatch">
+                            Bustout Watch — 40–49
+                        </option>
+
+                        <option value="monsterEligible">
+                            All Songs Eligible for Monster Gap
+                        </option>
+
+                        <option value="monsterWatch">
+                            Monster Gap Watch — 90–99
+                        </option>
+
+                        <option value="recent">
+                            Most Recently Played
+                        </option>
+
+                        <option value="mostPlayed">
+                            Most Played
+                        </option>
+
+                        <option value="neverOne">
+                            Never / One-Time Played
+                        </option>
+
+                    </select>
 
                 </div>
 
             </div>
 
-            <div class="song-list">
-
-                ${gapList(bustoutSongs)}
-
+            <div class="gap-column-head">
+                <div>Song</div>
+                <div>Last Played</div>
+                <div>Gap</div>
             </div>
+
+            <div
+                id="gap-results"
+                class="gap-list"
+            ></div>
 
         </section>
 
-        <section class="panel">
+        <div class="gap-back">
 
-            <div class="panel-header">
+            <button onclick="showPage('dashboard')">
+                ← Dashboard
+            </button>
 
-                <div>
-
-                    <h2>Monster Gap Watch</h2>
-
-                    <div class="song-meta">
-                        90–99 shows since last played
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="song-list">
-
-                ${gapList(monsterSongs)}
-
-            </div>
-
-        </section>
+        </div>
     `;
-}
 
+    document
+        .getElementById("gap-mode")
+        .addEventListener(
+            "change",
+            event => {
+                renderMode(event.target.value);
+            }
+        );
+
+    renderMode("longest");
+
+}
 /* ==================================================
    HELPERS
 ================================================== */
