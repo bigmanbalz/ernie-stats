@@ -2494,10 +2494,12 @@ function renderGaps() {
         longest: {
             title: "Longest Current Gaps",
             description: "Songs with the most shows since last played",
+
             songs: [...songs]
-                .sort((a, b) =>
-                    b.showsSinceLastPlay -
-                    a.showsSinceLastPlay
+                .sort(
+                    (a, b) =>
+                        b.showsSinceLastPlay -
+                        a.showsSinceLastPlay
                 )
                 .slice(0, 50)
         },
@@ -2505,141 +2507,236 @@ function renderGaps() {
         bustoutEligible: {
             title: "All Songs Eligible for Bustout",
             description: "50+ shows since last played · 3+ total plays",
+
             songs: [...songs]
-                .filter(song =>
-                    song.showsSinceLastPlay >= GAP_BUSTOUT &&
-                    song.performances >= 3
+                .filter(
+                    song =>
+                        song.showsSinceLastPlay >= GAP_BUSTOUT &&
+                        song.performances >= 3
                 )
-                .sort((a, b) =>
-                    b.showsSinceLastPlay -
-                    a.showsSinceLastPlay
+                .sort(
+                    (a, b) =>
+                        b.showsSinceLastPlay -
+                        a.showsSinceLastPlay
                 )
         },
 
         bustoutWatch: {
             title: "Bustout Watch",
             description: "40–49 shows since last played",
+
             songs: [...songs]
-                .filter(song =>
-                    song.showsSinceLastPlay >= 40 &&
-                    song.showsSinceLastPlay < GAP_BUSTOUT
+                .filter(
+                    song =>
+                        song.showsSinceLastPlay >= 40 &&
+                        song.showsSinceLastPlay < GAP_BUSTOUT
                 )
-                .sort((a, b) =>
-                    b.showsSinceLastPlay -
-                    a.showsSinceLastPlay
+                .sort(
+                    (a, b) =>
+                        b.showsSinceLastPlay -
+                        a.showsSinceLastPlay
                 )
         },
 
         monsterEligible: {
             title: "All Songs Eligible for Monster Gap",
             description: "100+ shows since last played · 3+ total plays",
+
             songs: [...songs]
-                .filter(song =>
-                    song.showsSinceLastPlay >= GAP_MONSTER &&
-                    song.performances >= 3
+                .filter(
+                    song =>
+                        song.showsSinceLastPlay >= GAP_MONSTER &&
+                        song.performances >= 3
                 )
-                .sort((a, b) =>
-                    b.showsSinceLastPlay -
-                    a.showsSinceLastPlay
+                .sort(
+                    (a, b) =>
+                        b.showsSinceLastPlay -
+                        a.showsSinceLastPlay
                 )
         },
 
         monsterWatch: {
             title: "Monster Gap Watch",
             description: "90–99 shows since last played",
+
             songs: [...songs]
-                .filter(song =>
-                    song.showsSinceLastPlay >= 90 &&
-                    song.showsSinceLastPlay < GAP_MONSTER
+                .filter(
+                    song =>
+                        song.showsSinceLastPlay >= 90 &&
+                        song.showsSinceLastPlay < GAP_MONSTER
                 )
-                .sort((a, b) =>
-                    b.showsSinceLastPlay -
-                    a.showsSinceLastPlay
+                .sort(
+                    (a, b) =>
+                        b.showsSinceLastPlay -
+                        a.showsSinceLastPlay
                 )
         },
 
         recent: {
             title: "Most Recently Played",
             description: "Songs ordered by most recent performance",
+
             songs: [...songs]
-                .sort((a, b) =>
-                    parseDate(b.lastPlayed) -
-                    parseDate(a.lastPlayed)
+                .sort(
+                    (a, b) =>
+                        parseDate(b.lastPlayed) -
+                        parseDate(a.lastPlayed)
                 )
         },
 
         mostPlayed: {
             title: "Most Played",
             description: "Songs ordered by total performances",
+
             songs: [...songs]
-                .sort((a, b) =>
-                    b.performances -
-                    a.performances
+                .sort(
+                    (a, b) =>
+                        b.performances -
+                        a.performances
                 )
         },
 
         neverOne: {
             title: "Never / One-Time Played",
             description: "Songs with one or fewer total performances",
+
             songs: [...songs]
-                .filter(song =>
-                    song.performances <= 1
+                .filter(
+                    song =>
+                        song.performances <= 1
                 )
-                .sort((a, b) =>
-                    a.name.localeCompare(b.name)
+                .sort(
+                    (a, b) =>
+                        a.name.localeCompare(b.name)
                 )
         }
 
     };
 
+    let currentMode = "longest";
+
+    let sortColumn = "gap";
+    let sortDirection = "desc";
+
+    function getSortedSongs(songList) {
+
+        const sorted = [...songList];
+
+        sorted.sort((a, b) => {
+
+            let result = 0;
+
+            if (sortColumn === "song") {
+
+                result =
+                    a.name.localeCompare(b.name);
+
+            }
+
+            if (sortColumn === "lastPlayed") {
+
+                result =
+                    parseDate(a.lastPlayed) -
+                    parseDate(b.lastPlayed);
+
+            }
+
+            if (sortColumn === "gap") {
+
+                result =
+                    a.showsSinceLastPlay -
+                    b.showsSinceLastPlay;
+
+            }
+
+            if (result === 0) {
+
+                result =
+                    a.name.localeCompare(b.name);
+
+            }
+
+            return sortDirection === "asc"
+                ? result
+                : -result;
+
+        });
+
+        return sorted;
+    }
+
+    function sortIndicator(column) {
+
+        if (sortColumn !== column) {
+            return "";
+        }
+
+        return sortDirection === "asc"
+            ? " ↑"
+            : " ↓";
+    }
+
     function renderGapList(songList) {
 
-        if (!songList.length) {
+        const sortedSongs =
+            getSortedSongs(songList);
+
+        if (!sortedSongs.length) {
+
             return `
                 <div class="gap-empty">
                     Nothing currently in this category.
                 </div>
             `;
+
         }
 
-        return songList
-            .map(song => `
-                <div
-                    class="gap-row"
-                    onclick="openSong('${escapeJs(song.name)}')"
-                >
+        return sortedSongs
+            .map(
+                song => `
 
-                    <div class="gap-song">
-                        ${escapeHtml(song.name)}
+                    <div
+                        class="gap-row"
+                        onclick="openSong('${escapeJs(song.name)}')"
+                    >
+
+                        <div class="gap-song">
+                            ${escapeHtml(song.name)}
+                        </div>
+
+                        <div class="gap-last">
+
+                            <span class="gap-label">
+                                Last Played
+                            </span>
+
+                            <span>
+                                ${escapeHtml(song.lastPlayed)}
+                            </span>
+
+                        </div>
+
+                        <div class="gap-count">
+                            ${song.showsSinceLastPlay}
+                        </div>
+
                     </div>
 
-                    <div class="gap-last">
-
-                        <span class="gap-label">
-                            Last Played
-                        </span>
-
-                        <span>
-                            ${escapeHtml(song.lastPlayed)}
-                        </span>
-
-                    </div>
-
-                    <div class="gap-count">
-                        ${song.showsSinceLastPlay}
-                    </div>
-
-                </div>
-            `)
+                `
+            )
             .join("");
 
     }
 
     function renderMode(mode) {
 
+        currentMode =
+            gapModes[mode]
+                ? mode
+                : "longest";
+
         const selected =
-            gapModes[mode] ||
-            gapModes.longest;
+            gapModes[currentMode];
 
         document.getElementById("gap-results")
             .innerHTML =
@@ -2653,9 +2750,49 @@ function renderGaps() {
             .textContent =
                 selected.description;
 
+        document.getElementById("gap-sort-song")
+            .innerHTML =
+                "Song" +
+                sortIndicator("song");
+
+        document.getElementById("gap-sort-last")
+            .innerHTML =
+                "Last Played" +
+                sortIndicator("lastPlayed");
+
+        document.getElementById("gap-sort-gap")
+            .innerHTML =
+                "Gap" +
+                sortIndicator("gap");
+
+    }
+
+    function handleSort(column) {
+
+        if (sortColumn === column) {
+
+            sortDirection =
+                sortDirection === "asc"
+                    ? "desc"
+                    : "asc";
+
+        } else {
+
+            sortColumn = column;
+
+            sortDirection =
+                column === "song"
+                    ? "asc"
+                    : "desc";
+
+        }
+
+        renderMode(currentMode);
+
     }
 
     document.getElementById("content").innerHTML = `
+
         <section class="panel gap-panel">
 
             <div class="panel-header gap-header">
@@ -2725,9 +2862,37 @@ function renderGaps() {
             </div>
 
             <div class="gap-column-head">
-                <div>Song</div>
-                <div>Last Played</div>
-                <div>Gap</div>
+
+                <div
+                    id="gap-sort-song"
+                    class="gap-sortable"
+                    role="button"
+                    tabindex="0"
+                    title="Sort by song"
+                >
+                    Song
+                </div>
+
+                <div
+                    id="gap-sort-last"
+                    class="gap-sortable"
+                    role="button"
+                    tabindex="0"
+                    title="Sort by last played"
+                >
+                    Last Played
+                </div>
+
+                <div
+                    id="gap-sort-gap"
+                    class="gap-sortable"
+                    role="button"
+                    tabindex="0"
+                    title="Sort by gap"
+                >
+                    Gap
+                </div>
+
             </div>
 
             <div
@@ -2744,6 +2909,7 @@ function renderGaps() {
             </button>
 
         </div>
+
     `;
 
     document
@@ -2752,6 +2918,78 @@ function renderGaps() {
             "change",
             event => {
                 renderMode(event.target.value);
+            }
+        );
+
+    document
+        .getElementById("gap-sort-song")
+        .addEventListener(
+            "click",
+            () => handleSort("song")
+        );
+
+    document
+        .getElementById("gap-sort-last")
+        .addEventListener(
+            "click",
+            () => handleSort("lastPlayed")
+        );
+
+    document
+        .getElementById("gap-sort-gap")
+        .addEventListener(
+            "click",
+            () => handleSort("gap")
+        );
+
+    document
+        .getElementById("gap-sort-song")
+        .addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+                    event.preventDefault();
+                    handleSort("song");
+                }
+
+            }
+        );
+
+    document
+        .getElementById("gap-sort-last")
+        .addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+                    event.preventDefault();
+                    handleSort("lastPlayed");
+                }
+
+            }
+        );
+
+    document
+        .getElementById("gap-sort-gap")
+        .addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+                    event.preventDefault();
+                    handleSort("gap");
+                }
+
             }
         );
 
