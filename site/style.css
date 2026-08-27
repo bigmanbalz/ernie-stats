@@ -1134,3 +1134,159 @@ button:hover {
     }
 
 }
+
+
+/* ==================================================
+   SONG BANK
+================================================== */
+
+.song-bank-location {
+    margin-bottom: 24px;
+}
+
+.song-bank-location .panel-header {
+    align-items: center;
+}
+
+.song-bank-location select {
+    min-width: 320px;
+    max-width: 100%;
+    padding: 9px 12px;
+
+    background: #101010;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    font-size: 12px;
+}
+
+.song-bank-panel {
+    margin-bottom: 24px;
+}
+
+.song-bank-panel .panel-header {
+    display: block;
+}
+
+.song-bank-panel .panel-header h2 {
+    margin-bottom: 5px;
+}
+
+.song-bank-panel .panel-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.song-bank-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.song-bank-column {
+    min-width: 0;
+}
+
+.song-bank-column + .song-bank-column {
+    border-left: 1px solid var(--border);
+}
+
+.song-bank-column > h3 {
+    margin: 0;
+    padding: 11px 20px;
+
+    background: #181818;
+    border-bottom: 1px solid var(--border);
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.song-bank-song {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    min-height: 48px;
+    padding: 10px 20px;
+
+    border-bottom: 1px solid #292929;
+}
+
+.song-bank-song:last-child {
+    border-bottom: 0;
+}
+
+.song-bank-song:hover {
+    background: #222;
+}
+
+.song-bank-song > span {
+    min-width: 0;
+    flex: 1;
+}
+
+.song-bank-song small {
+    flex: 0 0 auto;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.song-bank-empty {
+    padding: 18px 20px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* SONG BANK RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .song-bank-location .panel-header {
+        display: block;
+    }
+
+    .song-bank-location select {
+        width: 100%;
+        min-width: 0;
+        margin-top: 12px;
+    }
+
+    .song-bank-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .song-bank-column + .song-bank-column {
+        border-left: 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .song-bank-song {
+        min-height: 46px;
+        padding: 10px 16px;
+    }
+
+}
+
+.song-bank-clickable {
+    cursor: pointer;
+}
+
+.song-bank-clickable:hover {
+    color: var(--accent);
+}
+

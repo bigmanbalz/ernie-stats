@@ -467,7 +467,7 @@ function showPage(page, addHistory = true) {
     }
 
     if (page === "songbank") {
-        renderSongBank();
+        renderOverallRotation();
         return;
     }
 }
@@ -847,7 +847,7 @@ function openSong(name, addHistory = true) {
 
     const song =
         songs.find(
-            item => item.name === name
+            item => item.name?.trim() === name?.trim()
         );
 
     if (!song) return;
@@ -890,7 +890,7 @@ function renderSongDetail(song) {
         Object.entries(venueCounts)
             .sort((a, b) => b[1] - a[1]);
 
-    document.getElementById("content").innerHTML = `
+    document.getElementById("app").innerHTML = `
 
         <section class="panel">
 
@@ -2489,11 +2489,314 @@ function renderCityDetail(city) {
     `;
 }
 
+
 /* ==================================================
    SONG BANK
 ================================================== */
 
-function renderSongBank() {
+
+/* ==================================================
+   OVERALL ROTATION
+================================================== */
+
+function renderOverallRotation() {
+
+    /*
+       The raw Setlist.fm data stores songs inside:
+       show.sets.set[].song[]
+
+       Shows are already stored newest -> oldest.
+    */
+
+    const recentShows = shows;
+
+    const last5Shows = recentShows.slice(0, 5);
+    const last20Shows = recentShows.slice(0, 20);
+    const shows6to20 = recentShows.slice(5, 20);
+
+    function getShowSongs(show) {
+
+        const result = [];
+
+        (show.sets?.set || []).forEach(set => {
+
+            (set.song || []).forEach(song => {
+
+                const name = song.name?.trim();
+
+                if (name) {
+                    result.push(song);
+                }
+
+            });
+
+        });
+
+        return result;
+    }
+
+    const last5 = new Set();
+
+    last5Shows.forEach(show => {
+
+        getShowSongs(show).forEach(song => {
+            last5.add(song.name.trim());
+        });
+
+    });
+
+    const last20Counts = {};
+    const fallingOutCounts = {};
+
+    last20Shows.forEach(show => {
+
+        getShowSongs(show).forEach(song => {
+
+            const name = song.name.trim();
+
+            last20Counts[name] =
+                (last20Counts[name] || 0) + 1;
+        });
+
+    });
+
+    shows6to20.forEach(show => {
+
+        getShowSongs(show).forEach(song => {
+
+            const name = song.name.trim();
+
+            fallingOutCounts[name] =
+                (fallingOutCounts[name] || 0) + 1;
+        });
+
+    });
+
+    function isCover(name) {
+
+        const song =
+            songs.find(song => song.name === name);
+
+        return song?.type === "Cover";
+    }
+
+    function splitAndLimit(items) {
+
+        const originals = [];
+        const covers = [];
+
+        items.forEach(item => {
+
+            if (isCover(item.name)) {
+
+                if (covers.length < 5) {
+                    covers.push(item);
+                }
+
+            } else {
+
+                if (originals.length < 5) {
+                    originals.push(item);
+                }
+            }
+
+        });
+
+        return {
+            originals,
+            covers
+        };
+    }
+
+    function rank(items) {
+
+        return items.sort((a, b) =>
+            b.score - a.score ||
+            a.name.localeCompare(b.name)
+        );
+    }
+
+    /*
+       1. Most Played — Not Played in Last 5 Shows
+
+       Lifetime play count, excluding anything
+       appearing in the most recent five shows.
+    */
+
+    const mostPlayedNot5 =
+        splitAndLimit(
+            rank(
+                songs
+                    .filter(song =>
+                        song.performances > 0 &&
+                        !last5.has(song.name)
+                    )
+                    .map(song => ({
+                        name: song.name,
+                        score: song.performances,
+                        meta:
+                            song.performances +
+                            (song.performances === 1
+                                ? " overall play"
+                                : " overall plays")
+                    }))
+            )
+        );
+
+    /*
+       2. Recently Falling Out of Rotation
+
+       Songs played at least twice in shows 6–20,
+       but not in the most recent five.
+    */
+
+    const fallingOut =
+        splitAndLimit(
+            rank(
+                Object.entries(fallingOutCounts)
+                    .filter(([name, count]) =>
+                        count >= 2 &&
+                        !last5.has(name)
+                    )
+                    .map(([name, count]) => {
+
+                        const song =
+                            songs.find(song =>
+                                song.name === name
+                            );
+
+                        return {
+                            name,
+                            score: count,
+                            meta:
+                                count +
+                                (count === 1
+                                    ? " play in shows 6–20"
+                                    : " plays in shows 6–20") +
+                                (song
+                                    ? " · " +
+                                      song.performances +
+                                      " overall"
+                                    : "")
+                        };
+                    })
+            )
+        );
+
+    /*
+       3. Most Played in Last 20 Shows
+    */
+
+    const mostPlayed20 =
+        splitAndLimit(
+            rank(
+                Object.entries(last20Counts)
+                    .map(([name, count]) => {
+
+                        const song =
+                            songs.find(song =>
+                                song.name === name
+                            );
+
+                        return {
+                            name,
+                            score: count,
+                            meta:
+                                count +
+                                (count === 1
+                                    ? " play in last 20"
+                                    : " plays in last 20") +
+                                (song
+                                    ? " · " +
+                                      song.performances +
+                                      " overall"
+                                    : "")
+                        };
+                    })
+            )
+        );
+
+    /*
+       4. Top Songs We've Neglected
+
+       KEEPING THE WORKING VERSION:
+       lifetime importance × existing site gap.
+    */
+
+    const neglected =
+        splitAndLimit(
+            rank(
+                songs
+                    .filter(song =>
+                        song.performances >= 5 &&
+                        song.showsSinceLastPlay > 0 &&
+                        !last5.has(song.name)
+                    )
+                    .map(song => ({
+                        name: song.name,
+                        score:
+                            song.performances *
+                            song.showsSinceLastPlay,
+                        meta:
+                            song.performances +
+                            " overall plays · " +
+                            song.showsSinceLastPlay +
+                            " show gap"
+                    }))
+            )
+        );
+
+    function rows(items) {
+
+        if (!items.length) {
+            return '<div class="song-bank-empty">None currently qualify</div>';
+        }
+
+        return items.map(item =>
+            '<div class="song-bank-song" data-song-name="' +
+                escapeHtml(item.name) +
+            '">' +
+                '<span>' +
+                    escapeHtml(item.name) +
+                '</span>' +
+                '<small> (' +
+                    escapeHtml(item.meta) +
+                ')</small>' +
+            '</div>'
+        ).join("");
+    }
+
+    function section(title, description, data) {
+
+        return (
+            '<section class="panel song-bank-panel">' +
+
+                '<div class="panel-header">' +
+                    '<h2>' +
+                        escapeHtml(title) +
+                    '</h2>' +
+                    '<p>' +
+                        escapeHtml(description) +
+                    '</p>' +
+                '</div>' +
+
+                '<div class="song-bank-columns">' +
+
+                    '<div class="song-bank-column">' +
+                        '<h3>ORIGINALS</h3>' +
+                        rows(data.originals) +
+                    '</div>' +
+
+                    '<div class="song-bank-column">' +
+                        '<h3>COVERS</h3>' +
+                        rows(data.covers) +
+                    '</div>' +
+
+                '</div>' +
+
+            '</section>'
+        );
+    }
 
     const venueMap = {};
 
@@ -2503,155 +2806,272 @@ function renderSongBank() {
             show.venue?.name?.trim();
 
         const cityName =
-            show.venue?.city?.name?.trim();
+            show.venue?.city?.name?.trim() || "";
+
+        const stateName =
+            show.venue?.city?.stateCode?.trim() || "";
 
         if (!venueName) return;
 
-        if (!venueMap[venueName]) {
-            venueMap[venueName] = {
+        const key =
+            venueName +
+            "|" +
+            cityName +
+            "|" +
+            stateName;
+
+        if (!venueMap[key]) {
+
+            venueMap[key] = {
+                key,
                 name: venueName,
-                city: cityName || "",
+                city: cityName,
+                state: stateName,
                 shows: []
             };
         }
 
-        venueMap[venueName].shows.push(show);
+        venueMap[key].shows.push(show);
     });
 
-    const venues = Object.values(venueMap)
-        .sort((a, b) =>
-            a.name.localeCompare(b.name)
+    const venues =
+        Object.values(venueMap)
+            .sort((a, b) =>
+                a.name.localeCompare(b.name) ||
+                a.city.localeCompare(b.city)
+            );
+
+    const venueOptions =
+        venues.map(item => {
+
+            const label =
+                item.name +
+                " — " +
+                item.city +
+                (item.state
+                    ? ", " + item.state
+                    : "") +
+                " (" +
+                item.shows.length +
+                (item.shows.length === 1
+                    ? " show"
+                    : " shows") +
+                ")";
+
+            return (
+                '<option value="' +
+                    escapeHtml(item.key) +
+                '">' +
+                    escapeHtml(label) +
+                '</option>'
+            );
+
+        }).join("");
+
+    document.getElementById("app").innerHTML =
+
+        '<section class="panel song-bank-location">' +
+
+            '<div class="panel-header">' +
+                '<h1>SONG BANK</h1>' +
+                '<p>Overall rotation and song ideas for the band</p>' +
+            '</div>' +
+
+            '<div class="song-bank-overall-link">' +
+                '<span>Looking for venue-specific ideas?</span>' +
+
+                '<select ' +
+                    'id="song-bank-venue"' +
+                    'class="gap-select"' +
+                    'onchange="' +
+                        'window.songBankVenue=this.value;' +
+                        'renderSongBank()' +
+                    '"' +
+                '>' +
+
+                    '<option value="">Select a venue...</option>' +
+                    venueOptions +
+
+                '</select>' +
+
+            '</div>' +
+
+        '</section>' +
+
+        section(
+            "Most Played — Not Played in Last 5 Shows",
+            "Our most-played songs that haven't appeared in the last 5 shows",
+            mostPlayedNot5
+        ) +
+
+        section(
+            "Recently Falling Out of Rotation",
+            "Songs that were active in shows 6–20 but have disappeared from the last 5",
+            fallingOut
+        ) +
+
+        section(
+            "Most Played in Last 20 Shows",
+            "The band's current active vocabulary",
+            mostPlayed20
+        ) +
+
+        section(
+            "Top Songs We've Neglected",
+            "Well-established songs with the strongest combination of play history and current gap",
+            neglected
         );
 
+    document
+        .querySelectorAll(".song-bank-song[data-song-name]")
+        .forEach(row => {
+            row.addEventListener("click", () => {
+                openSong(row.dataset.songName);
+            });
+        });
+}
+
+/* ==================================================
+   VENUE SONG BANK
+================================================== */
+
+function renderSongBank() {
+
+    const venueMap = {};
+
+    shows.forEach(show => {
+
+        const venueName = show.venue?.name?.trim();
+        const cityName = show.venue?.city?.name?.trim() || "";
+        const stateName = show.venue?.city?.stateCode?.trim() || "";
+
+        if (!venueName) return;
+
+        const key = venueName + "|" + cityName + "|" + stateName;
+
+        if (!venueMap[key]) {
+            venueMap[key] = {
+                key: key,
+                name: venueName,
+                city: cityName,
+                state: stateName,
+                shows: []
+            };
+        }
+
+        venueMap[key].shows.push(show);
+    });
+
+    const venues = Object.values(venueMap).sort((a, b) =>
+        a.name.localeCompare(b.name) ||
+        a.city.localeCompare(b.city)
+    );
+
     if (!venues.length) {
-        document.getElementById("app").innerHTML = `
-            <section class="panel">
-                <div class="panel-header">
-                    <h2>Song Bank</h2>
-                    <p>No venue data available.</p>
-                </div>
-            </section>
-        `;
+        document.getElementById("app").innerHTML =
+            '<section class="panel"><div class="panel-header"><h2>Song Bank</h2><p>No venue data available.</p></div></section>';
         return;
     }
 
-    const selectedVenue =
-        window.songBankVenue ||
-        venues[0].name;
+    let selectedKey = window.songBankVenue;
 
-    window.songBankVenue =
-        venues.some(v => v.name === selectedVenue)
-            ? selectedVenue
-            : venues[0].name;
+    if (!selectedKey || !venues.some(v => v.key === selectedKey)) {
+        selectedKey = venues[0].key;
+    }
 
-    const venue =
-        venues.find(v =>
-            v.name === window.songBankVenue
-        );
+    window.songBankVenue = selectedKey;
 
-    const venueShows =
-        [...venue.shows]
-            .sort((a, b) =>
-                parseDate(a.eventDate) -
-                parseDate(b.eventDate)
-            );
+    const venue = venues.find(v => v.key === selectedKey);
+    const venueShows = venue.shows.slice().sort((a, b) =>
+        parseDate(a.eventDate) - parseDate(b.eventDate)
+    );
 
     const venueSongCounts = {};
-    const venueSongShows = {};
-
+    const venueSongDates = {};
     const allSongHistory = {};
 
     shows.forEach(show => {
 
-        const date =
-            parseDate(show.eventDate);
+        const showVenue = show.venue?.name?.trim() || "";
+        const showCity = show.venue?.city?.name?.trim() || "";
+        const showState = show.venue?.city?.stateCode?.trim() || "";
 
-        const showVenue =
-            show.venue?.name?.trim() || "";
+        const showKey =
+            showVenue + "|" + showCity + "|" + showState;
 
-        const songsInShow = new Set();
+        const date = parseDate(show.eventDate);
+        const uniqueSongs = new Map();
 
         (show.sets?.set || []).forEach(set => {
 
             (set.song || []).forEach(song => {
 
-                const name =
-                    song.name?.trim();
+                const name = song.name?.trim();
 
                 if (!name) return;
 
-                songsInShow.add(name);
+                uniqueSongs.set(name, song);
 
                 if (!allSongHistory[name]) {
                     allSongHistory[name] = [];
                 }
 
                 allSongHistory[name].push({
-                    date,
-                    venue: showVenue,
+                    date: date,
+                    venueKey: showKey,
                     cover: !!song.cover
                 });
             });
         });
 
-        if (showVenue === venue.name) {
+        if (showKey === venue.key) {
 
-            songsInShow.forEach(name => {
+            uniqueSongs.forEach((song, name) => {
 
                 venueSongCounts[name] =
                     (venueSongCounts[name] || 0) + 1;
 
-                if (!venueSongShows[name]) {
-                    venueSongShows[name] = [];
+                if (!venueSongDates[name]) {
+                    venueSongDates[name] = [];
                 }
 
-                venueSongShows[name].push(date);
+                venueSongDates[name].push(date);
             });
         }
     });
 
-    const songLookup = {};
-
-    songs.forEach(song => {
-        songLookup[song.name] = song;
-    });
-
     function isCover(name) {
 
-        const history =
-            allSongHistory[name] || [];
+        const history = allSongHistory[name] || [];
 
         return history.some(item => item.cover);
     }
 
-    function songType(name) {
+    function splitAndLimit(list) {
 
-        return isCover(name)
-            ? "cover"
-            : "original";
+        return {
+            originals: list
+                .filter(item => !isCover(item.name))
+                .slice(0, 5),
+
+            covers: list
+                .filter(item => isCover(item.name))
+                .slice(0, 5)
+        };
     }
 
-    function sortedSongs(list) {
-
-        return list
-            .sort((a, b) =>
-                a.name.localeCompare(b.name)
-            );
-    }
-
-    const always =
+    const alwaysRanked =
         Object.keys(venueSongCounts)
             .map(name => ({
-                name,
+                name: name,
                 count: venueSongCounts[name]
             }))
             .sort((a, b) =>
                 b.count - a.count ||
                 a.name.localeCompare(b.name)
-            )
-            .slice(0, 5);
+            );
 
-    const regularNever =
+    const regularRanked =
         songs
             .filter(song =>
                 song.performances >= 10 &&
@@ -2666,28 +3086,26 @@ function renderSongBank() {
                 a.name.localeCompare(b.name)
             );
 
-    const once =
+    const onceRanked =
         Object.keys(venueSongCounts)
-            .filter(name =>
-                venueSongCounts[name] === 1
-            )
+            .filter(name => venueSongCounts[name] === 1)
             .map(name => ({
-                name,
-                count: 1
+                name: name,
+                count: (songs.find(song => song.name === name)?.performances || 0)
             }))
             .sort((a, b) =>
+                b.count - a.count ||
                 a.name.localeCompare(b.name)
             );
 
-    const overdue =
+    const overdueRanked =
         Object.keys(venueSongCounts)
-            .filter(name =>
-                venueSongCounts[name] >= 2
-            )
+            .filter(name => venueSongCounts[name] >= 2)
             .map(name => {
 
                 const dates =
-                    [...venueSongShows[name]]
+                    venueSongDates[name]
+                        .slice()
                         .sort((a, b) => a - b);
 
                 const lastDate =
@@ -2695,14 +3113,13 @@ function renderSongBank() {
 
                 const showsSince =
                     venueShows.filter(show =>
-                        parseDate(show.eventDate) >
-                        lastDate
+                        parseDate(show.eventDate) > lastDate
                     ).length;
 
                 return {
-                    name,
+                    name: name,
                     count: venueSongCounts[name],
-                    showsSince
+                    showsSince: showsSince
                 };
             })
             .sort((a, b) =>
@@ -2719,28 +3136,26 @@ function renderSongBank() {
     Object.keys(allSongHistory).forEach(name => {
 
         const history =
-            [...allSongHistory[name]]
-                .sort((a, b) =>
-                    a.date - b.date
-                );
+            allSongHistory[name]
+                .slice()
+                .sort((a, b) => a.date - b.date);
 
         if (!history.length) return;
 
-        const first =
-            history[0];
-
-        if (first.venue !== venue.name) {
+        if (history[0].venueKey !== venue.key) {
             return;
         }
 
-        debuts[
-            songType(name) === "cover"
-                ? "covers"
-                : "originals"
-        ].push({
-            name,
-            date: first.date
-        });
+        const item = {
+            name: name,
+            date: history[0].date
+        };
+
+        if (isCover(name)) {
+            debuts.covers.push(item);
+        } else {
+            debuts.originals.push(item);
+        }
     });
 
     debuts.originals.sort((a, b) =>
@@ -2753,167 +3168,229 @@ function renderSongBank() {
         a.name.localeCompare(b.name)
     );
 
-    function split(list) {
+    const songBankData = {
+        always: splitAndLimit(alwaysRanked),
+        regular: splitAndLimit(regularRanked),
+        once: splitAndLimit(onceRanked),
+        overdue: splitAndLimit(overdueRanked),
+        debuts: debuts,
+        venue: venue,
+        venues: venues
+    };
 
-        return {
-            originals: sortedSongs(
-                list
-                    .filter(item =>
-                        songType(item.name) === "original"
-                    )
-            ).slice(0, 5),
+    renderSongBankPage(songBankData);
+}
 
-            covers: sortedSongs(
-                list
-                    .filter(item =>
-                        songType(item.name) === "cover"
-                    )
-            ).slice(0, 5)
-        };
+
+function renderSongBankPage(data) {
+
+    const venue = data.venue;
+    const venues = data.venues;
+
+    function escape(value) {
+        return escapeHtml(value);
     }
 
-    const sections = [
-        {
-            title: "Songs We Always Play Here",
-            description: "Top 5 songs played at this venue",
-            data: split(always)
-        },
-        {
-            title: "Regular Rotation — Never Played Here",
-            description: "10+ overall performances · 0 at this venue",
-            data: split(regularNever)
-        },
-        {
-            title: "Only Played Here Once",
-            description: "Exactly one appearance at this venue",
-            data: split(once)
-        },
-        {
-            title: "Overdue Songs We've Played Here",
-            description: "Played here 2+ times · biggest venue-specific gaps",
-            data: split(overdue)
-        }
-    ];
-
-    function songList(items, showGap = false) {
+    function songRows(items, type) {
 
         if (!items.length) {
-            return `
-                <div class="song-bank-empty">
-                    None currently qualify
-                </div>
-            `;
+            return '<div class="song-bank-empty">None currently qualify</div>';
         }
 
-        return items.map(item => `
-            <div class="song-bank-song">
-                <span>${escapeHtml(item.name)}</span>
-                ${showGap
-                    ? `<small>${item.showsSince} shows</small>`
-                    : ""}
-            </div>
-        `).join("");
+        return items.map(item => {
+
+            let meta = "";
+
+            if (type === "always") {
+                meta =
+                    item.count +
+                    (item.count === 1 ? " play" : " plays");
+            }
+
+            if (type === "regular") {
+                meta =
+                    item.count + " overall plays";
+            }
+
+            if (type === "overdue") {
+                meta =
+                    item.showsSince +
+                    (item.showsSince === 1
+                        ? " show ago"
+                        : " shows ago");
+            }
+
+            return (
+                '<div class="song-bank-song" data-song-name="' + escape(item.name) + '">' +
+                    '<span>' + escape(item.name) + '</span>' +
+                    (meta
+                        ? '<small> (' + escape(meta) + ')</small>'
+                        : '') +
+                '</div>'
+            );
+
+        }).join("");
     }
 
-    function sectionHtml(section) {
+    function section(
+        title,
+        description,
+        sectionData,
+        type
+    ) {
 
-        return `
-            <section class="panel song-bank-panel">
+        return (
+            '<section class="panel song-bank-panel">' +
 
-                <div class="panel-header">
-                    <h2>${section.title}</h2>
-                    <p>${section.description}</p>
-                </div>
+                '<div class="panel-header">' +
+                    '<h2>' + escape(title) + '</h2>' +
+                    '<p>' + escape(description) + '</p>' +
+                '</div>' +
 
-                <div class="song-bank-columns">
+                '<div class="song-bank-columns">' +
 
-                    <div class="song-bank-column">
-                        <h3>ORIGINALS</h3>
-                        ${songList(section.data.originals)}
-                    </div>
+                    '<div class="song-bank-column">' +
+                        '<h3>ORIGINALS</h3>' +
+                        songRows(sectionData.originals, type) +
+                    '</div>' +
 
-                    <div class="song-bank-column">
-                        <h3>COVERS</h3>
-                        ${songList(section.data.covers)}
-                    </div>
+                    '<div class="song-bank-column">' +
+                        '<h3>COVERS</h3>' +
+                        songRows(sectionData.covers, type) +
+                    '</div>' +
 
-                </div>
+                '</div>' +
 
-            </section>
-        `;
+            '</section>'
+        );
     }
 
-    document.getElementById("app").innerHTML = `
+    function debutRows(items) {
 
-        <section class="panel song-bank-location">
+        if (!items.length) {
+            return '<div class="song-bank-empty">None</div>';
+        }
 
-            <div class="panel-header">
-                <h1>SONG BANK</h1>
-                <p>Venue-specific song ideas for the band</p>
-            </div>
+        return items.map(item => {
 
-            <label for="song-bank-venue">
-                Location
-            </label>
+            return (
+                '<div class="song-bank-song">' +
+                    '<span>' + escape(item.name) + '</span>' +
+                    '<small>' + escape(formatDate(item.date)) + '</small>' +
+                '</div>'
+            );
 
-            <select
-                id="song-bank-venue"
-                onchange="window.songBankVenue=this.value; renderSongBank();"
-            >
-                ${venues.map(v => `
-                    <option
-                        value="${escapeHtml(v.name)}"
-                        ${v.name === venue.name ? "selected" : ""}
-                    >
-                        ${escapeHtml(v.name)}
-                        ${v.city
-                            ? " — " + escapeHtml(v.city)
-                            : ""}
-                    </option>
-                `).join("")}
-            </select>
+        }).join("");
+    }
 
-        </section>
+    const options = venues.map(item => {
 
-        ${sections.map(sectionHtml).join("")}
+        const label =
+            item.name +
+            " — " +
+            item.city +
+            (item.state ? ", " + item.state : "") +
+            " (" +
+            item.shows.length +
+            (item.shows.length === 1 ? " show" : " shows") +
+            ")";
 
-        <section class="panel song-bank-panel">
+        return (
+            '<option value="' +
+            escape(item.key) +
+            '"' +
+            (item.key === venue.key ? " selected" : "") +
+            '>' +
+            escape(label) +
+            '</option>'
+        );
 
-            <div class="panel-header">
-                <h2>Songs Debuted Here</h2>
-                <p>Every song whose first recorded appearance was at this venue</p>
-            </div>
+    }).join("");
 
-            <div class="song-bank-columns">
+    const debutSection =
+        '<section class="panel song-bank-panel">' +
 
-                <div class="song-bank-column">
-                    <h3>ORIGINALS</h3>
-                    ${debuts.originals.length
-                        ? debuts.originals.map(item => `
-                            <div class="song-bank-song">
-                                <span>${escapeHtml(item.name)}</span>
-                                <small>${formatDate(item.date)}</small>
-                            </div>
-                        `).join("")
-                        : `<div class="song-bank-empty">None</div>`}
-                </div>
+            '<div class="panel-header">' +
+                '<h2>Songs Debuted Here</h2>' +
+                '<p>Every song whose first recorded appearance was at this venue</p>' +
+            '</div>' +
 
-                <div class="song-bank-column">
-                    <h3>COVERS</h3>
-                    ${debuts.covers.length
-                        ? debuts.covers.map(item => `
-                            <div class="song-bank-song">
-                                <span>${escapeHtml(item.name)}</span>
-                                <small>${formatDate(item.date)}</small>
-                            </div>
-                        `).join("")
-                        : `<div class="song-bank-empty">None</div>`}
-                </div>
+            '<div class="song-bank-columns">' +
 
-            </div>
+                '<div class="song-bank-column">' +
+                    '<h3>ORIGINALS</h3>' +
+                    debutRows(data.debuts.originals) +
+                '</div>' +
 
-        </section>
-    `;
+                '<div class="song-bank-column">' +
+                    '<h3>COVERS</h3>' +
+                    debutRows(data.debuts.covers) +
+                '</div>' +
+
+            '</div>' +
+
+        '</section>';
+
+    document.getElementById("app").innerHTML =
+
+        '<section class="panel song-bank-location">' +
+
+            '<div class="panel-header">' +
+                '<h1>SONG BANK</h1>' +
+                '<p>Venue-specific song ideas for the band</p>' +
+            '</div>' +
+
+            '<label for="song-bank-venue">Location</label>' +
+
+            '<select ' +
+                'id="song-bank-venue" ' +
+                'class="gap-select" ' +
+                'onchange="window.songBankVenue=this.value;renderSongBank()"' +
+            '>' +
+
+                options +
+
+            '</select>' +
+
+        '</section>' +
+
+        section(
+            "Songs We Always Play Here",
+            "Top 5 songs played at this venue",
+            data.always,
+            "always"
+        ) +
+
+        section(
+            "Regular Rotation — Never Played Here",
+            "10+ overall performances · 0 at this venue",
+            data.regular,
+            "regular"
+        ) +
+
+        section(
+            "Only Played Here Once",
+            "Exactly one appearance at this venue",
+            data.once,
+            "once"
+        ) +
+
+        section(
+            "Overdue Songs We've Played Here",
+            "Played here 2+ times · biggest venue-specific gaps",
+            data.overdue,
+            "overdue"
+        ) +
+
+        debutSection;
+
+    document
+        .querySelectorAll(".song-bank-song[data-song-name]")
+        .forEach(row => {
+            row.addEventListener("click", () => {
+                openSong(row.dataset.songName);
+            });
+        });
 }
 
 /* ==================================================
