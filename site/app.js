@@ -362,6 +362,10 @@ function navigation() {
                 Gaps
             </button>
 
+            <button onclick="showPage('songbank')">
+                Song Bank
+            </button>
+
         </nav>
     `;
 }
@@ -459,6 +463,11 @@ function showPage(page, addHistory = true) {
 
     if (page === "gaps") {
         renderGaps();
+        return;
+    }
+
+    if (page === "songbank") {
+        renderSongBank();
         return;
     }
 }
@@ -2473,6 +2482,433 @@ function renderCityDetail(city) {
                 ${recentShows
                     .map(show => showRow(show))
                     .join("")}
+
+            </div>
+
+        </section>
+    `;
+}
+
+/* ==================================================
+   SONG BANK
+================================================== */
+
+function renderSongBank() {
+
+    const venueMap = {};
+
+    shows.forEach(show => {
+
+        const venueName =
+            show.venue?.name?.trim();
+
+        const cityName =
+            show.venue?.city?.name?.trim();
+
+        if (!venueName) return;
+
+        if (!venueMap[venueName]) {
+            venueMap[venueName] = {
+                name: venueName,
+                city: cityName || "",
+                shows: []
+            };
+        }
+
+        venueMap[venueName].shows.push(show);
+    });
+
+    const venues = Object.values(venueMap)
+        .sort((a, b) =>
+            a.name.localeCompare(b.name)
+        );
+
+    if (!venues.length) {
+        document.getElementById("app").innerHTML = `
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Song Bank</h2>
+                    <p>No venue data available.</p>
+                </div>
+            </section>
+        `;
+        return;
+    }
+
+    const selectedVenue =
+        window.songBankVenue ||
+        venues[0].name;
+
+    window.songBankVenue =
+        venues.some(v => v.name === selectedVenue)
+            ? selectedVenue
+            : venues[0].name;
+
+    const venue =
+        venues.find(v =>
+            v.name === window.songBankVenue
+        );
+
+    const venueShows =
+        [...venue.shows]
+            .sort((a, b) =>
+                parseDate(a.eventDate) -
+                parseDate(b.eventDate)
+            );
+
+    const venueSongCounts = {};
+    const venueSongShows = {};
+
+    const allSongHistory = {};
+
+    shows.forEach(show => {
+
+        const date =
+            parseDate(show.eventDate);
+
+        const showVenue =
+            show.venue?.name?.trim() || "";
+
+        const songsInShow = new Set();
+
+        (show.sets?.set || []).forEach(set => {
+
+            (set.song || []).forEach(song => {
+
+                const name =
+                    song.name?.trim();
+
+                if (!name) return;
+
+                songsInShow.add(name);
+
+                if (!allSongHistory[name]) {
+                    allSongHistory[name] = [];
+                }
+
+                allSongHistory[name].push({
+                    date,
+                    venue: showVenue,
+                    cover: !!song.cover
+                });
+            });
+        });
+
+        if (showVenue === venue.name) {
+
+            songsInShow.forEach(name => {
+
+                venueSongCounts[name] =
+                    (venueSongCounts[name] || 0) + 1;
+
+                if (!venueSongShows[name]) {
+                    venueSongShows[name] = [];
+                }
+
+                venueSongShows[name].push(date);
+            });
+        }
+    });
+
+    const songLookup = {};
+
+    songs.forEach(song => {
+        songLookup[song.name] = song;
+    });
+
+    function isCover(name) {
+
+        const history =
+            allSongHistory[name] || [];
+
+        return history.some(item => item.cover);
+    }
+
+    function songType(name) {
+
+        return isCover(name)
+            ? "cover"
+            : "original";
+    }
+
+    function sortedSongs(list) {
+
+        return list
+            .sort((a, b) =>
+                a.name.localeCompare(b.name)
+            );
+    }
+
+    const always =
+        Object.keys(venueSongCounts)
+            .map(name => ({
+                name,
+                count: venueSongCounts[name]
+            }))
+            .sort((a, b) =>
+                b.count - a.count ||
+                a.name.localeCompare(b.name)
+            )
+            .slice(0, 5);
+
+    const regularNever =
+        songs
+            .filter(song =>
+                song.performances >= 10 &&
+                !venueSongCounts[song.name]
+            )
+            .map(song => ({
+                name: song.name,
+                count: song.performances
+            }))
+            .sort((a, b) =>
+                b.count - a.count ||
+                a.name.localeCompare(b.name)
+            );
+
+    const once =
+        Object.keys(venueSongCounts)
+            .filter(name =>
+                venueSongCounts[name] === 1
+            )
+            .map(name => ({
+                name,
+                count: 1
+            }))
+            .sort((a, b) =>
+                a.name.localeCompare(b.name)
+            );
+
+    const overdue =
+        Object.keys(venueSongCounts)
+            .filter(name =>
+                venueSongCounts[name] >= 2
+            )
+            .map(name => {
+
+                const dates =
+                    [...venueSongShows[name]]
+                        .sort((a, b) => a - b);
+
+                const lastDate =
+                    dates[dates.length - 1];
+
+                const showsSince =
+                    venueShows.filter(show =>
+                        parseDate(show.eventDate) >
+                        lastDate
+                    ).length;
+
+                return {
+                    name,
+                    count: venueSongCounts[name],
+                    showsSince
+                };
+            })
+            .sort((a, b) =>
+                b.showsSince - a.showsSince ||
+                b.count - a.count ||
+                a.name.localeCompare(b.name)
+            );
+
+    const debuts = {
+        originals: [],
+        covers: []
+    };
+
+    Object.keys(allSongHistory).forEach(name => {
+
+        const history =
+            [...allSongHistory[name]]
+                .sort((a, b) =>
+                    a.date - b.date
+                );
+
+        if (!history.length) return;
+
+        const first =
+            history[0];
+
+        if (first.venue !== venue.name) {
+            return;
+        }
+
+        debuts[
+            songType(name) === "cover"
+                ? "covers"
+                : "originals"
+        ].push({
+            name,
+            date: first.date
+        });
+    });
+
+    debuts.originals.sort((a, b) =>
+        a.date - b.date ||
+        a.name.localeCompare(b.name)
+    );
+
+    debuts.covers.sort((a, b) =>
+        a.date - b.date ||
+        a.name.localeCompare(b.name)
+    );
+
+    function split(list) {
+
+        return {
+            originals: sortedSongs(
+                list
+                    .filter(item =>
+                        songType(item.name) === "original"
+                    )
+            ).slice(0, 5),
+
+            covers: sortedSongs(
+                list
+                    .filter(item =>
+                        songType(item.name) === "cover"
+                    )
+            ).slice(0, 5)
+        };
+    }
+
+    const sections = [
+        {
+            title: "Songs We Always Play Here",
+            description: "Top 5 songs played at this venue",
+            data: split(always)
+        },
+        {
+            title: "Regular Rotation — Never Played Here",
+            description: "10+ overall performances · 0 at this venue",
+            data: split(regularNever)
+        },
+        {
+            title: "Only Played Here Once",
+            description: "Exactly one appearance at this venue",
+            data: split(once)
+        },
+        {
+            title: "Overdue Songs We've Played Here",
+            description: "Played here 2+ times · biggest venue-specific gaps",
+            data: split(overdue)
+        }
+    ];
+
+    function songList(items, showGap = false) {
+
+        if (!items.length) {
+            return `
+                <div class="song-bank-empty">
+                    None currently qualify
+                </div>
+            `;
+        }
+
+        return items.map(item => `
+            <div class="song-bank-song">
+                <span>${escapeHtml(item.name)}</span>
+                ${showGap
+                    ? `<small>${item.showsSince} shows</small>`
+                    : ""}
+            </div>
+        `).join("");
+    }
+
+    function sectionHtml(section) {
+
+        return `
+            <section class="panel song-bank-panel">
+
+                <div class="panel-header">
+                    <h2>${section.title}</h2>
+                    <p>${section.description}</p>
+                </div>
+
+                <div class="song-bank-columns">
+
+                    <div class="song-bank-column">
+                        <h3>ORIGINALS</h3>
+                        ${songList(section.data.originals)}
+                    </div>
+
+                    <div class="song-bank-column">
+                        <h3>COVERS</h3>
+                        ${songList(section.data.covers)}
+                    </div>
+
+                </div>
+
+            </section>
+        `;
+    }
+
+    document.getElementById("app").innerHTML = `
+
+        <section class="panel song-bank-location">
+
+            <div class="panel-header">
+                <h1>SONG BANK</h1>
+                <p>Venue-specific song ideas for the band</p>
+            </div>
+
+            <label for="song-bank-venue">
+                Location
+            </label>
+
+            <select
+                id="song-bank-venue"
+                onchange="window.songBankVenue=this.value; renderSongBank();"
+            >
+                ${venues.map(v => `
+                    <option
+                        value="${escapeHtml(v.name)}"
+                        ${v.name === venue.name ? "selected" : ""}
+                    >
+                        ${escapeHtml(v.name)}
+                        ${v.city
+                            ? " — " + escapeHtml(v.city)
+                            : ""}
+                    </option>
+                `).join("")}
+            </select>
+
+        </section>
+
+        ${sections.map(sectionHtml).join("")}
+
+        <section class="panel song-bank-panel">
+
+            <div class="panel-header">
+                <h2>Songs Debuted Here</h2>
+                <p>Every song whose first recorded appearance was at this venue</p>
+            </div>
+
+            <div class="song-bank-columns">
+
+                <div class="song-bank-column">
+                    <h3>ORIGINALS</h3>
+                    ${debuts.originals.length
+                        ? debuts.originals.map(item => `
+                            <div class="song-bank-song">
+                                <span>${escapeHtml(item.name)}</span>
+                                <small>${formatDate(item.date)}</small>
+                            </div>
+                        `).join("")
+                        : `<div class="song-bank-empty">None</div>`}
+                </div>
+
+                <div class="song-bank-column">
+                    <h3>COVERS</h3>
+                    ${debuts.covers.length
+                        ? debuts.covers.map(item => `
+                            <div class="song-bank-song">
+                                <span>${escapeHtml(item.name)}</span>
+                                <small>${formatDate(item.date)}</small>
+                            </div>
+                        `).join("")
+                        : `<div class="song-bank-empty">None</div>`}
+                </div>
 
             </div>
 
