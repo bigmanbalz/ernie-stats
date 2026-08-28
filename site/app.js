@@ -408,6 +408,12 @@ function restoreHistory(state) {
 
     if (state.type === "city") {
         openCity(state.key, false);
+        return;
+    }
+
+    if (state.type === "songbank-venue") {
+        window.songBankVenue = state.key;
+        renderSongBank();
     }
 }
 
@@ -467,7 +473,7 @@ function showPage(page, addHistory = true) {
     }
 
     if (page === "songbank") {
-        renderOverallRotation();
+        renderSongBankScopeHome();
         return;
     }
 }
@@ -2499,6 +2505,83 @@ function renderCityDetail(city) {
    OVERALL ROTATION
 ================================================== */
 
+function filterSongBankLocations() {
+
+    const stateSelect =
+        document.getElementById("song-bank-state");
+
+    const citySelect =
+        document.getElementById("song-bank-city");
+
+    const venueSelect =
+        document.getElementById("song-bank-venue");
+
+    if (!stateSelect || !citySelect || !venueSelect) {
+        return;
+    }
+
+    const selectedState = stateSelect.value;
+    const selectedCity = citySelect.value;
+
+    [...citySelect.options].forEach(option => {
+
+        if (!option.value) return;
+
+        const hasMatchingVenue =
+            [...venueSelect.options].some(venueOption => {
+
+                if (!venueOption.value) return false;
+
+                const parts =
+                    venueOption.value.split("|");
+
+                return (
+                    parts[1] === option.value &&
+                    (
+                        !selectedState ||
+                        parts[2] === selectedState
+                    )
+                );
+            });
+
+        option.hidden = !hasMatchingVenue;
+    });
+
+    if (
+        selectedCity &&
+        citySelect.selectedOptions[0]?.hidden
+    ) {
+        citySelect.value = "";
+    }
+
+    [...venueSelect.options].forEach(option => {
+
+        if (!option.value) return;
+
+        const parts = option.value.split("|");
+
+        const venueCity = parts[1] || "";
+        const venueState = parts[2] || "";
+
+        option.hidden =
+            (
+                selectedState &&
+                venueState !== selectedState
+            ) ||
+            (
+                selectedCity &&
+                venueCity !== selectedCity
+            );
+    });
+
+    if (
+        venueSelect.value &&
+        venueSelect.selectedOptions[0]?.hidden
+    ) {
+        venueSelect.value = "";
+    }
+}
+
 function renderOverallRotation() {
 
     /*
@@ -2841,6 +2924,38 @@ function renderOverallRotation() {
                 a.city.localeCompare(b.city)
             );
 
+    const states = [...new Set(
+        venues
+            .map(venue => venue.state)
+            .filter(Boolean)
+    )].sort();
+
+    const cities = [...new Set(
+        venues
+            .map(venue => venue.city)
+            .filter(Boolean)
+    )].sort();
+
+    const stateOptions = states
+        .map(state =>
+            '<option value="' +
+                escapeHtml(state) +
+            '">' +
+                escapeHtml(state) +
+            '</option>'
+        )
+        .join("");
+
+    const cityOptions = cities
+        .map(city =>
+            '<option value="' +
+                escapeHtml(city) +
+            '">' +
+                escapeHtml(city) +
+            '</option>'
+        )
+        .join("");
+
     const venueOptions =
         venues.map(item => {
 
@@ -2884,8 +2999,7 @@ function renderOverallRotation() {
                     'id="song-bank-venue"' +
                     'class="gap-select"' +
                     'onchange="' +
-                        'window.songBankVenue=this.value;' +
-                        'renderSongBank()' +
+                        'openSongBankVenue(this.value)' +
                     '"' +
                 '>' +
 
@@ -2931,9 +3045,1368 @@ function renderOverallRotation() {
         });
 }
 
+
+
+/* ==================================================
+   LOCATION SCOPED SONG BANK
+================================================== */
+
+function distanceMiles(lat1, lon1, lat2, lon2) {
+
+    const toRad = value => value * Math.PI / 180;
+    const R = 3958.8;
+
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+
+    const a =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(toRad(lat1)) *
+        Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) ** 2;
+
+    return R * 2 * Math.atan2(
+        Math.sqrt(a),
+        Math.sqrt(1 - a)
+    );
+}
+
+function getSongBankLocations() {
+
+    const cities = {};
+    const states = {};
+    const venues = {};
+
+    shows.forEach(show => {
+
+        const venue = show.venue;
+        const city = venue?.city;
+
+        if (!venue || !city) return;
+
+        const venueName = venue.name?.trim() || "";
+        const cityName = city.name?.trim() || "";
+        const stateCode = city.stateCode?.trim() || "";
+        const stateName = city.state?.trim() || "";
+
+        const lat = Number(city.coords?.lat);
+        const lon = Number(city.coords?.long);
+
+        if (
+            !cityName ||
+            !Number.isFinite(lat) ||
+            !Number.isFinite(lon)
+        ) {
+            return;
+        }
+
+        const cityKey =
+            cityName + "|" + stateCode;
+
+        if (!cities[cityKey]) {
+            cities[cityKey] = {
+                key: cityKey,
+                name: cityName,
+                state: stateCode,
+                stateFull: stateName,
+                lat: lat,
+                lon: lon,
+                showCount: 0
+            };
+        }
+
+        if (stateCode && !states[stateCode]) {
+            states[stateCode] = {
+                key: stateCode,
+                name: stateName || stateCode,
+                code: stateCode,
+                showCount: 0
+            };
+        }
+
+        cities[cityKey].showCount++;
+
+        if (stateCode) {
+            states[stateCode].showCount++;
+        }
+
+        if (venueName) {
+
+            const venueKey =
+                venueName +
+                "|" +
+                cityName +
+                "|" +
+                stateCode;
+
+            if (!venues[venueKey]) {
+                venues[venueKey] = {
+                    key: venueKey,
+                    name: venueName,
+                    city: cityName,
+                    state: stateCode,
+                    showCount: 0
+                };
+            }
+
+            venues[venueKey].showCount++;
+        }
+    });
+
+    return {
+        cities: Object.values(cities).sort((a, b) =>
+            a.name.localeCompare(b.name) ||
+            a.state.localeCompare(b.state)
+        ),
+
+        states: Object.values(states).sort((a, b) =>
+            a.name.localeCompare(b.name)
+        ),
+
+        venues: Object.values(venues).sort((a, b) =>
+            a.name.localeCompare(b.name) ||
+            a.city.localeCompare(b.city)
+        )
+    };
+}
+
+
+
+function renderOverallSongBankSections() {
+
+    const recentShows = shows;
+    const last5Shows = recentShows.slice(0, 5);
+    const last20Shows = recentShows.slice(0, 20);
+    const shows6to20 = recentShows.slice(5, 20);
+
+    const last5 = new Set();
+
+    last5Shows.forEach(show => {
+        (show.sets?.set || []).forEach(set => {
+            (set.song || []).forEach(song => {
+                if (song.name) last5.add(song.name.trim());
+            });
+        });
+    });
+
+    const last20Counts = {};
+    const fallingOutCounts = {};
+
+    recentShows.slice(0, 20).forEach(show => {
+        (show.sets?.set || []).forEach(set => {
+            (set.song || []).forEach(song => {
+                if (!song.name) return;
+                const name = song.name.trim();
+                last20Counts[name] = (last20Counts[name] || 0) + 1;
+            });
+        });
+    });
+
+    shows6to20.forEach(show => {
+        (show.sets?.set || []).forEach(set => {
+            (set.song || []).forEach(song => {
+                if (!song.name) return;
+                const name = song.name.trim();
+                fallingOutCounts[name] = (fallingOutCounts[name] || 0) + 1;
+            });
+        });
+    });
+
+    function isCover(name) {
+        const song = songs.find(song => song.name === name);
+        return song?.type === "Cover";
+    }
+
+    function splitAndLimit(items) {
+        const originals = [];
+        const covers = [];
+
+        items.forEach(item => {
+            if (isCover(item.name)) {
+                if (covers.length < 5) covers.push(item);
+            } else {
+                if (originals.length < 5) originals.push(item);
+            }
+        });
+
+        return { originals, covers };
+    }
+
+    function rank(items) {
+        return items.sort((a, b) =>
+            b.score - a.score ||
+            a.name.localeCompare(b.name)
+        );
+    }
+
+    const mostPlayedNot5 = splitAndLimit(
+        rank(
+            songs
+                .filter(song =>
+                    song.performances > 0 &&
+                    !last5.has(song.name)
+                )
+                .map(song => ({
+                    name: song.name,
+                    score: song.performances,
+                    meta:
+                        song.performances +
+                        (song.performances === 1
+                            ? " overall play"
+                            : " overall plays")
+                }))
+        )
+    );
+
+    const fallingOut = splitAndLimit(
+        rank(
+            Object.entries(fallingOutCounts)
+                .filter(([name, count]) =>
+                    count >= 2 && !last5.has(name)
+                )
+                .map(([name, count]) => {
+                    const song = songs.find(song => song.name === name);
+
+                    return {
+                        name,
+                        score: count,
+                        meta:
+                            count +
+                            " plays in shows 6–20" +
+                            (song
+                                ? " · " + song.performances + " overall"
+                                : "")
+                    };
+                })
+        )
+    );
+
+    const mostPlayed20 = splitAndLimit(
+        rank(
+            Object.entries(last20Counts)
+                .map(([name, count]) => {
+                    const song = songs.find(song => song.name === name);
+
+                    return {
+                        name,
+                        score: count,
+                        meta:
+                            count +
+                            (count === 1
+                                ? " play in last 20"
+                                : " plays in last 20") +
+                            (song
+                                ? " · " + song.performances + " overall"
+                                : "")
+                    };
+                })
+        )
+    );
+
+    const neglected = splitAndLimit(
+        rank(
+            songs
+                .filter(song =>
+                    song.performances >= 5 &&
+                    song.showsSinceLastPlay > 0 &&
+                    !last5.has(song.name)
+                )
+                .map(song => ({
+                    name: song.name,
+                    score:
+                        song.performances *
+                        song.showsSinceLastPlay,
+                    meta:
+                        song.performances +
+                        " overall plays · " +
+                        song.showsSinceLastPlay +
+                        " show gap"
+                }))
+        )
+    );
+
+    function rows(items) {
+        if (!items.length) {
+            return '<div class="song-bank-empty">None currently qualify</div>';
+        }
+
+        return items.map(item =>
+            '<div class="song-bank-song" data-song-name="' +
+                escapeHtml(item.name) +
+            '">' +
+                '<span>' +
+                    escapeHtml(item.name) +
+                '</span>' +
+                '<small> (' +
+                    escapeHtml(item.meta) +
+                ')</small>' +
+            '</div>'
+        ).join("");
+    }
+
+    function section(title, description, data) {
+        return (
+            '<section class="panel song-bank-panel">' +
+                '<div class="panel-header">' +
+                    '<h2>' + escapeHtml(title) + '</h2>' +
+                    '<p>' + escapeHtml(description) + '</p>' +
+                '</div>' +
+                '<div class="song-bank-columns">' +
+                    '<div class="song-bank-column">' +
+                        '<h3>ORIGINALS</h3>' +
+                        rows(data.originals) +
+                    '</div>' +
+                    '<div class="song-bank-column">' +
+                        '<h3>COVERS</h3>' +
+                        rows(data.covers) +
+                    '</div>' +
+                '</div>' +
+            '</section>'
+        );
+    }
+
+    return (
+        section(
+            "Most Played — Not Played in Last 5 Shows",
+            "Our most-played songs that haven't appeared in the last 5 shows",
+            mostPlayedNot5
+        ) +
+        section(
+            "Recently Falling Out of Rotation",
+            "Songs that were active in shows 6–20 but have disappeared from the last 5",
+            fallingOut
+        ) +
+        section(
+            "Most Played in Last 20 Shows",
+            "The band's current active vocabulary",
+            mostPlayed20
+        ) +
+        section(
+            "Top Songs We've Neglected",
+            "Well-established songs with the strongest combination of play history and current gap",
+            neglected
+        )
+    );
+}
+
+function renderSongBankScopeHome() {
+
+    const locations = getSongBankLocations();
+
+    const venueOptions = locations.venues.map(item =>
+        '<option value="' + escapeHtml(item.key) + '">' +
+        escapeHtml(
+            item.name +
+            " — " +
+            item.city +
+            (item.state ? ", " + item.state : "" + " (" + item.showCount + " shows)")
+        ) +
+        '</option>'
+    ).join("");
+
+    const cityOptions = locations.cities.map(item =>
+        '<option value="' + escapeHtml(item.key) + '">' +
+        escapeHtml(
+            item.name +
+            (item.state ? ", " + item.state : "" + " (" + item.showCount + " shows)")
+        ) +
+        '</option>'
+    ).join("");
+
+    const stateOptions = locations.states.map(item =>
+        '<option value="' + escapeHtml(item.code) + '">' +
+        escapeHtml(item.name) +
+        '</option>'
+    ).join("");
+
+    document.getElementById("app").innerHTML =
+
+        '<section class="panel song-bank-location">' +
+
+            '<div class="panel-header">' +
+                '<h1>SONG BANK</h1>' +
+                '<p>Generate song ideas for a specific venue, city market, or state.</p>' +
+            '</div>' +
+
+            '<div class="song-bank-scope-controls">' +
+
+                '<div class="song-bank-scope-option">' +
+                    '<label>' +
+                        '<input type="radio" name="song-bank-scope" value="venue" checked>' +
+                        ' VENUE' +
+                    '</label>' +
+
+                    '<select id="song-bank-venue" class="gap-select">' +
+                        '<option value="">Select a venue...</option>' +
+                        venueOptions +
+                    '</select>' +
+
+                '</div>' +
+
+                '<div class="song-bank-scope-option">' +
+                    '<label>' +
+                        '<input type="radio" name="song-bank-scope" value="city">' +
+                        ' CITY / 25-MILE MARKET' +
+                    '</label>' +
+
+                    '<select id="song-bank-city" class="gap-select" disabled>' +
+                        '<option value="">Select a city...</option>' +
+                        cityOptions +
+                    '</select>' +
+
+                '</div>' +
+
+                '<div class="song-bank-scope-option">' +
+                    '<label>' +
+                        '<input type="radio" name="song-bank-scope" value="state">' +
+                        ' STATE' +
+                    '</label>' +
+
+                    '<select id="song-bank-state" class="gap-select" disabled>' +
+                        '<option value="">Select a state...</option>' +
+                        stateOptions +
+                    '</select>' +
+
+                '</div>' +
+
+            '</div>' +
+
+            '<div class="song-bank-home-description">' +
+                '<h2>Choose a location</h2>' +
+                '<p>' +
+                    'Venue uses one specific room. City uses a 25-mile radius around the selected city. State uses every show in that state.' +
+                '</p>' +
+            '</div>' +
+
+        '</section>';
+
+    const venueSelect =
+        document.getElementById("song-bank-venue");
+
+    const citySelect =
+        document.getElementById("song-bank-city");
+
+    const stateSelect =
+        document.getElementById("song-bank-state");
+
+    venueSelect.addEventListener("change", function() {
+        if (this.value) {
+            openSongBankScope("venue", this.value);
+        }
+    });
+
+    citySelect.addEventListener("change", function() {
+        if (this.value) {
+            openSongBankScope("city", this.value);
+        }
+    });
+
+    stateSelect.addEventListener("change", function() {
+        if (this.value) {
+            openSongBankScope("state", this.value);
+        }
+    });
+
+    document
+        .querySelectorAll('input[name="song-bank-scope"]')
+        .forEach(radio => {
+
+            radio.addEventListener("change", function() {
+
+                songBankScopeModeChanged(
+                    this.value
+                );
+
+            });
+
+        });
+
+    /* Overall Song Bank lives directly underneath the location selectors */
+    document.getElementById("app").innerHTML +=
+        renderOverallSongBankSections();
+
+    document
+        .querySelectorAll(".song-bank-song[data-song-name]")
+        .forEach(row => {
+            row.addEventListener("click", () => {
+                openSong(row.dataset.songName);
+            });
+        });
+}
+
+function openSongBankScope(type, key, addHistory = true) {
+
+    if (!type || !key) return;
+
+    window.songBankScope = {
+        type: type,
+        key: key
+    };
+
+    if (addHistory) {
+        history.pushState(
+            {
+                type: "songbank-scope",
+                scopeType: type,
+                key: key
+            },
+            ""
+        );
+    }
+
+    renderSongBankScope();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+}
+
+function renderSongBankScope() {
+
+    const scope =
+        window.songBankScope || {
+            type: "venue",
+            key: window.songBankVenue
+        };
+
+    const locations = getSongBankLocations();
+
+    let targetShows = [];
+    let title = "SONG BANK";
+    let subtitle = "";
+    let scopeDescription = "";
+
+    if (scope.type === "venue") {
+
+        const venue =
+            locations.venues.find(
+                item => item.key === scope.key
+            );
+
+        if (!venue) return;
+
+        targetShows = shows.filter(show => {
+
+            const venueName =
+                show.venue?.name?.trim() || "";
+
+            const cityName =
+                show.venue?.city?.name?.trim() || "";
+
+            const stateCode =
+                show.venue?.city?.stateCode?.trim() || "";
+
+            return (
+                venueName +
+                "|" +
+                cityName +
+                "|" +
+                stateCode
+            ) === venue.key;
+        });
+
+        title =
+            "SONG BANK — " +
+            venue.name.toUpperCase();
+
+        subtitle =
+            venue.city +
+            (
+                venue.state
+                    ? ", " + venue.state
+                    : ""
+            );
+
+        scopeDescription =
+            targetShows.length +
+            (
+                targetShows.length === 1
+                    ? " show at this venue"
+                    : " shows at this venue"
+            );
+
+    } else if (scope.type === "city") {
+
+        const city =
+            locations.cities.find(
+                item => item.key === scope.key
+            );
+
+        if (!city) return;
+
+        targetShows = shows.filter(show => {
+
+            const showCity =
+                show.venue?.city;
+
+            const lat =
+                Number(showCity?.coords?.lat);
+
+            const lon =
+                Number(showCity?.coords?.long);
+
+            if (
+                !Number.isFinite(lat) ||
+                !Number.isFinite(lon)
+            ) {
+                return false;
+            }
+
+            return (
+                distanceMiles(
+                    city.lat,
+                    city.lon,
+                    lat,
+                    lon
+                ) <= 25
+            );
+        });
+
+        title =
+            "SONG BANK — " +
+            city.name.toUpperCase() +
+            " AREA";
+
+        subtitle =
+            city.name +
+            (
+                city.state
+                    ? ", " + city.state
+                    : ""
+            );
+
+        scopeDescription =
+            targetShows.length +
+            (
+                targetShows.length === 1
+                    ? " show within 25 miles"
+                    : " shows within 25 miles"
+            );
+
+    } else if (scope.type === "state") {
+
+        const stateCode = scope.key;
+
+        const state =
+            locations.states.find(
+                item => item.code === stateCode
+            );
+
+        targetShows = shows.filter(show =>
+            (
+                show.venue?.city?.stateCode?.trim() || ""
+            ) === stateCode
+        );
+
+        title =
+            "SONG BANK — " +
+            (
+                state?.name ||
+                stateCode
+            ).toUpperCase();
+
+        subtitle = stateCode;
+
+        scopeDescription =
+            targetShows.length +
+            (
+                targetShows.length === 1
+                    ? " show in this state"
+                    : " shows in this state"
+            );
+    }
+
+    if (!targetShows.length) {
+
+        document.getElementById("app").innerHTML =
+            '<section class="panel">' +
+                '<div class="panel-header">' +
+                    '<h1>' +
+                        escapeHtml(title) +
+                    '</h1>' +
+                    '<p>' +
+                        escapeHtml(scopeDescription) +
+                    '</p>' +
+                '</div>' +
+                '<p>No shows currently match this location.</p>' +
+            '</section>';
+
+        return;
+    }
+
+    const targetShowSet =
+        new Set(targetShows);
+
+    const targetSongCounts = {};
+    const targetSongDates = {};
+    const allSongHistory = {};
+
+    shows.forEach(show => {
+
+        const venueName =
+            show.venue?.name?.trim() || "";
+
+        const cityName =
+            show.venue?.city?.name?.trim() || "";
+
+        const stateCode =
+            show.venue?.city?.stateCode?.trim() || "";
+
+        const venueKey =
+            venueName +
+            "|" +
+            cityName +
+            "|" +
+            stateCode;
+
+        const date =
+            parseDate(show.eventDate);
+
+        const uniqueSongs = new Map();
+
+        (show.sets?.set || []).forEach(set => {
+
+            (set.song || []).forEach(song => {
+
+                const name =
+                    song.name?.trim();
+
+                if (!name) return;
+
+                uniqueSongs.set(name, song);
+
+                if (!allSongHistory[name]) {
+                    allSongHistory[name] = [];
+                }
+
+                allSongHistory[name].push({
+                    date: date,
+                    venueKey: venueKey,
+                    show: show,
+                    cover: !!song.cover
+                });
+            });
+        });
+
+        if (targetShowSet.has(show)) {
+
+            uniqueSongs.forEach((song, name) => {
+
+                targetSongCounts[name] =
+                    (targetSongCounts[name] || 0) + 1;
+
+                if (!targetSongDates[name]) {
+                    targetSongDates[name] = [];
+                }
+
+                targetSongDates[name].push(date);
+            });
+        }
+    });
+
+    function isCover(name) {
+
+        return (allSongHistory[name] || [])
+            .some(item => item.cover);
+    }
+
+    function splitAndLimit(list) {
+
+        return {
+            originals: list
+                .filter(item => !isCover(item.name))
+                .slice(0, 5),
+
+            covers: list
+                .filter(item => isCover(item.name))
+                .slice(0, 5)
+        };
+    }
+
+    const alwaysRanked =
+        Object.keys(targetSongCounts)
+            .map(name => ({
+                name: name,
+                count: targetSongCounts[name]
+            }))
+            .sort((a, b) =>
+                b.count - a.count ||
+                a.name.localeCompare(b.name)
+            );
+
+    const regularRanked =
+        songs
+            .filter(song =>
+                song.performances >= 10 &&
+                !targetSongCounts[song.name]
+            )
+            .map(song => ({
+                name: song.name,
+                count: song.performances
+            }))
+            .sort((a, b) =>
+                b.count - a.count ||
+                a.name.localeCompare(b.name)
+            );
+
+    const onceRanked =
+        Object.keys(targetSongCounts)
+            .filter(
+                name => targetSongCounts[name] === 1
+            )
+            .map(name => ({
+                name: name,
+                count:
+                    songs.find(
+                        song => song.name === name
+                    )?.performances || 0
+            }))
+            .sort((a, b) =>
+                b.count - a.count ||
+                a.name.localeCompare(b.name)
+            );
+
+    const overdueRanked =
+        Object.keys(targetSongCounts)
+            .filter(
+                name => targetSongCounts[name] >= 2
+            )
+            .map(name => {
+
+                const dates =
+                    targetSongDates[name]
+                        .slice()
+                        .sort((a, b) => a - b);
+
+                const lastDate =
+                    dates[dates.length - 1];
+
+                const showsSince =
+                    shows.filter(show =>
+                        parseDate(show.eventDate) > lastDate
+                    ).length;
+
+                return {
+                    name: name,
+                    count: targetSongCounts[name],
+                    showsSince: showsSince
+                };
+            })
+            .sort((a, b) =>
+                b.showsSince - a.showsSince ||
+                b.count - a.count ||
+                a.name.localeCompare(b.name)
+            );
+
+    const debuts = {
+        originals: [],
+        covers: []
+    };
+
+    Object.keys(allSongHistory).forEach(name => {
+
+        const history =
+            allSongHistory[name]
+                .slice()
+                .sort((a, b) => a.date - b.date);
+
+        if (!history.length) return;
+
+        const firstAppearance =
+            history[0];
+
+        /*
+         * A debut belongs to the selected scope if
+         * the actual first-ever show containing the song
+         * is one of the target shows.
+         */
+        if (!targetShowSet.has(firstAppearance.show)) {
+            return;
+        }
+
+        const item = {
+            name: name,
+            date: firstAppearance.date
+        };
+
+        if (isCover(name)) {
+            debuts.covers.push(item);
+        } else {
+            debuts.originals.push(item);
+        }
+    });
+
+    debuts.originals.sort((a, b) =>
+        a.date - b.date ||
+        a.name.localeCompare(b.name)
+    );
+
+    debuts.covers.sort((a, b) =>
+        a.date - b.date ||
+        a.name.localeCompare(b.name)
+    );
+
+    renderSongBankScopePage({
+        always: splitAndLimit(alwaysRanked),
+        regular: splitAndLimit(regularRanked),
+        once: splitAndLimit(onceRanked),
+        overdue: splitAndLimit(overdueRanked),
+        debuts: debuts,
+        scope: scope,
+        title: title,
+        subtitle: subtitle,
+        scopeDescription: scopeDescription,
+        targetShowCount: targetShows.length,
+        locations: locations
+    });
+}
+
+function renderSongBankScopePage(data) {
+
+    function songRows(items, type) {
+
+        if (!items.length) {
+            return '<div class="song-bank-empty">None currently qualify</div>';
+        }
+
+        return items.map(item => {
+
+            let meta = "";
+
+            if (type === "always") {
+                meta =
+                    item.count +
+                    (
+                        item.count === 1
+                            ? " play"
+                            : " plays"
+                    );
+            }
+
+            if (type === "regular") {
+                meta =
+                    item.count +
+                    " overall plays";
+            }
+
+            if (type === "overdue") {
+                meta =
+                    item.showsSince +
+                    (
+                        item.showsSince === 1
+                            ? " show ago"
+                            : " shows ago"
+                    );
+            }
+
+            return (
+                '<div class="song-bank-song" data-song-name="' +
+                    escapeHtml(item.name) +
+                '">' +
+                    '<span>' +
+                        escapeHtml(item.name) +
+                    '</span>' +
+                    (
+                        meta
+                            ? '<small> (' +
+                                escapeHtml(meta) +
+                              ')</small>'
+                            : ''
+                    ) +
+                '</div>'
+            );
+
+        }).join("");
+    }
+
+    function section(
+        title,
+        description,
+        sectionData,
+        type
+    ) {
+
+        return (
+            '<section class="panel song-bank-panel">' +
+
+                '<div class="panel-header">' +
+                    '<h2>' +
+                        escapeHtml(title) +
+                    '</h2>' +
+
+                    '<p>' +
+                        escapeHtml(description) +
+                    '</p>' +
+                '</div>' +
+
+                '<div class="song-bank-columns">' +
+
+                    '<div class="song-bank-column">' +
+                        '<h3>ORIGINALS</h3>' +
+                        songRows(
+                            sectionData.originals,
+                            type
+                        ) +
+                    '</div>' +
+
+                    '<div class="song-bank-column">' +
+                        '<h3>COVERS</h3>' +
+                        songRows(
+                            sectionData.covers,
+                            type
+                        ) +
+                    '</div>' +
+
+                '</div>' +
+
+            '</section>'
+        );
+    }
+
+    function debutRows(items) {
+
+        if (!items.length) {
+            return '<div class="song-bank-empty">None</div>';
+        }
+
+        return items.map(item =>
+            '<div class="song-bank-song">' +
+                '<span>' +
+                    escapeHtml(item.name) +
+                '</span>' +
+                '<small>' +
+                    escapeHtml(formatDate(item.date)) +
+                '</small>' +
+            '</div>'
+        ).join("");
+    }
+
+    const locations = data.locations;
+
+    const venueOptions =
+        locations.venues.map(item =>
+            '<option value="' +
+                escapeHtml(item.key) +
+            '">' +
+                escapeHtml(
+                    item.name +
+                    " — " +
+                    item.city +
+                    (
+                        item.state
+                            ? ", " + item.state
+                            : ""
+                    )
+                ) +
+            '</option>'
+        ).join("");
+
+    const cityOptions =
+        locations.cities.map(item =>
+            '<option value="' +
+                escapeHtml(item.key) +
+            '">' +
+                escapeHtml(
+                    item.name +
+                    (
+                        item.state
+                            ? ", " + item.state
+                            : ""
+                    )
+                ) +
+            '</option>'
+        ).join("");
+
+    const stateOptions =
+        locations.states.map(item =>
+            '<option value="' +
+                escapeHtml(item.code) +
+            '">' +
+                escapeHtml(item.name) +
+            '</option>'
+        ).join("");
+
+    const activeType =
+        data.scope.type;
+
+    const controls =
+        '<section class="panel song-bank-location">' +
+
+            '<div class="panel-header">' +
+                '<h1>SONG BANK</h1>' +
+                '<p>Generate song ideas for a specific venue, city market, or state.</p>' +
+            '</div>' +
+
+            '<div class="song-bank-scope-controls">' +
+
+                '<div class="song-bank-scope-option">' +
+                    '<label>' +
+                        '<input type="radio" name="song-bank-scope" value="venue" ' +
+                        (activeType === "venue" ? "checked" : "") +
+                        ' onchange="songBankScopeModeChanged(this.value)">' +
+                        ' VENUE' +
+                    '</label>' +
+
+                    '<select id="song-bank-venue" class="gap-select" ' +
+                        (activeType === "venue" ? "" : "disabled") +
+                        '>' +
+                        '<option value="">Select a venue...</option>' +
+                        venueOptions +
+                    '</select>' +
+
+                '</div>' +
+
+                '<div class="song-bank-scope-option">' +
+                    '<label>' +
+                        '<input type="radio" name="song-bank-scope" value="city" ' +
+                        (activeType === "city" ? "checked" : "") +
+                        ' onchange="songBankScopeModeChanged(this.value)">' +
+                        ' CITY / 25-MILE MARKET' +
+                    '</label>' +
+
+                    '<select id="song-bank-city" class="gap-select" ' +
+                        (activeType === "city" ? "" : "disabled") +
+                        '>' +
+                        '<option value="">Select a city...</option>' +
+                        cityOptions +
+                    '</select>' +
+
+                '</div>' +
+
+                '<div class="song-bank-scope-option">' +
+                    '<label>' +
+                        '<input type="radio" name="song-bank-scope" value="state" ' +
+                        (activeType === "state" ? "checked" : "") +
+                        ' onchange="songBankScopeModeChanged(this.value)">' +
+                        ' STATE' +
+                    '</label>' +
+
+                    '<select id="song-bank-state" class="gap-select" ' +
+                        (activeType === "state" ? "" : "disabled") +
+                        '>' +
+                        '<option value="">Select a state...</option>' +
+                        stateOptions +
+                    '</select>' +
+
+                '</div>' +
+
+            '</div>' +
+
+            '<div class="song-bank-scope-summary">' +
+                '<h1>' +
+                    escapeHtml(data.title) +
+                '</h1>' +
+                '<p>' +
+                    escapeHtml(data.scopeDescription) +
+                    ' · ' +
+                    data.targetShowCount +
+                    (
+                        data.targetShowCount === 1
+                            ? ' show'
+                            : ' shows'
+                    ) +
+                '</p>' +
+            '</div>' +
+
+        '</section>';
+
+    document.getElementById("app").innerHTML =
+
+        controls +
+
+        section(
+            "Songs We Always Play Here",
+            "Top 5 songs in this location",
+            data.always,
+            "always"
+        ) +
+
+        section(
+            "Regular Rotation — Never Played Here",
+            "10+ overall performances · 0 in this location",
+            data.regular,
+            "regular"
+        ) +
+
+        section(
+            "Only Played Here Once",
+            "Exactly one appearance in this location",
+            data.once,
+            "once"
+        ) +
+
+        section(
+            "Overdue Songs We've Played Here",
+            "Played here 2+ times · biggest local gaps",
+            data.overdue,
+            "overdue"
+        ) +
+
+        (
+            '<section class="panel song-bank-panel">' +
+                '<div class="panel-header">' +
+                    '<h2>Songs Debuted Here</h2>' +
+                    '<p>Every song whose first recorded appearance was in this location</p>' +
+                '</div>' +
+
+                '<div class="song-bank-columns">' +
+
+                    '<div class="song-bank-column">' +
+                        '<h3>ORIGINALS</h3>' +
+                        debutRows(data.debuts.originals) +
+                    '</div>' +
+
+                    '<div class="song-bank-column">' +
+                        '<h3>COVERS</h3>' +
+                        debutRows(data.debuts.covers) +
+                    '</div>' +
+
+                '</div>' +
+            '</section>'
+        );
+
+    const venueSelect =
+        document.getElementById("song-bank-venue");
+
+    const citySelect =
+        document.getElementById("song-bank-city");
+
+    const stateSelect =
+        document.getElementById("song-bank-state");
+
+    if (venueSelect) {
+        venueSelect.value =
+            activeType === "venue"
+                ? data.scope.key
+                : "";
+    }
+
+    if (citySelect) {
+        citySelect.value =
+            activeType === "city"
+                ? data.scope.key
+                : "";
+    }
+
+    if (stateSelect) {
+        stateSelect.value =
+            activeType === "state"
+                ? data.scope.key
+                : "";
+    }
+
+    if (venueSelect) {
+        venueSelect.addEventListener(
+            "change",
+            () => {
+                if (venueSelect.value) {
+                    openSongBankScope(
+                        "venue",
+                        venueSelect.value
+                    );
+                }
+            }
+        );
+    }
+
+    if (citySelect) {
+        citySelect.addEventListener(
+            "change",
+            () => {
+                if (citySelect.value) {
+                    openSongBankScope(
+                        "city",
+                        citySelect.value
+                    );
+                }
+            }
+        );
+    }
+
+    if (stateSelect) {
+        stateSelect.addEventListener(
+            "change",
+            () => {
+                if (stateSelect.value) {
+                    openSongBankScope(
+                        "state",
+                        stateSelect.value
+                    );
+                }
+            }
+        );
+    }
+
+    document
+        .querySelectorAll(
+            ".song-bank-song[data-song-name]"
+        )
+        .forEach(row => {
+            row.addEventListener(
+                "click",
+                () => {
+                    openSong(
+                        row.dataset.songName
+                    );
+                }
+            );
+        });
+}
+
+function songBankScopeModeChanged(type) {
+
+    const controls = {
+        venue:
+            document.getElementById(
+                "song-bank-venue"
+            ),
+
+        city:
+            document.getElementById(
+                "song-bank-city"
+            ),
+
+        state:
+            document.getElementById(
+                "song-bank-state"
+            )
+    };
+
+    Object.keys(controls).forEach(key => {
+
+        if (controls[key]) {
+            controls[key].disabled =
+                key !== type;
+        }
+    });
+}
+
 /* ==================================================
    VENUE SONG BANK
 ================================================== */
+
+function openSongBankVenue(key, addHistory = true) {
+
+    window.songBankVenue = key;
+
+    if (addHistory) {
+        history.pushState(
+            {
+                type: "songbank-venue",
+                key
+            },
+            ""
+        );
+    }
+
+    renderSongBank();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+}
 
 function renderSongBank() {
 
@@ -3329,28 +4802,6 @@ function renderSongBankPage(data) {
 
             '</div>' +
 
-        '</section>';
-
-    document.getElementById("app").innerHTML =
-
-        '<section class="panel song-bank-location">' +
-
-            '<div class="panel-header">' +
-                '<h1>SONG BANK</h1>' +
-                '<p>Venue-specific song ideas for the band</p>' +
-            '</div>' +
-
-            '<label for="song-bank-venue">Location</label>' +
-
-            '<select ' +
-                'id="song-bank-venue" ' +
-                'class="gap-select" ' +
-                'onchange="window.songBankVenue=this.value;renderSongBank()"' +
-            '>' +
-
-                options +
-
-            '</select>' +
 
         '</section>' +
 
