@@ -3432,11 +3432,11 @@ function renderSongBankScopeHome() {
 
                 '<div class="song-bank-scope-option">' +
                     '<label>' +
-                        '<input type="radio" name="song-bank-scope" value="venue" checked>' +
+                        '<input type="radio" name="song-bank-scope" value="venue" checked onchange="songBankScopeModeChanged(this.value)">' +
                         ' VENUE' +
                     '</label>' +
 
-                    '<select id="song-bank-venue" class="gap-select">' +
+                    '<select id="song-bank-venue" class="gap-select" onchange="if (this.value) openSongBankScope(\'venue\', this.value)">' +
                         '<option value="">Select a venue...</option>' +
                         venueOptions +
                     '</select>' +
@@ -3445,11 +3445,11 @@ function renderSongBankScopeHome() {
 
                 '<div class="song-bank-scope-option">' +
                     '<label>' +
-                        '<input type="radio" name="song-bank-scope" value="city">' +
+                        '<input type="radio" name="song-bank-scope" value="city" onchange="songBankScopeModeChanged(this.value)">' +
                         ' CITY / 25-MILE MARKET' +
                     '</label>' +
 
-                    '<select id="song-bank-city" class="gap-select" disabled>' +
+                    '<select id="song-bank-city" class="gap-select" disabled onchange="if (this.value) openSongBankScope(\'city\', this.value)">' +
                         '<option value="">Select a city...</option>' +
                         cityOptions +
                     '</select>' +
@@ -3458,11 +3458,11 @@ function renderSongBankScopeHome() {
 
                 '<div class="song-bank-scope-option">' +
                     '<label>' +
-                        '<input type="radio" name="song-bank-scope" value="state">' +
+                        '<input type="radio" name="song-bank-scope" value="state" onchange="songBankScopeModeChanged(this.value)">' +
                         ' STATE' +
                     '</label>' +
 
-                    '<select id="song-bank-state" class="gap-select" disabled>' +
+                    '<select id="song-bank-state" class="gap-select" disabled onchange="if (this.value) openSongBankScope(\'state\', this.value)">' +
                         '<option value="">Select a state...</option>' +
                         stateOptions +
                     '</select>' +
