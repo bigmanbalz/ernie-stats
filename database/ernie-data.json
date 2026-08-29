@@ -1,9 +1,118 @@
 [
   {
+    "id": "3b714868",
+    "versionId": "g230e78c3",
+    "eventDate": "28-08-2026",
+    "lastUpdated": "2026-08-29T08:52:39.183+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "1bd2ad00",
+      "name": "Nietzsche's",
+      "city": {
+        "id": "5110629",
+        "name": "Buffalo",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 42.8864468,
+          "long": -78.8783689
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/nietzsches-buffalo-ny-usa-1bd2ad00.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Rock and Roll Part 2",
+              "cover": {
+                "mbid": "5e05d900-51e0-4dda-81e2-f4c0bd7ed5e6",
+                "name": "Gary Glitter",
+                "sortName": "Glitter, Gary",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/gary-glitter-73d6e2a1.html"
+              },
+              "info": "unfinished [>]"
+            },
+            {
+              "name": "Mighty Great Escape"
+            },
+            {
+              "name": "Dead Man Walking",
+              "info": ">"
+            },
+            {
+              "name": "Deal",
+              "cover": {
+                "mbid": "1ecff755-607d-4130-9a8a-8873f27e5de5",
+                "name": "Jerry Garcia",
+                "sortName": "Garcia, Jerry",
+                "disambiguation": "guitarist / vocalist in Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/jerry-garcia-bd6adce.html"
+              },
+              "info": "w/ Down With Disease jam"
+            },
+            {
+              "name": "Qué Lástima"
+            },
+            {
+              "name": "West L.A. Fadeaway",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Sand",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              }
+            },
+            {
+              "name": "Bubbles",
+              "info": "w/ Roses Are Free & When the Circus Comes teases"
+            },
+            {
+              "name": "Funky Bitch",
+              "cover": {
+                "mbid": "d2728d68-26f6-42b6-a490-ddae85b65d6d",
+                "name": "Son Seals",
+                "sortName": "Seals, Son",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/son-seals-3bd61020.html"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "info": "Buffalo Funk Brigade opened the night.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/nietzsches-buffalo-ny-3b714868.html"
+  },
+  {
     "id": "2b71f466",
-    "versionId": "g6b01ba9a",
+    "versionId": "g30e312f",
     "eventDate": "15-08-2026",
-    "lastUpdated": "2026-08-16T02:59:53.181+0000",
+    "lastUpdated": "2026-08-27T18:13:32.935+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -48,7 +157,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -59,7 +168,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -72,6 +181,9 @@
               "name": "Get Down"
             },
             {
+              "name": "Lonely Star"
+            },
+            {
               "name": "Money Man",
               "info": "->"
             },
@@ -81,7 +193,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover"
@@ -215,7 +327,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -332,7 +444,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -1178,7 +1290,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "w/ Hypnotize teases by John [->]"
@@ -2909,7 +3021,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -2924,7 +3036,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -2935,7 +3047,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -4400,7 +4512,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -5891,7 +6003,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -5902,7 +6014,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -6384,7 +6496,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -6654,7 +6766,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -6728,7 +6840,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -8331,7 +8443,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -8346,7 +8458,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "LTP 2021 [>]"
@@ -8357,7 +8469,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -8375,7 +8487,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover [>]"
@@ -8397,7 +8509,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover [>]"
@@ -8466,7 +8578,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover [>]"
@@ -8488,7 +8600,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover [>]"
@@ -8499,7 +8611,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "Debut Cover"
@@ -8671,7 +8783,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "w/ Batman Theme teases by John [>]"
@@ -8884,7 +8996,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -8895,7 +9007,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -10423,7 +10535,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -13192,7 +13304,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -13588,7 +13700,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "w/ Rappers Delight tease by Rob; Not Fade Away tease by Nick [->]"
@@ -14283,7 +14395,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "w/ Another One Bites the Dust & China Cat teases [->]"
@@ -14919,7 +15031,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -15730,7 +15842,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -15741,7 +15853,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -17382,7 +17494,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               }
             }
@@ -17964,7 +18076,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "->"
@@ -18272,7 +18384,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "verses only [->]"
@@ -18848,7 +18960,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": ">"
@@ -20147,7 +20259,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "(->)"
@@ -20166,7 +20278,7 @@
                 "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
                 "name": "Pink Floyd",
                 "sortName": "Pink Floyd",
-                "disambiguation": "English Rock Band",
+                "disambiguation": "",
                 "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
               },
               "info": "(->)"
