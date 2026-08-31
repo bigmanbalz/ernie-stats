@@ -1,9 +1,103 @@
 [
   {
+    "id": "5b7eb31c",
+    "versionId": "g3b0fb0d8",
+    "eventDate": "29-08-2026",
+    "lastUpdated": "2026-08-31T04:33:53.168+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "43dfa363",
+      "name": "Slidin Dirty",
+      "city": {
+        "id": "5141502",
+        "name": "Troy",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 42.7284117,
+          "long": -73.6917851
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/slidin-dirty-troy-ny-usa-43dfa363.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Also sprach Zarathustra, op. 30",
+              "cover": {
+                "mbid": "4cb43d82-824e-4034-b03d-1a98f36f6e16",
+                "name": "Richard Strauss",
+                "sortName": "Strauss, Richard",
+                "disambiguation": "German composer",
+                "url": "https://www.setlist.fm/setlists/richard-strauss-3d4ddcb.html"
+              },
+              "info": "[->]"
+            },
+            {
+              "name": "Dead Man Walking"
+            },
+            {
+              "name": "Bubbles"
+            },
+            {
+              "name": "Lonely Star"
+            },
+            {
+              "name": "No Rest"
+            },
+            {
+              "name": "Drivin' My Life Away",
+              "cover": {
+                "mbid": "486d04cf-355f-4afb-a694-a895918c45ac",
+                "name": "Eddie Rabbitt",
+                "sortName": "Rabbitt, Eddie",
+                "disambiguation": "US country singer & songwriter",
+                "url": "https://www.setlist.fm/setlists/eddie-rabbitt-5bd6035c.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Summertime",
+              "info": "w/ Mississippi Half-Step Uptown Toodeloo teases and quotes [>]"
+            },
+            {
+              "name": "Rise"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "Glass Pony closed the show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/slidin-dirty-troy-ny-5b7eb31c.html"
+  },
+  {
     "id": "3b714868",
-    "versionId": "g230e78c3",
+    "versionId": "g2b0fb002",
     "eventDate": "28-08-2026",
-    "lastUpdated": "2026-08-29T08:52:39.183+0000",
+    "lastUpdated": "2026-08-31T04:28:21.622+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -50,7 +144,7 @@
             },
             {
               "name": "Dead Man Walking",
-              "info": ">"
+              "info": "w/ Crosseyed & Painless [>]"
             },
             {
               "name": "Deal",
