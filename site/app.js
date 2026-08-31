@@ -103,7 +103,7 @@ async function loadData() {
         const [songsResponse, dataResponse] =
             await Promise.all([
                 fetch(SONGS_URL),
-                fetch(DATA_URL)
+                fetch(DATA_URL + "?v=" + Date.now())
             ]);
 
         if (!songsResponse.ok) {
