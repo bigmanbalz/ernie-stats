@@ -30,13 +30,18 @@ jobs:
           SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
         run: node update-band-stats.js
 
-      - name: Update site database
-        run: cp database/ernie-data.json site/ernie-data.json
+      - name: Build song report
+        run: node build-song-report.js
+
+      - name: Update site data
+        run: |
+          cp database/ernie-data.json site/ernie-data.json
+          cp reports/Songs.csv site/Songs.csv
 
       - name: Check for data changes
         id: changes
         run: |
-          if git diff --quiet -- database/ernie-data.json site/ernie-data.json; then
+          if git diff --quiet -- database/ernie-data.json site/ernie-data.json reports/Songs.csv site/Songs.csv; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -47,6 +52,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add database/ernie-data.json site/ernie-data.json
+          git add database/ernie-data.json site/ernie-data.json reports/Songs.csv site/Songs.csv
           git commit -m "Update live band stats data"
           git push

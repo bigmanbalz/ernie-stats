@@ -1,238 +1,238 @@
 Song,Type,Cover Artist,Total Plays,First Played,First Venue,First City,Last Played,Last Venue,Last City,Shows Played,Shows Since Last Play,Gap Status,Previous Gap,Average Shows Between Plays,Longest Gap,Venues Played,Cities Played
-"Dead Man Walking","Original","",100,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",100,0,"Regular",1,0.3,3,45,32
-"Crescent Sun","Original","",99,"12/31/2022","Beau’s Bar","Greenlawn","07/25/2026","Shorefront Park","Patchogue",99,1,"Regular",0,0.3,4,40,30
-"Beautiful Buzz","Original","",55,"11/25/2023","Industry Lounge & Gallery","Huntington","07/11/2026","Ulster County Fairgrounds","New Paltz",55,3,"Regular",2,0.7,5,30,22
-"No Rest","Original","",54,"04/28/2024","Port Jeff Brewing Company","Port Jefferson","07/11/2026","Ulster County Fairgrounds","New Paltz",54,3,"Regular",1,0.5,3,31,26
-"Money Man","Original","",50,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",50,0,"Regular",2,1.6,8,23,18
-"Get Down","Original","",47,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",47,0,"Regular",1,1.8,7,25,20
-"Crybaby","Original","",40,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",40,2,"Regular",1,2.2,10,25,18
-"Stay Easy","Original","",39,"12/31/2022","Beau’s Bar","Greenlawn","06/27/2026","Arrowhead Ranch","Parksville",39,5,"Regular",3,2.2,10,18,13
-"Shakedown Street","Cover","Grateful Dead",37,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",37,2,"Regular",2,2.5,12,20,15
-"Deal","Cover","Jerry Garcia",35,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","Ulster County Fairgrounds","New Paltz",35,3,"Regular",1,2.7,7,20,16
-"Sand","Cover","Phish",35,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",35,2,"Regular",9,2.7,9,18,17
-"Feel Free","Original","",33,"04/20/2023","Blue Point Brewery","Patchogue","07/25/2026","Shorefront Park","Patchogue",33,1,"Regular",4,2.7,7,18,13
-"Jam","Original","",33,"04/01/2023","Beau’s Bar","Greenlawn","06/27/2026","Arrowhead Ranch","Parksville",33,5,"Regular",7,2.6,14,17,14
-"Rise","Original","",32,"04/12/2023","Blue Point Brewery","Patchogue","05/23/2026","Pat Cav's Backyard","Sayville",32,7,"Regular",11,2.6,19,19,13
-"Funky Bitch","Cover","Son Seals",29,"01/27/2023","Blue Point Brewery","Patchogue","04/09/2026","89 North","Patchogue",29,12,"Regular",10,3.1,10,14,11
-"China Cat Sunflower","Cover","Grateful Dead",28,"12/31/2022","Beau’s Bar","Greenlawn","06/27/2026","Arrowhead Ranch","Parksville",28,5,"Regular",3,3.6,11,15,13
-"Crosseyed and Painless","Cover","Talking Heads",28,"04/01/2023","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",28,2,"Regular",4,3.4,13,14,12
-"Gotta Jibboo","Cover","Phish",28,"03/10/2023","Industry Lounge & Gallery","Huntington","03/27/2026","Zapp Factory","Philadelphia",28,13,"Regular",10,3.1,12,18,14
-"You and Me","Original","",28,"06/28/2025","Arrowhead Ranch","Parksville","07/25/2026","Shorefront Park","Patchogue",27,1,"Regular",0,0.6,3,17,13
-"Fire on the Mountain","Cover","Grateful Dead",26,"12/31/2022","Beau’s Bar","Greenlawn","01/03/2026","Port Jeff Brewing Company","Port Jefferson",26,21,"Regular",4,3.3,12,15,13
-"Not Fade Away","Cover","The Crickets",26,"01/27/2023","Blue Point Brewery","Patchogue","07/11/2026","Ulster County Fairgrounds","New Paltz",26,3,"Regular",0,3.9,18,15,12
-"Summertime","Original","",24,"03/29/2023","Blue Point Brewery","Patchogue","08/15/2026","Hallockville","Riverhead",24,0,"Regular",0,4.3,24,17,15
-"Bubbles","Original","",23,"10/20/2023","89 North","Patchogue","05/23/2026","Pat Cav's Backyard","Sayville",23,7,"Regular",4,3.3,14,15,13
-"Franklin's Tower","Cover","Grateful Dead",23,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",23,2,"Regular",3,4.7,12,15,13
-"First Tube","Cover","Phish",20,"12/31/2022","Beau’s Bar","Greenlawn","09/29/2025","89 North","Patchogue",20,28,"Bust Out",0,4.3,26,12,9
-"Scarlet Begonias","Cover","Grateful Dead",20,"04/12/2023","Blue Point Brewery","Patchogue","09/29/2025","89 North","Patchogue",20,28,"Bust Out",4,3.8,12,14,12
-"That's What Love Will Make You Do","Cover","Little Milton",19,"03/29/2023","Blue Point Brewery","Patchogue","04/09/2026","89 North","Patchogue",19,12,"Regular",8,5.1,15,12,11
-"West L.A. Fadeaway","Cover","Grateful Dead",17,"09/15/2023","Blue Point Brewery","Patchogue","04/09/2026","89 North","Patchogue",17,12,"Regular",6,4.8,18,10,9
-"Bertha","Cover","Grateful Dead",16,"03/29/2023","Blue Point Brewery","Patchogue","08/29/2025","Blue Point Brewery","Patchogue",16,31,"Bust Out",1,5.1,16,7,5
-"Heighty Hi","Cover","Lee Michaels",16,"01/15/2023","The Warehouse","Amityville","10/21/2025","Blue Point Brewery","Patchogue",16,26,"Bust Out",12,5.7,12,9,8
-"Tangled Up in Blue","Cover","Bob Dylan",16,"01/27/2023","Blue Point Brewery","Patchogue","09/29/2025","89 North","Patchogue",16,28,"Bust Out",1,5.5,24,13,12
-"Harvest Moon","Cover","Neil Young",15,"12/31/2022","Beau’s Bar","Greenlawn","01/18/2026","89 North","Patchogue",15,18,"Regular",9,6.9,16,9,8
-"Jack Straw","Cover","Grateful Dead",15,"01/27/2023","Blue Point Brewery","Patchogue","03/02/2026","89 North","Patchogue",15,15,"Regular",7,6.9,16,6,4
-"Long Train Runnin'","Cover","The Doobie Brothers",15,"05/20/2023","Blue Point Brewery","Patchogue","04/19/2026","The Warehouse","Amityville",15,10,"Regular",10,6.6,26,12,10
-"Promontory Rider","Cover","Robert Hunter",15,"01/15/2023","The Warehouse","Amityville","05/23/2026","Pat Cav's Backyard","Sayville",15,7,"Regular",0,7.6,26,8,7
-"Drums","Original","",14,"04/12/2023","Blue Point Brewery","Patchogue","07/11/2026","The Lemon Squeeze","New Paltz",14,2,"Regular",6,8,29,7,6
-"The Shape I'm In","Cover","The Band",14,"12/31/2022","Beau’s Bar","Greenlawn","04/09/2026","89 North","Patchogue",14,12,"Regular",33,7.9,33,9,7
-"Who's Ernie?","Original","",14,"01/27/2023","Blue Point Brewery","Patchogue","08/14/2025","Downtown","Patchogue",14,32,"Bust Out",9,6.2,17,10,8
-"Young Lust","Cover","Pink Floyd",14,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",14,2,"Regular",22,8.7,22,10,10
-"Everybody","Original","",13,"04/28/2024","Port Jeff Brewing Company","Port Jefferson","08/14/2025","Downtown","Patchogue",13,32,"Bust Out",10,3.4,10,9,6
-"I Know You Rider","Cover","[traditional]",13,"12/31/2022","Beau’s Bar","Greenlawn","03/02/2026","89 North","Patchogue",13,15,"Regular",14,8.4,31,6,5
-"Mountain Jam","Cover","The Allman Brothers Band",13,"12/31/2022","Beau’s Bar","Greenlawn","06/29/2025","Arrowhead Ranch","Parksville",13,41,"Bust Out",27,6.3,27,10,9
-"Qué Lástima","Original","",13,"07/19/2025","Blue Point Brewery","Patchogue","07/25/2026","Shorefront Park","Patchogue",13,1,"Regular",5,2.1,6,8,6
-"A Thousand Faces","Original","",12,"12/27/2023","Sayville Theater","Sayville","05/23/2026","Pat Cav's Backyard","Sayville",12,7,"Regular",37,6.9,37,9,7
-"Also sprach Zarathustra, op. 30","Cover","Richard Strauss",12,"03/10/2023","Industry Lounge & Gallery","Huntington","07/11/2026","The Lemon Squeeze","New Paltz",12,2,"Regular",5,10.1,25,10,8
-"Happy Birthday","Original","",12,"04/01/2023","Beau’s Bar","Greenlawn","01/18/2026","89 North","Patchogue",12,18,"Regular",16,8.4,17,6,5
-"You Sexy Thing","Cover","Hot Chocolate",12,"11/25/2023","Industry Lounge & Gallery","Huntington","02/27/2026","People's Pub","Bayport",12,16,"Regular",8,6.4,14,8,6
-"Every 1's a Winner","Cover","Hot Chocolate",11,"01/27/2024","Blue Point Brewery","Patchogue","03/13/2026","Blue Point Brewery","Patchogue",11,14,"Regular",2,6.8,26,8,7
-"Uncle Rob","Original","",11,"12/01/2023","Blue Point Brewery","Patchogue","02/13/2026","Blue Point Brewery","Patchogue",11,17,"Regular",9,6.9,26,6,6
-"Angel From Montgomery","Cover","John Prine",10,"01/27/2023","Blue Point Brewery","Patchogue","04/10/2026","Blue Point Brewery","Patchogue",10,11,"Regular",3,11.8,29,6,5
-"Breathe (In the Air)","Cover","Pink Floyd",10,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",10,0,"Regular",19,13.2,40,9,9
-"Champagne Supernova","Cover","Oasis",10,"03/29/2023","Blue Point Brewery","Patchogue","07/11/2026","The Lemon Squeeze","New Paltz",10,2,"Regular",20,12.3,24,3,2
-"Lonely Star","Original","",10,"12/31/2024","Blue Point Brewery","Patchogue","05/23/2026","Pat Cav's Backyard","Sayville",10,7,"Regular",1,4.2,9,4,3
-"Meatstick","Cover","Phish",10,"01/15/2023","The Warehouse","Amityville","06/28/2026","Arrowhead Ranch","Parksville",10,4,"Regular",13,12.7,21,6,4
-"Midnight Rider","Cover","The Allman Brothers Band",10,"03/29/2023","Blue Point Brewery","Patchogue","06/29/2025","Arrowhead Ranch","Parksville",10,41,"Bust Out",47,8,47,6,5
-"Say It to Me S.A.N.T.O.S.","Cover","Phish",10,"05/10/2024","Industry Lounge & Gallery","Huntington","07/11/2026","The Lemon Squeeze","New Paltz",10,2,"Regular",15,7.9,15,9,8
-"Statesboro Blues","Cover","Blind Willie McTell",10,"12/31/2022","Beau’s Bar","Greenlawn","02/13/2026","Blue Point Brewery","Patchogue",10,17,"Regular",14,11.3,24,8,8
-"Drivin' My Life Away","Cover","Eddie Rabbitt",9,"01/27/2023","Blue Point Brewery","Patchogue","04/10/2026","Blue Point Brewery","Patchogue",9,11,"Regular",16,13.4,24,7,6
-"I Shall Be Released","Cover","Bob Dylan",9,"03/29/2023","Blue Point Brewery","Patchogue","01/18/2026","89 North","Patchogue",9,18,"Regular",13,12,35,6,4
-"Into the Mystic","Cover","Van Morrison",9,"01/27/2023","Blue Point Brewery","Patchogue","06/28/2026","Arrowhead Ranch","Parksville",9,4,"Regular",21,14.3,44,4,3
-"Possum","Cover","Phish",9,"12/31/2022","Beau’s Bar","Greenlawn","03/13/2026","Blue Point Brewery","Patchogue",9,14,"Regular",27,13.3,27,4,2
-"Morning Dew","Cover","Bonnie Dobson",8,"04/01/2023","Beau’s Bar","Greenlawn","02/13/2026","Blue Point Brewery","Patchogue",8,17,"Regular",6,13.9,45,4,3
-"Soulshine","Cover","The Allman Brothers Band",8,"03/29/2023","Blue Point Brewery","Patchogue","07/20/2025","Blue Point Brewery","Patchogue",8,37,"Bust Out",2,11.1,27,3,3
-"Can't You See","Cover","The Marshall Tucker Band",7,"03/04/2023","Southernside Brewing Co.","Greenville","11/08/2025","Black Oak Tavern","Oneonta",7,25,"Bust Out",27,15.7,35,5,4
-"Character Zero","Cover","Phish",7,"11/25/2023","Industry Lounge & Gallery","Huntington","01/10/2026","Blue Point Brewery","Patchogue",7,20,"Regular",23,11.8,23,5,4
-"Day By Day","Original","",7,"08/29/2025","Blue Point Brewery","Patchogue","06/27/2026","Arrowhead Ranch","Parksville",7,5,"Regular",2,3.3,7,4,3
-"Down With Disease jam","Original","",7,"09/15/2023","Blue Point Brewery","Patchogue","01/16/2026","Hubbards Cupboard","Port Chester",7,19,"Regular",7,13.3,48,6,5
-"Going Down the Road Feeling Bad","Cover","[traditional]",7,"01/27/2023","Blue Point Brewery","Patchogue","08/26/2024","89 North","Patchogue",7,68,"Monster Gap",29,8.7,29,5,3
-"I Ain't Living Long Like This","Cover","Rodney Crowell",7,"04/12/2023","Blue Point Brewery","Patchogue","08/29/2025","Blue Point Brewery","Patchogue",7,31,"Bust Out",9,13.7,29,3,3
-"Mighty Great Escape","Original","",7,"02/13/2026","Blue Point Brewery","Patchogue","07/11/2026","The Lemon Squeeze","New Paltz",7,2,"Regular",2,1.5,3,5,4
-"Mighty High","Cover","Mighty Clouds of Joy",7,"08/14/2023","89 North","Patchogue","10/21/2025","Blue Point Brewery","Patchogue",7,26,"Bust Out",8,12.5,62,4,1
-"On The Run jam","Original","",7,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",7,0,"Regular",25,20.3,43,6,6
-"Pluto","Original","",7,"01/10/2026","Blue Point Brewery","Patchogue","07/11/2026","The Lemon Squeeze","New Paltz",7,2,"Regular",3,2,5,5,4
-"Weekapaug Groove","Cover","Phish",7,"08/10/2023","Birdies","Patchogue","02/27/2026","People's Pub","Bayport",7,16,"Regular",32,14.3,32,6,3
-"Breathe (Reprise)","Cover","Pink Floyd",6,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","08/15/2026","Hallockville","Riverhead",6,0,"Regular",20,19.6,40,6,6
-"Higher","Original","",6,"05/17/2025","Blue Point Brewery","Patchogue","12/27/2025","Sayville Theater","Sayville",6,22,"Regular",5,3.8,7,4,3
-"I'm the Man Who Loves You","Cover","Wilco",6,"01/27/2024","Blue Point Brewery","Patchogue","06/27/2024","Stella Blues","New Haven",6,76,"Monster Gap",1,2.2,4,5,5
-"Immigrant Song","Cover","Led Zeppelin",6,"10/28/2023","Beau’s Bar","Greenlawn","06/27/2026","Arrowhead Ranch","Parksville",6,5,"Regular",4,18,44,6,5
-"No Stone","Original","",6,"08/29/2025","Blue Point Brewery","Patchogue","02/27/2026","People's Pub","Bayport",6,16,"Regular",0,2,5,5,5
-"Sugaree","Cover","Jerry Garcia",6,"04/05/2023","Blue Point Brewery","Patchogue","12/13/2023","Blue Point Brewery","Patchogue",6,95,"Monster Gap",8,4,10,3,2
-"Why Does Love Got to Be So Sad?","Cover","Derek and the Dominos",6,"05/17/2024","People's Pub","Bayport","03/13/2026","Blue Point Brewery","Patchogue",6,14,"Regular",25,12.4,25,5,5
-"Big Railroad Blues","Cover","Cannon’s Jug Stompers",5,"11/25/2023","Industry Lounge & Gallery","Huntington","08/01/2025","Stella Blues","New Haven",5,36,"Bust Out",16,14.3,26,5,5
-"California Stars","Cover","Billy Bragg & Wilco",5,"04/05/2023","Blue Point Brewery","Patchogue","07/20/2025","Blue Point Brewery","Patchogue",5,37,"Bust Out",44,19.8,44,1,1
-"Goin' the Wrong Way","Original","",5,"12/31/2022","Beau’s Bar","Greenlawn","04/10/2026","Blue Point Brewery","Patchogue",5,11,"Regular",63,28.3,63,4,3
-"Heavy Metal Drummer","Cover","Wilco",5,"11/25/2023","Industry Lounge & Gallery","Huntington","03/09/2024","Blue Point Brewery","Patchogue",5,87,"Monster Gap",2,1.5,4,2,2
-"One Way Out","Cover","Sonny Boy Williamson",5,"07/26/2023","The Mann Center Parking Lot","Philadelphia","04/09/2026","89 North","Patchogue",5,12,"Regular",19,23.5,31,5,4
-"Access Me","Cover","Phish",4,"02/27/2026","People's Pub","Bayport","06/27/2026","Arrowhead Ranch","Parksville",4,5,"Regular",1,2.7,5,4,4
-"Carini","Cover","Phish",4,"05/20/2023","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",4,60,"Monster Gap",21,17.7,21,2,2
-"Get Lucky","Cover","Daft Punk",4,"05/20/2023","Blue Point Brewery","Patchogue","06/03/2025","Blue Point Brewery","Patchogue",4,44,"Bust Out",20,23,45,3,3
-"Hey Old Lady","Original","",4,"01/10/2026","Blue Point Brewery","Patchogue","06/28/2026","Arrowhead Ranch","Parksville",4,4,"Regular",7,4.3,7,3,3
-"Hold Me Close","Original","",4,"10/20/2023","89 North","Patchogue","02/18/2024","89 North","Patchogue",4,89,"Monster Gap",1,3.3,7,3,2
-"Peggy-O","Cover","[traditional]",4,"06/05/2023","89 North","Patchogue","02/17/2025","Funk 'n Waffles","Syracuse",4,51,"Monster Gap",1,20.3,44,3,3
-"Stay Easy House Remix","Original","",4,"02/27/2026","People's Pub","Bayport","06/27/2026","Arrowhead Ranch","Parksville",4,5,"Regular",5,2.7,5,3,3
-"The Harder They Come","Cover","Jimmy Cliff",4,"04/12/2023","Blue Point Brewery","Patchogue","01/16/2026","Hubbards Cupboard","Port Chester",4,19,"Regular",5,32.3,89,3,3
-"Whole Lotta Love","Cover","Led Zeppelin",4,"03/10/2023","Industry Lounge & Gallery","Huntington","01/18/2025","Mr. Beery's","Bethpage",4,53,"Monster Gap",28,22.7,34,4,3
-"Aisle 8","Original","",3,"12/27/2023","Sayville Theater","Sayville","02/29/2024","Birdies","Patchogue",3,88,"Monster Gap",2,2,2,3,3
-"Better Days","Original","",3,"12/27/2023","Sayville Theater","Sayville","05/17/2024","People's Pub","Bayport",3,81,"Monster Gap",4,5.5,7,3,3
-"Breakdown","Cover","Tom Petty and the Heartbreakers",3,"06/10/2023","Blue Point Brewery","Patchogue","03/28/2025","Beau’s Bar","Greenlawn",3,48,"Bust Out",17,32,47,2,2
-"CHICO","Original","",3,"05/08/2026","Blue Point Brewery","Patchogue","07/11/2026","The Lemon Squeeze","New Paltz",3,2,"Regular",2,2,2,3,3
-"Down With Disease","Cover","Phish",3,"02/29/2024","Birdies","Patchogue","08/24/2024","Beau’s Bar","Greenlawn",3,69,"Monster Gap",11,8.5,11,3,3
-"First Tube jam","Original","",3,"10/22/2023","Jamesport Farm Brewery","Riverhead","05/26/2024","Pat Cav's Backyard","Sayville",3,80,"Monster Gap",2,9.5,17,3,3
-"Franklin'd Up In Blue","Original","",3,"06/05/2023","89 North","Patchogue","06/18/2025","Port Jeff Brewing Company","Port Jefferson",3,43,"Bust Out",59,35,59,3,3
-"Goodbye Horses","Cover","Q Lazzarus",3,"03/09/2024","Blue Point Brewery","Patchogue","10/31/2024","Sayville Theater","Sayville",3,59,"Monster Gap",5,13,21,3,3
-"I Shot the Sheriff","Cover","The Wailers",3,"05/20/2023","Blue Point Brewery","Patchogue","06/29/2025","Arrowhead Ranch","Parksville",3,41,"Bust Out",17,36.5,56,3,2
-"If You're Ernie & You Know It","Original","",3,"03/11/2023","89 North","Patchogue","08/24/2024","Beau’s Bar","Greenlawn",3,69,"Monster Gap",28,26,28,3,3
-"My Own Worst Enemy","Cover","Lit",3,"09/15/2023","Blue Point Brewery","Patchogue","02/22/2025","Alfie's Wild Ride","Stowe",3,49,"Bust Out",50,27,50,2,2
-"Roadhouse Blues","Cover","The Doors",3,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","01/18/2025","Mr. Beery's","Bethpage",3,53,"Monster Gap",4,24,44,3,3
-"Runaway","Original","",3,"01/27/2024","Blue Point Brewery","Patchogue","04/09/2026","89 North","Patchogue",3,12,"Regular",2,39,76,2,1
-"Turn On Your Love Light","Cover","Bobby “Blue” Bland",3,"03/29/2023","Blue Point Brewery","Patchogue","02/13/2026","Blue Point Brewery","Patchogue",3,17,"Regular",4,51.5,99,2,1
-"Uncle Rob (Reprise)","Original","",3,"12/01/2023","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",3,92,"Monster Gap",1,1,1,2,2
-"Voodoo Child","Cover","The Jimi Hendrix Experience",3,"10/28/2023","Beau’s Bar","Greenlawn","08/08/2025","Black Oak Tavern","Oneonta",3,34,"Bust Out",51,32,51,2,2
-"Whipping Post","Cover","The Allman Brothers Band",3,"08/10/2023","Birdies","Patchogue","10/28/2023","Beau’s Bar","Greenlawn",3,100,"Monster Gap",5,3,5,3,2
-"Wolfman's Brother","Cover","Phish",3,"03/10/2023","Industry Lounge & Gallery","Huntington","04/05/2023","Blue Point Brewery","Patchogue",3,120,"Monster Gap",1,1,1,2,2
-"(A Swingin') Thank You To Brian","Original","",2,"04/05/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",2,119,"Monster Gap",0,0,0,1,1
-"Don't Let Me Down","Cover","The Beatles",2,"04/12/2023","Blue Point Brewery","Patchogue","04/16/2025","Blue Point Brewery","Patchogue",2,47,"Bust Out",0,71,71,1,1
-"Down With Disease ending","Original","",2,"01/13/2024","Stella Blues","New Haven","06/27/2024","Stella Blues","New Haven",2,76,"Monster Gap",0,16,16,1,1
-"Drums/Space","Original","",2,"10/31/2024","Sayville Theater","Sayville","08/14/2025","Downtown","Patchogue",2,32,"Bust Out",0,26,26,2,2
-"Fire","Original","",2,"01/27/2024","Blue Point Brewery","Patchogue","06/29/2025","Arrowhead Ranch","Parksville",2,41,"Bust Out",0,50,50,2,2
-"Free Fallin'","Cover","Tom Petty",2,"04/05/2023","Blue Point Brewery","Patchogue","01/18/2026","89 North","Patchogue",2,18,"Regular",0,101,101,2,1
-"Harry Hood jam","Original","",2,"04/01/2023","Beau’s Bar","Greenlawn","11/22/2023","Bobbique","Patchogue",2,98,"Monster Gap",0,22,22,2,2
-"He's Gone","Cover","Grateful Dead",2,"08/14/2023","89 North","Patchogue","07/18/2025","Blue Point Brewery","Patchogue",2,39,"Bust Out",0,67,67,2,1
-"Lil' Did He Know","Original","",2,"10/08/2025","The Warehouse","Amityville","12/27/2025","Sayville Theater","Sayville",2,22,"Regular",0,4,4,2,2
-"Minglewood Blues","Cover","Cannon’s Jug Stompers",2,"08/14/2023","89 North","Patchogue","01/10/2026","Blue Point Brewery","Patchogue",2,20,"Regular",0,86,86,2,1
-"No One to Run With","Cover","The Allman Brothers Band",2,"08/14/2023","89 North","Patchogue","10/22/2023","Jamesport Farm Brewery","Riverhead",2,101,"Monster Gap",0,5,5,2,2
-"Paranoid","Cover","Black Sabbath",2,"09/15/2023","Blue Point Brewery","Patchogue","07/19/2025","Blue Point Brewery","Patchogue",2,38,"Bust Out",0,66,66,1,1
-"Sunshine Daydream jam","Original","",2,"03/28/2025","Beau’s Bar","Greenlawn","10/08/2025","The Warehouse","Amityville",2,27,"Bust Out",0,20,20,2,2
-"Tea Time with Brady","Original","",2,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","08/02/2025","Ophelia's","Albany",2,35,"Bust Out",0,67,67,2,2
-"The Howling","Cover","Phish",2,"02/29/2024","Birdies","Patchogue","01/18/2025","Mr. Beery's","Bethpage",2,53,"Monster Gap",0,34,34,2,2
-"The Other One jam","Original","",2,"12/01/2023","Blue Point Brewery","Patchogue","02/29/2024","Birdies","Patchogue",2,88,"Monster Gap",0,7,7,2,1
-"Thrill Is Gone","Cover","B.B. King",2,"06/27/2024","Stella Blues","New Haven","04/09/2026","89 North","Patchogue",2,12,"Regular",0,63,63,2,2
-"Time","Cover","Pink Floyd",2,"10/31/2024","Sayville Theater","Sayville","11/26/2025","The Warehouse","Amityville",2,23,"Regular",0,35,35,2,2
-"Wilson intro","Original","",2,"05/20/2023","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",2,92,"Monster Gap",0,23,23,1,1
-"You Sexy Thing (Reprise)","Original","",2,"11/25/2023","Industry Lounge & Gallery","Huntington","02/29/2024","Birdies","Patchogue",2,88,"Monster Gap",0,8,8,2,2
-"""Heroes""","Cover","David Bowie",1,"11/30/2024","Industry Lounge & Gallery","Huntington","11/30/2024","Industry Lounge & Gallery","Huntington",1,57,"Monster Gap",0,0,0,1,1
-"(A Swingin') Birthday Announcment","Original","",1,"01/27/2024","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",1,92,"Monster Gap",0,0,0,1,1
-"(Stella Break)","Original","",1,"05/04/2024","Thatch Meadow Farm","Saint James","05/04/2024","Thatch Meadow Farm","Saint James",1,84,"Monster Gap",0,0,0,1,1
-"46 Days","Cover","Phish",1,"03/13/2026","Blue Point Brewery","Patchogue","03/13/2026","Blue Point Brewery","Patchogue",1,14,"Regular",0,0,0,1,1
-"A Pirate Looks at Forty","Cover","Jimmy Buffett",1,"02/29/2024","Birdies","Patchogue","02/29/2024","Birdies","Patchogue",1,88,"Monster Gap",0,0,0,1,1
-"All Night Long (All Night)","Cover","Lionel Richie",1,"12/13/2023","Blue Point Brewery","Patchogue","12/13/2023","Blue Point Brewery","Patchogue",1,95,"Monster Gap",0,0,0,1,1
-"American Girl jam","Original","",1,"07/11/2026","The Lemon Squeeze","New Paltz","07/11/2026","The Lemon Squeeze","New Paltz",1,2,"Regular",0,0,0,1,1
-"Another Brick in the Wall, Part 1","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,59,"Monster Gap",0,0,0,1,1
-"Another Brick in the Wall, Part 2","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,59,"Monster Gap",0,0,0,1,1
-"Another Brick in the Wall, Part 3","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,59,"Monster Gap",0,0,0,1,1
-"Another Jam","Original","",1,"09/06/2024","89 North","Patchogue","09/06/2024","89 North","Patchogue",1,65,"Monster Gap",0,0,0,1,1
-"Another One Bites the Dust","Cover","Queen",1,"10/22/2024","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",1,60,"Monster Gap",0,0,0,1,1
-"Aunt Rachel","Original","",1,"01/27/2024","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",1,92,"Monster Gap",0,0,0,1,1
-"Back on the Train","Cover","Phish",1,"09/07/2024","H.O.G. Farm","Brookhaven","09/07/2024","H.O.G. Farm","Brookhaven",1,64,"Monster Gap",0,0,0,1,1
-"Backwards Down the Number Line","Cover","Phish",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,122,"Monster Gap",0,0,0,1,1
-"Bathtub Gin","Cover","Phish",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,8,"Regular",0,0,0,1,1
-"Blaze On","Cover","Phish",1,"08/30/2024","Blue Point Brewery","Patchogue","08/30/2024","Blue Point Brewery","Patchogue",1,67,"Monster Gap",0,0,0,1,1
-"Blister in the Sun","Cover","Violent Femmes",1,"05/20/2023","Blue Point Brewery","Patchogue","05/20/2023","Blue Point Brewery","Patchogue",1,116,"Monster Gap",0,0,0,1,1
-"Bongos Tuning","Original","",1,"09/29/2025","89 North","Patchogue","09/29/2025","89 North","Patchogue",1,28,"Bust Out",0,0,0,1,1
-"Brain Damage","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,59,"Monster Gap",0,0,0,1,1
-"Break Stuff","Cover","Limp Bizkit",1,"05/17/2025","Blue Point Brewery","Patchogue","05/17/2025","Blue Point Brewery","Patchogue",1,46,"Bust Out",0,0,0,1,1
-"Cayman Review","Cover","Trey Anastasio",1,"05/20/2023","Blue Point Brewery","Patchogue","05/20/2023","Blue Point Brewery","Patchogue",1,116,"Monster Gap",0,0,0,1,1
-"Cha Cha Slide","Cover","DJ Casper",1,"05/17/2024","People's Pub","Bayport","05/17/2024","People's Pub","Bayport",1,81,"Monster Gap",0,0,0,1,1
-"Cocaine","Cover","J.J. Cale",1,"02/29/2024","Birdies","Patchogue","02/29/2024","Birdies","Patchogue",1,88,"Monster Gap",0,0,0,1,1
-"Colorado Town","Original","",1,"06/27/2026","Arrowhead Ranch","Parksville","06/27/2026","Arrowhead Ranch","Parksville",1,5,"Regular",0,0,0,1,1
-"Come Together","Cover","The Beatles",1,"01/18/2025","Mr. Beery's","Bethpage","01/18/2025","Mr. Beery's","Bethpage",1,53,"Monster Gap",0,0,0,1,1
-"Comfortably Numb","Cover","Pink Floyd",1,"08/15/2026","Hallockville","Riverhead","08/15/2026","Hallockville","Riverhead",1,0,"Regular",0,0,0,1,1
-"Cortez the Killer","Cover","Neil Young & Crazy Horse",1,"02/13/2026","Blue Point Brewery","Patchogue","02/13/2026","Blue Point Brewery","Patchogue",1,17,"Regular",0,0,0,1,1
-"Cracklin' Rosie","Original","",1,"06/03/2025","Blue Point Brewery","Patchogue","06/03/2025","Blue Point Brewery","Patchogue",1,44,"Bust Out",0,0,0,1,1
-"Dark Star jam","Original","",1,"02/13/2026","Blue Point Brewery","Patchogue","02/13/2026","Blue Point Brewery","Patchogue",1,17,"Regular",0,0,0,1,1
-"Dreams jam","Original","",1,"11/25/2023","Industry Lounge & Gallery","Huntington","11/25/2023","Industry Lounge & Gallery","Huntington",1,97,"Monster Gap",0,0,0,1,1
-"Drift While You're Sleeping ending","Original","",1,"03/09/2024","Blue Point Brewery","Patchogue","03/09/2024","Blue Point Brewery","Patchogue",1,87,"Monster Gap",0,0,0,1,1
-"Eclipse","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,59,"Monster Gap",0,0,0,1,1
-"Eminence Front","Cover","The Who",1,"12/27/2023","Sayville Theater","Sayville","12/27/2023","Sayville Theater","Sayville",1,94,"Monster Gap",0,0,0,1,1
-"Exodus","Cover","Bob Marley & The Wailers",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,8,"Regular",0,0,0,1,1
-"Farmhouse","Cover","Phish",1,"09/07/2024","H.O.G. Farm","Brookhaven","09/07/2024","H.O.G. Farm","Brookhaven",1,64,"Monster Gap",0,0,0,1,1
-"Fearless","Cover","Pink Floyd",1,"04/12/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",1,119,"Monster Gap",0,0,0,1,1
-"Feel Free Reprise","Original","",1,"12/27/2025","Sayville Theater","Sayville","12/27/2025","Sayville Theater","Sayville",1,22,"Regular",0,0,0,1,1
-"Find the Cost of Freedom","Cover","Crosby, Stills, Nash & Young",1,"02/27/2026","People's Pub","Bayport","02/27/2026","People's Pub","Bayport",1,16,"Regular",0,0,0,1,1
-"Get Down Reprise","Original","",1,"12/31/2022","Beau’s Bar","Greenlawn","12/31/2022","Beau’s Bar","Greenlawn",1,128,"Monster Gap",0,0,0,1,1
-"Going Up the Country","Cover","Canned Heat",1,"06/27/2024","Stella Blues","New Haven","06/27/2024","Stella Blues","New Haven",1,76,"Monster Gap",0,0,0,1,1
-"Golden Age jam","Original","",1,"02/02/2024","Long Island Glass","Holtsville","02/02/2024","Long Island Glass","Holtsville",1,91,"Monster Gap",0,0,0,1,1
-"Golf Jam","Original","",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,8,"Regular",0,0,0,1,1
-"Good Luck, Babe!","Cover","Chappell Roan",1,"12/31/2024","Blue Point Brewery","Patchogue","12/31/2024","Blue Point Brewery","Patchogue",1,54,"Monster Gap",0,0,0,1,1
-"Here Comes The Hotstepper","Original","",1,"04/20/2023","Blue Point Brewery","Patchogue","04/20/2023","Blue Point Brewery","Patchogue",1,118,"Monster Gap",0,0,0,1,1
-"Hey Joe","Cover","The Leaves",1,"10/28/2023","Beau’s Bar","Greenlawn","10/28/2023","Beau’s Bar","Greenlawn",1,100,"Monster Gap",0,0,0,1,1
-"I Got You Babe","Cover","Sonny & Cher",1,"02/02/2024","Long Island Glass","Holtsville","02/02/2024","Long Island Glass","Holtsville",1,91,"Monster Gap",0,0,0,1,1
-"Keep On Growing","Cover","Derek and the Dominos",1,"01/27/2023","Blue Point Brewery","Patchogue","01/27/2023","Blue Point Brewery","Patchogue",1,126,"Monster Gap",0,0,0,1,1
-"Knockin' on Heaven's Door","Cover","Bob Dylan",1,"04/05/2023","Blue Point Brewery","Patchogue","04/05/2023","Blue Point Brewery","Patchogue",1,120,"Monster Gap",0,0,0,1,1
-"La Grange","Cover","ZZ Top",1,"11/30/2024","Industry Lounge & Gallery","Huntington","11/30/2024","Industry Lounge & Gallery","Huntington",1,57,"Monster Gap",0,0,0,1,1
-"Lady (Hear Me Tonight)","Cover","Modjo",1,"12/31/2024","Blue Point Brewery","Patchogue","12/31/2024","Blue Point Brewery","Patchogue",1,54,"Monster Gap",0,0,0,1,1
-"Layla","Cover","Derek and the Dominos",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,122,"Monster Gap",0,0,0,1,1
-"Levon","Cover","Elton John",1,"04/16/2025","Blue Point Brewery","Patchogue","04/16/2025","Blue Point Brewery","Patchogue",1,47,"Bust Out",0,0,0,1,1
-"Life During Wartime","Cover","Talking Heads",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,8,"Regular",0,0,0,1,1
-"Melissa","Cover","The Allman Brothers Band",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,122,"Monster Gap",0,0,0,1,1
-"Mellow Mood","Cover","Bob Marley & The Wailers",1,"04/12/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",1,119,"Monster Gap",0,0,0,1,1
-"Midnight Moonlight","Cover","Old & In the Way",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,122,"Monster Gap",0,0,0,1,1
-"No One Left To Run With jam","Original","",1,"10/22/2023","Jamesport Farm Brewery","Riverhead","10/22/2023","Jamesport Farm Brewery","Riverhead",1,101,"Monster Gap",0,0,0,1,1
-"Oh! Sweet Nuthin'","Cover","The Velvet Underground",1,"11/25/2023","Industry Lounge & Gallery","Huntington","11/25/2023","Industry Lounge & Gallery","Huntington",1,97,"Monster Gap",0,0,0,1,1
-"One More Saturday Night","Cover","Bob Weir",1,"06/05/2023","89 North","Patchogue","06/05/2023","89 North","Patchogue",1,115,"Monster Gap",0,0,0,1,1
-"Pac-Man Theme (Remix)","Original","",1,"10/31/2023","Blue Point Brewery","Patchogue","10/31/2023","Blue Point Brewery","Patchogue",1,99,"Monster Gap",0,0,0,1,1
-"Primass","Original","",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,59,"Monster Gap",0,0,0,1,1
-"Primass (A Brief Reprise)","Original","",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,59,"Monster Gap",0,0,0,1,1
-"Psycho Killer","Cover","Talking Heads",1,"01/27/2023","Blue Point Brewery","Patchogue","01/27/2023","Blue Point Brewery","Patchogue",1,126,"Monster Gap",0,0,0,1,1
-"PYITE jam","Original","",1,"12/27/2025","Sayville Theater","Sayville","12/27/2025","Sayville Theater","Sayville",1,22,"Regular",0,0,0,1,1
-"Rapper's Delight","Cover","The Sugarhill Gang",1,"10/22/2024","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",1,60,"Monster Gap",0,0,0,1,1
-"Riders on the Storm jam","Original","",1,"10/28/2023","Beau’s Bar","Greenlawn","10/28/2023","Beau’s Bar","Greenlawn",1,100,"Monster Gap",0,0,0,1,1
-"Rock and Roll","Cover","Led Zeppelin",1,"02/27/2026","People's Pub","Bayport","02/27/2026","People's Pub","Bayport",1,16,"Regular",0,0,0,1,1
-"Rock and Roll Part 2","Cover","Gary Glitter",1,"02/27/2026","People's Pub","Bayport","02/27/2026","People's Pub","Bayport",1,16,"Regular",0,0,0,1,1
-"Runnin' Down a Dream","Cover","Tom Petty",1,"09/13/2025","Blue Point Brewery","Patchogue","09/13/2025","Blue Point Brewery","Patchogue",1,29,"Bust Out",0,0,0,1,1
-"Secret Jam","Original","",1,"06/27/2026","Arrowhead Ranch","Parksville","06/27/2026","Arrowhead Ranch","Parksville",1,5,"Regular",0,0,0,1,1
-"Simple jam","Original","",1,"03/28/2025","Beau’s Bar","Greenlawn","03/28/2025","Beau’s Bar","Greenlawn",1,48,"Bust Out",0,0,0,1,1
-"Space/Jam","Original","",1,"08/26/2024","89 North","Patchogue","08/26/2024","89 North","Patchogue",1,68,"Monster Gap",0,0,0,1,1
-"Speak To Me","Original","",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,59,"Monster Gap",0,0,0,1,1
-"Star Wars (Main Theme)","Original","",1,"05/04/2024","Thatch Meadow Farm","Saint James","05/04/2024","Thatch Meadow Farm","Saint James",1,84,"Monster Gap",0,0,0,1,1
-"Sunshine Daydream","Cover","Grateful Dead",1,"10/22/2023","Jamesport Farm Brewery","Riverhead","10/22/2023","Jamesport Farm Brewery","Riverhead",1,101,"Monster Gap",0,0,0,1,1
-"Sunshine of Your Love","Cover","Cream",1,"07/20/2025","Blue Point Brewery","Patchogue","07/20/2025","Blue Point Brewery","Patchogue",1,37,"Bust Out",0,0,0,1,1
-"Terrapin Station","Cover","Grateful Dead",1,"04/12/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",1,119,"Monster Gap",0,0,0,1,1
-"Thank You (Falettinme Be Mice Elf Agin)","Cover","Sly & the Family Stone",1,"06/28/2026","Arrowhead Ranch","Parksville","06/28/2026","Arrowhead Ranch","Parksville",1,4,"Regular",0,0,0,1,1
-"The Other One","Cover","Grateful Dead",1,"06/05/2023","89 North","Patchogue","06/05/2023","89 North","Patchogue",1,115,"Monster Gap",0,0,0,1,1
-"The Weight","Cover","The Band",1,"10/20/2023","89 North","Patchogue","10/20/2023","89 North","Patchogue",1,102,"Monster Gap",0,0,0,1,1
-"The Wheel","Cover","Jerry Garcia",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,8,"Regular",0,0,0,1,1
-"Tio Roberto","Original","",1,"02/18/2024","89 North","Patchogue","02/18/2024","89 North","Patchogue",1,89,"Monster Gap",0,0,0,1,1
-"ToddJam","Original","",1,"06/29/2025","Arrowhead Ranch","Parksville","06/29/2025","Arrowhead Ranch","Parksville",1,41,"Bust Out",0,0,0,1,1
-"Tweezer","Cover","Phish",1,"07/11/2026","The Lemon Squeeze","New Paltz","07/11/2026","The Lemon Squeeze","New Paltz",1,2,"Regular",0,0,0,1,1
-"Tweezer Reprise","Cover","Phish",1,"02/18/2024","89 North","Patchogue","02/18/2024","89 North","Patchogue",1,89,"Monster Gap",0,0,0,1,1
-"Twist jam","Original","",1,"09/07/2024","H.O.G. Farm","Brookhaven","09/07/2024","H.O.G. Farm","Brookhaven",1,64,"Monster Gap",0,0,0,1,1
-"Uncle Rob (ReReprise)","Original","",1,"01/27/2024","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",1,92,"Monster Gap",0,0,0,1,1
-"Uncle Todd","Original","",1,"06/22/2024","Arrowhead Ranch","Parksville","06/22/2024","Arrowhead Ranch","Parksville",1,77,"Monster Gap",0,0,0,1,1
-"Viola Lee Blues","Original","",1,"10/31/2023","Blue Point Brewery","Patchogue","10/31/2023","Blue Point Brewery","Patchogue",1,99,"Monster Gap",0,0,0,1,1
-"WakaWOW Pre-prise","Original","",1,"03/11/2023","89 North","Patchogue","03/11/2023","89 North","Patchogue",1,123,"Monster Gap",0,0,0,1,1
-"War Pigs","Cover","Black Sabbath",1,"06/28/2025","Arrowhead Ranch","Parksville","06/28/2025","Arrowhead Ranch","Parksville",1,42,"Bust Out",0,0,0,1,1
-"Waste","Cover","Phish",1,"04/12/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",1,119,"Monster Gap",0,0,0,1,1
-"West L.A. Fakeout","Original","",1,"02/21/2025","The Hollow Bar","Albany","02/21/2025","The Hollow Bar","Albany",1,50,"Monster Gap",0,0,0,1,1
-"Wheel Spin","Original","",1,"07/20/2025","Blue Point Brewery","Patchogue","07/20/2025","Blue Point Brewery","Patchogue",1,37,"Bust Out",0,0,0,1,1
-"When the Circus Comes","Cover","Los Lobos",1,"05/17/2024","People's Pub","Bayport","05/17/2024","People's Pub","Bayport",1,81,"Monster Gap",0,0,0,1,1
-"Whole Ocean Jam","Original","",1,"08/24/2024","Beau’s Bar","Greenlawn","08/24/2024","Beau’s Bar","Greenlawn",1,69,"Monster Gap",0,0,0,1,1
-"Wind Jam","Original","",1,"09/15/2023","Blue Point Brewery","Patchogue","09/15/2023","Blue Point Brewery","Patchogue",1,105,"Monster Gap",0,0,0,1,1
-"Wine Way Out","Original","",1,"02/29/2024","Birdies","Patchogue","02/29/2024","Birdies","Patchogue",1,88,"Monster Gap",0,0,0,1,1
-"Wipe Out","Cover","The Surfaris",1,"06/27/2024","Stella Blues","New Haven","06/27/2024","Stella Blues","New Haven",1,76,"Monster Gap",0,0,0,1,1
-"Wipeout","Original","",1,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","10/02/2023","Beach Club Estate","Lake Ronkonkoma",1,103,"Monster Gap",0,0,0,1,1
-"Yahoos & Triangles","Cover","The Refreshments",1,"11/22/2023","Bobbique","Patchogue","11/22/2023","Bobbique","Patchogue",1,98,"Monster Gap",0,0,0,1,1
-"Yet Another Jam","Original","",1,"09/06/2024","89 North","Patchogue","09/06/2024","89 North","Patchogue",1,65,"Monster Gap",0,0,0,1,1
-"You Really Got Me","Cover","The Kinks",1,"10/22/2024","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",1,60,"Monster Gap",0,0,0,1,1
+"Dead Man Walking","Original","",102,"12/31/2022","Beau’s Bar","Greenlawn","08/29/2026","Slidin Dirty","Troy",102,1,"Regular",0,0.3,3,46,33
+"Crescent Sun","Original","",100,"12/31/2022","Beau’s Bar","Greenlawn","08/31/2026","Wonder Bar","Asbury Park",100,0,"Regular",1,0.3,4,41,31
+"Beautiful Buzz","Original","",55,"11/25/2023","Industry Lounge & Gallery","Huntington","07/11/2026","Ulster County Fairgrounds","New Paltz",55,6,"Regular",2,0.7,5,30,22
+"No Rest","Original","",55,"04/28/2024","Port Jeff Brewing Company","Port Jefferson","08/29/2026","Slidin Dirty","Troy",55,1,"Regular",0,0.6,4,32,27
+"Money Man","Original","",50,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",50,3,"Regular",2,1.6,8,23,18
+"Get Down","Original","",47,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",47,3,"Regular",1,1.8,7,25,20
+"Crybaby","Original","",40,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",40,5,"Regular",1,2.2,10,25,18
+"Stay Easy","Original","",39,"12/31/2022","Beau’s Bar","Greenlawn","06/27/2026","Arrowhead Ranch","Parksville",39,8,"Regular",3,2.2,10,18,13
+"Shakedown Street","Cover","Grateful Dead",38,"12/31/2022","Beau’s Bar","Greenlawn","08/29/2026","Slidin Dirty","Troy",38,1,"Regular",12,2.5,12,21,16
+"Deal","Cover","Jerry Garcia",36,"12/31/2022","Beau’s Bar","Greenlawn","08/28/2026","Nietzsche's","Buffalo",36,2,"Regular",5,2.7,7,21,17
+"Sand","Cover","Phish",36,"12/31/2022","Beau’s Bar","Greenlawn","08/28/2026","Nietzsche's","Buffalo",36,2,"Regular",4,2.7,9,19,18
+"Feel Free","Original","",33,"04/20/2023","Blue Point Brewery","Patchogue","07/25/2026","Shorefront Park","Patchogue",33,4,"Regular",4,2.7,7,18,13
+"Jam","Original","",33,"04/01/2023","Beau’s Bar","Greenlawn","06/27/2026","Arrowhead Ranch","Parksville",33,8,"Regular",7,2.6,14,17,14
+"Rise","Original","",33,"04/12/2023","Blue Point Brewery","Patchogue","08/29/2026","Slidin Dirty","Troy",33,1,"Regular",19,2.8,19,20,14
+"Funky Bitch","Cover","Son Seals",30,"01/27/2023","Blue Point Brewery","Patchogue","08/28/2026","Nietzsche's","Buffalo",30,2,"Regular",1,3.4,12,15,12
+"China Cat Sunflower","Cover","Grateful Dead",28,"12/31/2022","Beau’s Bar","Greenlawn","06/27/2026","Arrowhead Ranch","Parksville",28,8,"Regular",3,3.6,11,15,13
+"Crosseyed and Painless","Cover","Talking Heads",28,"04/01/2023","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",28,5,"Regular",4,3.4,13,14,12
+"Gotta Jibboo","Cover","Phish",28,"03/10/2023","Industry Lounge & Gallery","Huntington","03/27/2026","Zapp Factory","Philadelphia",28,16,"Regular",10,3.1,12,18,14
+"You and Me","Original","",28,"06/28/2025","Arrowhead Ranch","Parksville","07/25/2026","Shorefront Park","Patchogue",27,4,"Regular",0,0.6,3,17,13
+"Fire on the Mountain","Cover","Grateful Dead",26,"12/31/2022","Beau’s Bar","Greenlawn","01/03/2026","Port Jeff Brewing Company","Port Jefferson",26,24,"Regular",4,3.3,12,15,13
+"Not Fade Away","Cover","The Crickets",26,"01/27/2023","Blue Point Brewery","Patchogue","07/11/2026","Ulster County Fairgrounds","New Paltz",26,6,"Regular",0,3.9,18,15,12
+"Bubbles","Original","",25,"10/20/2023","89 North","Patchogue","08/29/2026","Slidin Dirty","Troy",25,1,"Regular",7,3.3,14,17,15
+"Summertime","Original","",25,"03/29/2023","Blue Point Brewery","Patchogue","08/29/2026","Slidin Dirty","Troy",25,1,"Regular",5,4.2,24,18,16
+"Franklin's Tower","Cover","Grateful Dead",23,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",23,5,"Regular",3,4.7,12,15,13
+"First Tube","Cover","Phish",20,"12/31/2022","Beau’s Bar","Greenlawn","09/29/2025","89 North","Patchogue",20,31,"Bust Out",0,4.3,26,12,9
+"Scarlet Begonias","Cover","Grateful Dead",20,"04/12/2023","Blue Point Brewery","Patchogue","09/29/2025","89 North","Patchogue",20,31,"Bust Out",4,3.8,12,14,12
+"That's What Love Will Make You Do","Cover","Little Milton",19,"03/29/2023","Blue Point Brewery","Patchogue","04/09/2026","89 North","Patchogue",19,15,"Regular",8,5.1,15,12,11
+"West L.A. Fadeaway","Cover","Grateful Dead",18,"09/15/2023","Blue Point Brewery","Patchogue","08/28/2026","Nietzsche's","Buffalo",18,2,"Regular",2,5.2,18,11,10
+"Bertha","Cover","Grateful Dead",16,"03/29/2023","Blue Point Brewery","Patchogue","08/29/2025","Blue Point Brewery","Patchogue",16,34,"Bust Out",1,5.1,16,7,5
+"Heighty Hi","Cover","Lee Michaels",16,"01/15/2023","The Warehouse","Amityville","10/21/2025","Blue Point Brewery","Patchogue",16,29,"Bust Out",12,5.7,12,9,8
+"Tangled Up in Blue","Cover","Bob Dylan",16,"01/27/2023","Blue Point Brewery","Patchogue","09/29/2025","89 North","Patchogue",16,31,"Bust Out",1,5.5,24,13,12
+"Harvest Moon","Cover","Neil Young",15,"12/31/2022","Beau’s Bar","Greenlawn","01/18/2026","89 North","Patchogue",15,21,"Regular",9,6.9,16,9,8
+"Jack Straw","Cover","Grateful Dead",15,"01/27/2023","Blue Point Brewery","Patchogue","03/02/2026","89 North","Patchogue",15,18,"Regular",7,6.9,16,6,4
+"Long Train Runnin'","Cover","The Doobie Brothers",15,"05/20/2023","Blue Point Brewery","Patchogue","04/19/2026","The Warehouse","Amityville",15,13,"Regular",10,6.6,26,12,10
+"Promontory Rider","Cover","Robert Hunter",15,"01/15/2023","The Warehouse","Amityville","05/23/2026","Pat Cav's Backyard","Sayville",15,10,"Regular",0,7.6,26,8,7
+"Who's Ernie?","Original","",15,"01/27/2023","Blue Point Brewery","Patchogue","06/20/2026","Thatch Meadow Farm","Saint James",15,9,"Regular",0,7.6,25,11,9
+"Drums","Original","",14,"04/12/2023","Blue Point Brewery","Patchogue","07/11/2026","The Lemon Squeeze","New Paltz",14,5,"Regular",6,8,29,7,6
+"Qué Lástima","Original","",14,"07/19/2025","Blue Point Brewery","Patchogue","08/28/2026","Nietzsche's","Buffalo",14,2,"Regular",0,2,6,9,7
+"The Shape I'm In","Cover","The Band",14,"12/31/2022","Beau’s Bar","Greenlawn","04/09/2026","89 North","Patchogue",14,15,"Regular",33,7.9,33,9,7
+"Young Lust","Cover","Pink Floyd",14,"12/31/2022","Beau’s Bar","Greenlawn","07/11/2026","The Lemon Squeeze","New Paltz",14,5,"Regular",22,8.7,22,10,10
+"Also sprach Zarathustra, op. 30","Cover","Richard Strauss",13,"03/10/2023","Industry Lounge & Gallery","Huntington","08/29/2026","Slidin Dirty","Troy",13,1,"Regular",15,9.5,25,11,9
+"Everybody","Original","",13,"04/28/2024","Port Jeff Brewing Company","Port Jefferson","08/14/2025","Downtown","Patchogue",13,35,"Bust Out",10,3.4,10,9,6
+"I Know You Rider","Cover","[traditional]",13,"12/31/2022","Beau’s Bar","Greenlawn","03/02/2026","89 North","Patchogue",13,18,"Regular",14,8.4,31,6,5
+"Mountain Jam","Cover","The Allman Brothers Band",13,"12/31/2022","Beau’s Bar","Greenlawn","06/29/2025","Arrowhead Ranch","Parksville",13,44,"Bust Out",27,6.3,27,10,9
+"A Thousand Faces","Original","",12,"12/27/2023","Sayville Theater","Sayville","05/23/2026","Pat Cav's Backyard","Sayville",12,10,"Regular",37,6.9,37,9,7
+"Happy Birthday","Original","",12,"04/01/2023","Beau’s Bar","Greenlawn","01/18/2026","89 North","Patchogue",12,21,"Regular",16,8.4,17,6,5
+"Lonely Star","Original","",12,"12/31/2024","Blue Point Brewery","Patchogue","08/29/2026","Slidin Dirty","Troy",12,1,"Regular",6,4.1,9,6,5
+"You Sexy Thing","Cover","Hot Chocolate",12,"11/25/2023","Industry Lounge & Gallery","Huntington","02/27/2026","People's Pub","Bayport",12,19,"Regular",8,6.4,14,8,6
+"Every 1's a Winner","Cover","Hot Chocolate",11,"01/27/2024","Blue Point Brewery","Patchogue","03/13/2026","Blue Point Brewery","Patchogue",11,17,"Regular",2,6.8,26,8,7
+"Uncle Rob","Original","",11,"12/01/2023","Blue Point Brewery","Patchogue","02/13/2026","Blue Point Brewery","Patchogue",11,20,"Regular",9,6.9,26,6,6
+"Angel From Montgomery","Cover","John Prine",10,"01/27/2023","Blue Point Brewery","Patchogue","04/10/2026","Blue Point Brewery","Patchogue",10,14,"Regular",3,11.8,29,6,5
+"Breathe (In the Air)","Cover","Pink Floyd",10,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",10,3,"Regular",19,13.2,40,9,9
+"Champagne Supernova","Cover","Oasis",10,"03/29/2023","Blue Point Brewery","Patchogue","07/11/2026","The Lemon Squeeze","New Paltz",10,5,"Regular",20,12.3,24,3,2
+"Drivin' My Life Away","Cover","Eddie Rabbitt",10,"01/27/2023","Blue Point Brewery","Patchogue","08/29/2026","Slidin Dirty","Troy",10,1,"Regular",20,13.2,24,8,7
+"Meatstick","Cover","Phish",10,"01/15/2023","The Warehouse","Amityville","06/28/2026","Arrowhead Ranch","Parksville",10,7,"Regular",13,12.7,21,6,4
+"Midnight Rider","Cover","The Allman Brothers Band",10,"03/29/2023","Blue Point Brewery","Patchogue","06/29/2025","Arrowhead Ranch","Parksville",10,44,"Bust Out",47,8,47,6,5
+"Say It to Me S.A.N.T.O.S.","Cover","Phish",10,"05/10/2024","Industry Lounge & Gallery","Huntington","07/11/2026","The Lemon Squeeze","New Paltz",10,5,"Regular",15,7.9,15,9,8
+"Statesboro Blues","Cover","Blind Willie McTell",10,"12/31/2022","Beau’s Bar","Greenlawn","02/13/2026","Blue Point Brewery","Patchogue",10,20,"Regular",14,11.3,24,8,8
+"I Shall Be Released","Cover","Bob Dylan",9,"03/29/2023","Blue Point Brewery","Patchogue","01/18/2026","89 North","Patchogue",9,21,"Regular",13,12,35,6,4
+"Into the Mystic","Cover","Van Morrison",9,"01/27/2023","Blue Point Brewery","Patchogue","06/28/2026","Arrowhead Ranch","Parksville",9,7,"Regular",21,14.3,44,4,3
+"Possum","Cover","Phish",9,"12/31/2022","Beau’s Bar","Greenlawn","03/13/2026","Blue Point Brewery","Patchogue",9,17,"Regular",27,13.3,27,4,2
+"Day By Day","Original","",8,"08/29/2025","Blue Point Brewery","Patchogue","08/31/2026","Wonder Bar","Asbury Park",8,0,"Regular",5,3.9,7,5,4
+"Mighty Great Escape","Original","",8,"02/13/2026","Blue Point Brewery","Patchogue","08/28/2026","Nietzsche's","Buffalo",8,2,"Regular",2,1.6,3,6,5
+"Morning Dew","Cover","Bonnie Dobson",8,"04/01/2023","Beau’s Bar","Greenlawn","02/13/2026","Blue Point Brewery","Patchogue",8,20,"Regular",6,13.9,45,4,3
+"Soulshine","Cover","The Allman Brothers Band",8,"03/29/2023","Blue Point Brewery","Patchogue","07/20/2025","Blue Point Brewery","Patchogue",8,40,"Bust Out",2,11.1,27,3,3
+"Can't You See","Cover","The Marshall Tucker Band",7,"03/04/2023","Southernside Brewing Co.","Greenville","11/08/2025","Black Oak Tavern","Oneonta",7,28,"Bust Out",27,15.7,35,5,4
+"Character Zero","Cover","Phish",7,"11/25/2023","Industry Lounge & Gallery","Huntington","01/10/2026","Blue Point Brewery","Patchogue",7,23,"Regular",23,11.8,23,5,4
+"Down With Disease jam","Original","",7,"09/15/2023","Blue Point Brewery","Patchogue","01/16/2026","Hubbards Cupboard","Port Chester",7,22,"Regular",7,13.3,48,6,5
+"Going Down the Road Feeling Bad","Cover","[traditional]",7,"01/27/2023","Blue Point Brewery","Patchogue","08/26/2024","89 North","Patchogue",7,71,"Monster Gap",29,8.7,29,5,3
+"I Ain't Living Long Like This","Cover","Rodney Crowell",7,"04/12/2023","Blue Point Brewery","Patchogue","08/29/2025","Blue Point Brewery","Patchogue",7,34,"Bust Out",9,13.7,29,3,3
+"Mighty High","Cover","Mighty Clouds of Joy",7,"08/14/2023","89 North","Patchogue","10/21/2025","Blue Point Brewery","Patchogue",7,29,"Bust Out",8,12.5,62,4,1
+"On The Run jam","Original","",7,"12/31/2022","Beau’s Bar","Greenlawn","08/15/2026","Hallockville","Riverhead",7,3,"Regular",25,20.3,43,6,6
+"Pluto","Original","",7,"01/10/2026","Blue Point Brewery","Patchogue","07/11/2026","The Lemon Squeeze","New Paltz",7,5,"Regular",3,2,5,5,4
+"Weekapaug Groove","Cover","Phish",7,"08/10/2023","Birdies","Patchogue","02/27/2026","People's Pub","Bayport",7,19,"Regular",32,14.3,32,6,3
+"Breathe (Reprise)","Cover","Pink Floyd",6,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","08/15/2026","Hallockville","Riverhead",6,3,"Regular",20,19.6,40,6,6
+"Higher","Original","",6,"05/17/2025","Blue Point Brewery","Patchogue","12/27/2025","Sayville Theater","Sayville",6,25,"Bust Out",5,3.8,7,4,3
+"I'm the Man Who Loves You","Cover","Wilco",6,"01/27/2024","Blue Point Brewery","Patchogue","06/27/2024","Stella Blues","New Haven",6,79,"Monster Gap",1,2.2,4,5,5
+"Immigrant Song","Cover","Led Zeppelin",6,"10/28/2023","Beau’s Bar","Greenlawn","06/27/2026","Arrowhead Ranch","Parksville",6,8,"Regular",4,18,44,6,5
+"No Stone","Original","",6,"08/29/2025","Blue Point Brewery","Patchogue","02/27/2026","People's Pub","Bayport",6,19,"Regular",0,2,5,5,5
+"Sugaree","Cover","Jerry Garcia",6,"04/05/2023","Blue Point Brewery","Patchogue","12/13/2023","Blue Point Brewery","Patchogue",6,98,"Monster Gap",8,4,10,3,2
+"Why Does Love Got to Be So Sad?","Cover","Derek and the Dominos",6,"05/17/2024","People's Pub","Bayport","03/13/2026","Blue Point Brewery","Patchogue",6,17,"Regular",25,12.4,25,5,5
+"Big Railroad Blues","Cover","Cannon’s Jug Stompers",5,"11/25/2023","Industry Lounge & Gallery","Huntington","08/01/2025","Stella Blues","New Haven",5,39,"Bust Out",16,14.3,26,5,5
+"California Stars","Cover","Billy Bragg & Wilco",5,"04/05/2023","Blue Point Brewery","Patchogue","07/20/2025","Blue Point Brewery","Patchogue",5,40,"Bust Out",44,19.8,44,1,1
+"Goin' the Wrong Way","Original","",5,"12/31/2022","Beau’s Bar","Greenlawn","04/10/2026","Blue Point Brewery","Patchogue",5,14,"Regular",63,28.3,63,4,3
+"Heavy Metal Drummer","Cover","Wilco",5,"11/25/2023","Industry Lounge & Gallery","Huntington","03/09/2024","Blue Point Brewery","Patchogue",5,90,"Monster Gap",2,1.5,4,2,2
+"One Way Out","Cover","Sonny Boy Williamson",5,"07/26/2023","The Mann Center Parking Lot","Philadelphia","04/09/2026","89 North","Patchogue",5,15,"Regular",19,23.5,31,5,4
+"Access Me","Cover","Phish",4,"02/27/2026","People's Pub","Bayport","06/27/2026","Arrowhead Ranch","Parksville",4,8,"Regular",1,2.7,5,4,4
+"Carini","Cover","Phish",4,"05/20/2023","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",4,63,"Monster Gap",21,17.7,21,2,2
+"CHICO","Original","",4,"05/08/2026","Blue Point Brewery","Patchogue","08/31/2026","Wonder Bar","Asbury Park",4,0,"Regular",2,2.7,4,4,4
+"Get Lucky","Cover","Daft Punk",4,"05/20/2023","Blue Point Brewery","Patchogue","06/03/2025","Blue Point Brewery","Patchogue",4,47,"Bust Out",20,23,45,3,3
+"Hey Old Lady","Original","",4,"01/10/2026","Blue Point Brewery","Patchogue","06/28/2026","Arrowhead Ranch","Parksville",4,7,"Regular",7,4.3,7,3,3
+"Hold Me Close","Original","",4,"10/20/2023","89 North","Patchogue","02/18/2024","89 North","Patchogue",4,92,"Monster Gap",1,3.3,7,3,2
+"Peggy-O","Cover","[traditional]",4,"06/05/2023","89 North","Patchogue","02/17/2025","Funk 'n Waffles","Syracuse",4,54,"Monster Gap",1,20.3,44,3,3
+"Stay Easy House Remix","Original","",4,"02/27/2026","People's Pub","Bayport","06/27/2026","Arrowhead Ranch","Parksville",4,8,"Regular",5,2.7,5,3,3
+"The Harder They Come","Cover","Jimmy Cliff",4,"04/12/2023","Blue Point Brewery","Patchogue","01/16/2026","Hubbards Cupboard","Port Chester",4,22,"Regular",5,32.3,89,3,3
+"Whole Lotta Love","Cover","Led Zeppelin",4,"03/10/2023","Industry Lounge & Gallery","Huntington","01/18/2025","Mr. Beery's","Bethpage",4,56,"Monster Gap",28,22.7,34,4,3
+"Aisle 8","Original","",3,"12/27/2023","Sayville Theater","Sayville","02/29/2024","Birdies","Patchogue",3,91,"Monster Gap",2,2,2,3,3
+"Better Days","Original","",3,"12/27/2023","Sayville Theater","Sayville","05/17/2024","People's Pub","Bayport",3,84,"Monster Gap",4,5.5,7,3,3
+"Breakdown","Cover","Tom Petty and the Heartbreakers",3,"06/10/2023","Blue Point Brewery","Patchogue","03/28/2025","Beau’s Bar","Greenlawn",3,51,"Monster Gap",17,32,47,2,2
+"Down With Disease","Cover","Phish",3,"02/29/2024","Birdies","Patchogue","08/24/2024","Beau’s Bar","Greenlawn",3,72,"Monster Gap",11,8.5,11,3,3
+"First Tube jam","Original","",3,"10/22/2023","Jamesport Farm Brewery","Riverhead","05/26/2024","Pat Cav's Backyard","Sayville",3,83,"Monster Gap",2,9.5,17,3,3
+"Franklin'd Up In Blue","Original","",3,"06/05/2023","89 North","Patchogue","06/18/2025","Port Jeff Brewing Company","Port Jefferson",3,46,"Bust Out",59,35,59,3,3
+"Goodbye Horses","Cover","Q Lazzarus",3,"03/09/2024","Blue Point Brewery","Patchogue","10/31/2024","Sayville Theater","Sayville",3,62,"Monster Gap",5,13,21,3,3
+"I Shot the Sheriff","Cover","The Wailers",3,"05/20/2023","Blue Point Brewery","Patchogue","06/29/2025","Arrowhead Ranch","Parksville",3,44,"Bust Out",17,36.5,56,3,2
+"If You're Ernie & You Know It","Original","",3,"03/11/2023","89 North","Patchogue","08/24/2024","Beau’s Bar","Greenlawn",3,72,"Monster Gap",28,26,28,3,3
+"My Own Worst Enemy","Cover","Lit",3,"09/15/2023","Blue Point Brewery","Patchogue","02/22/2025","Alfie's Wild Ride","Stowe",3,52,"Monster Gap",50,27,50,2,2
+"Roadhouse Blues","Cover","The Doors",3,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","01/18/2025","Mr. Beery's","Bethpage",3,56,"Monster Gap",4,24,44,3,3
+"Runaway","Original","",3,"01/27/2024","Blue Point Brewery","Patchogue","04/09/2026","89 North","Patchogue",3,15,"Regular",2,39,76,2,1
+"Turn On Your Love Light","Cover","Bobby “Blue” Bland",3,"03/29/2023","Blue Point Brewery","Patchogue","02/13/2026","Blue Point Brewery","Patchogue",3,20,"Regular",4,51.5,99,2,1
+"Uncle Rob (Reprise)","Original","",3,"12/01/2023","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",3,95,"Monster Gap",1,1,1,2,2
+"Voodoo Child","Cover","The Jimi Hendrix Experience",3,"10/28/2023","Beau’s Bar","Greenlawn","08/08/2025","Black Oak Tavern","Oneonta",3,37,"Bust Out",51,32,51,2,2
+"Whipping Post","Cover","The Allman Brothers Band",3,"08/10/2023","Birdies","Patchogue","10/28/2023","Beau’s Bar","Greenlawn",3,103,"Monster Gap",5,3,5,3,2
+"Wolfman's Brother","Cover","Phish",3,"03/10/2023","Industry Lounge & Gallery","Huntington","04/05/2023","Blue Point Brewery","Patchogue",3,123,"Monster Gap",1,1,1,2,2
+"(A Swingin') Thank You To Brian","Original","",2,"04/05/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",2,122,"Monster Gap",0,0,0,1,1
+"Don't Let Me Down","Cover","The Beatles",2,"04/12/2023","Blue Point Brewery","Patchogue","04/16/2025","Blue Point Brewery","Patchogue",2,50,"Monster Gap",0,71,71,1,1
+"Down With Disease ending","Original","",2,"01/13/2024","Stella Blues","New Haven","06/27/2024","Stella Blues","New Haven",2,79,"Monster Gap",0,16,16,1,1
+"Drums/Space","Original","",2,"10/31/2024","Sayville Theater","Sayville","08/14/2025","Downtown","Patchogue",2,35,"Bust Out",0,26,26,2,2
+"Fire","Original","",2,"01/27/2024","Blue Point Brewery","Patchogue","06/29/2025","Arrowhead Ranch","Parksville",2,44,"Bust Out",0,50,50,2,2
+"Free Fallin'","Cover","Tom Petty",2,"04/05/2023","Blue Point Brewery","Patchogue","01/18/2026","89 North","Patchogue",2,21,"Regular",0,101,101,2,1
+"Harry Hood jam","Original","",2,"04/01/2023","Beau’s Bar","Greenlawn","11/22/2023","Bobbique","Patchogue",2,101,"Monster Gap",0,22,22,2,2
+"He's Gone","Cover","Grateful Dead",2,"08/14/2023","89 North","Patchogue","07/18/2025","Blue Point Brewery","Patchogue",2,42,"Bust Out",0,67,67,2,1
+"Lil' Did He Know","Original","",2,"10/08/2025","The Warehouse","Amityville","12/27/2025","Sayville Theater","Sayville",2,25,"Bust Out",0,4,4,2,2
+"Minglewood Blues","Cover","Cannon’s Jug Stompers",2,"08/14/2023","89 North","Patchogue","01/10/2026","Blue Point Brewery","Patchogue",2,23,"Regular",0,86,86,2,1
+"No One to Run With","Cover","The Allman Brothers Band",2,"08/14/2023","89 North","Patchogue","10/22/2023","Jamesport Farm Brewery","Riverhead",2,104,"Monster Gap",0,5,5,2,2
+"Paranoid","Cover","Black Sabbath",2,"09/15/2023","Blue Point Brewery","Patchogue","07/19/2025","Blue Point Brewery","Patchogue",2,41,"Bust Out",0,66,66,1,1
+"Rock and Roll Part 2","Cover","Gary Glitter",2,"02/27/2026","People's Pub","Bayport","08/28/2026","Nietzsche's","Buffalo",2,2,"Regular",0,16,16,2,2
+"Sunshine Daydream jam","Original","",2,"03/28/2025","Beau’s Bar","Greenlawn","10/08/2025","The Warehouse","Amityville",2,30,"Bust Out",0,20,20,2,2
+"Tea Time with Brady","Original","",2,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","08/02/2025","Ophelia's","Albany",2,38,"Bust Out",0,67,67,2,2
+"The Howling","Cover","Phish",2,"02/29/2024","Birdies","Patchogue","01/18/2025","Mr. Beery's","Bethpage",2,56,"Monster Gap",0,34,34,2,2
+"The Other One jam","Original","",2,"12/01/2023","Blue Point Brewery","Patchogue","02/29/2024","Birdies","Patchogue",2,91,"Monster Gap",0,7,7,2,1
+"Thrill Is Gone","Cover","B.B. King",2,"06/27/2024","Stella Blues","New Haven","04/09/2026","89 North","Patchogue",2,15,"Regular",0,63,63,2,2
+"Time","Cover","Pink Floyd",2,"10/31/2024","Sayville Theater","Sayville","11/26/2025","The Warehouse","Amityville",2,26,"Bust Out",0,35,35,2,2
+"Wilson intro","Original","",2,"05/20/2023","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",2,95,"Monster Gap",0,23,23,1,1
+"You Sexy Thing (Reprise)","Original","",2,"11/25/2023","Industry Lounge & Gallery","Huntington","02/29/2024","Birdies","Patchogue",2,91,"Monster Gap",0,8,8,2,2
+"""Heroes""","Cover","David Bowie",1,"11/30/2024","Industry Lounge & Gallery","Huntington","11/30/2024","Industry Lounge & Gallery","Huntington",1,60,"Monster Gap",0,0,0,1,1
+"(A Swingin') Birthday Announcment","Original","",1,"01/27/2024","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",1,95,"Monster Gap",0,0,0,1,1
+"(Stella Break)","Original","",1,"05/04/2024","Thatch Meadow Farm","Saint James","05/04/2024","Thatch Meadow Farm","Saint James",1,87,"Monster Gap",0,0,0,1,1
+"46 Days","Cover","Phish",1,"03/13/2026","Blue Point Brewery","Patchogue","03/13/2026","Blue Point Brewery","Patchogue",1,17,"Regular",0,0,0,1,1
+"A Pirate Looks at Forty","Cover","Jimmy Buffett",1,"02/29/2024","Birdies","Patchogue","02/29/2024","Birdies","Patchogue",1,91,"Monster Gap",0,0,0,1,1
+"All Night Long (All Night)","Cover","Lionel Richie",1,"12/13/2023","Blue Point Brewery","Patchogue","12/13/2023","Blue Point Brewery","Patchogue",1,98,"Monster Gap",0,0,0,1,1
+"American Girl jam","Original","",1,"07/11/2026","The Lemon Squeeze","New Paltz","07/11/2026","The Lemon Squeeze","New Paltz",1,5,"Regular",0,0,0,1,1
+"Another Brick in the Wall, Part 1","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,62,"Monster Gap",0,0,0,1,1
+"Another Brick in the Wall, Part 2","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,62,"Monster Gap",0,0,0,1,1
+"Another Brick in the Wall, Part 3","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,62,"Monster Gap",0,0,0,1,1
+"Another Jam","Original","",1,"09/06/2024","89 North","Patchogue","09/06/2024","89 North","Patchogue",1,68,"Monster Gap",0,0,0,1,1
+"Another One Bites the Dust","Cover","Queen",1,"10/22/2024","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",1,63,"Monster Gap",0,0,0,1,1
+"Aunt Rachel","Original","",1,"01/27/2024","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",1,95,"Monster Gap",0,0,0,1,1
+"Back on the Train","Cover","Phish",1,"09/07/2024","H.O.G. Farm","Brookhaven","09/07/2024","H.O.G. Farm","Brookhaven",1,67,"Monster Gap",0,0,0,1,1
+"Backwards Down the Number Line","Cover","Phish",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,125,"Monster Gap",0,0,0,1,1
+"Bathtub Gin","Cover","Phish",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,11,"Regular",0,0,0,1,1
+"Blaze On","Cover","Phish",1,"08/30/2024","Blue Point Brewery","Patchogue","08/30/2024","Blue Point Brewery","Patchogue",1,70,"Monster Gap",0,0,0,1,1
+"Blister in the Sun","Cover","Violent Femmes",1,"05/20/2023","Blue Point Brewery","Patchogue","05/20/2023","Blue Point Brewery","Patchogue",1,119,"Monster Gap",0,0,0,1,1
+"Bongos Tuning","Original","",1,"09/29/2025","89 North","Patchogue","09/29/2025","89 North","Patchogue",1,31,"Bust Out",0,0,0,1,1
+"Brain Damage","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,62,"Monster Gap",0,0,0,1,1
+"Break Stuff","Cover","Limp Bizkit",1,"05/17/2025","Blue Point Brewery","Patchogue","05/17/2025","Blue Point Brewery","Patchogue",1,49,"Bust Out",0,0,0,1,1
+"Cayman Review","Cover","Trey Anastasio",1,"05/20/2023","Blue Point Brewery","Patchogue","05/20/2023","Blue Point Brewery","Patchogue",1,119,"Monster Gap",0,0,0,1,1
+"Cha Cha Slide","Cover","DJ Casper",1,"05/17/2024","People's Pub","Bayport","05/17/2024","People's Pub","Bayport",1,84,"Monster Gap",0,0,0,1,1
+"Cocaine","Cover","J.J. Cale",1,"02/29/2024","Birdies","Patchogue","02/29/2024","Birdies","Patchogue",1,91,"Monster Gap",0,0,0,1,1
+"Colorado Town","Original","",1,"06/27/2026","Arrowhead Ranch","Parksville","06/27/2026","Arrowhead Ranch","Parksville",1,8,"Regular",0,0,0,1,1
+"Come Together","Cover","The Beatles",1,"01/18/2025","Mr. Beery's","Bethpage","01/18/2025","Mr. Beery's","Bethpage",1,56,"Monster Gap",0,0,0,1,1
+"Comfortably Numb","Cover","Pink Floyd",1,"08/15/2026","Hallockville","Riverhead","08/15/2026","Hallockville","Riverhead",1,3,"Regular",0,0,0,1,1
+"Cortez the Killer","Cover","Neil Young & Crazy Horse",1,"02/13/2026","Blue Point Brewery","Patchogue","02/13/2026","Blue Point Brewery","Patchogue",1,20,"Regular",0,0,0,1,1
+"Cracklin' Rosie","Original","",1,"06/03/2025","Blue Point Brewery","Patchogue","06/03/2025","Blue Point Brewery","Patchogue",1,47,"Bust Out",0,0,0,1,1
+"Dark Star jam","Original","",1,"02/13/2026","Blue Point Brewery","Patchogue","02/13/2026","Blue Point Brewery","Patchogue",1,20,"Regular",0,0,0,1,1
+"Dreams jam","Original","",1,"11/25/2023","Industry Lounge & Gallery","Huntington","11/25/2023","Industry Lounge & Gallery","Huntington",1,100,"Monster Gap",0,0,0,1,1
+"Drift While You're Sleeping ending","Original","",1,"03/09/2024","Blue Point Brewery","Patchogue","03/09/2024","Blue Point Brewery","Patchogue",1,90,"Monster Gap",0,0,0,1,1
+"Eclipse","Cover","Pink Floyd",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,62,"Monster Gap",0,0,0,1,1
+"Eminence Front","Cover","The Who",1,"12/27/2023","Sayville Theater","Sayville","12/27/2023","Sayville Theater","Sayville",1,97,"Monster Gap",0,0,0,1,1
+"Exodus","Cover","Bob Marley & The Wailers",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,11,"Regular",0,0,0,1,1
+"Farmhouse","Cover","Phish",1,"09/07/2024","H.O.G. Farm","Brookhaven","09/07/2024","H.O.G. Farm","Brookhaven",1,67,"Monster Gap",0,0,0,1,1
+"Fearless","Cover","Pink Floyd",1,"04/12/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",1,122,"Monster Gap",0,0,0,1,1
+"Feel Free Reprise","Original","",1,"12/27/2025","Sayville Theater","Sayville","12/27/2025","Sayville Theater","Sayville",1,25,"Bust Out",0,0,0,1,1
+"Find the Cost of Freedom","Cover","Crosby, Stills, Nash & Young",1,"02/27/2026","People's Pub","Bayport","02/27/2026","People's Pub","Bayport",1,19,"Regular",0,0,0,1,1
+"Get Down Reprise","Original","",1,"12/31/2022","Beau’s Bar","Greenlawn","12/31/2022","Beau’s Bar","Greenlawn",1,131,"Monster Gap",0,0,0,1,1
+"Going Up the Country","Cover","Canned Heat",1,"06/27/2024","Stella Blues","New Haven","06/27/2024","Stella Blues","New Haven",1,79,"Monster Gap",0,0,0,1,1
+"Golden Age jam","Original","",1,"02/02/2024","Long Island Glass","Holtsville","02/02/2024","Long Island Glass","Holtsville",1,94,"Monster Gap",0,0,0,1,1
+"Golf Jam","Original","",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,11,"Regular",0,0,0,1,1
+"Good Luck, Babe!","Cover","Chappell Roan",1,"12/31/2024","Blue Point Brewery","Patchogue","12/31/2024","Blue Point Brewery","Patchogue",1,57,"Monster Gap",0,0,0,1,1
+"Here Comes The Hotstepper","Original","",1,"04/20/2023","Blue Point Brewery","Patchogue","04/20/2023","Blue Point Brewery","Patchogue",1,121,"Monster Gap",0,0,0,1,1
+"Hey Joe","Cover","The Leaves",1,"10/28/2023","Beau’s Bar","Greenlawn","10/28/2023","Beau’s Bar","Greenlawn",1,103,"Monster Gap",0,0,0,1,1
+"I Got You Babe","Cover","Sonny & Cher",1,"02/02/2024","Long Island Glass","Holtsville","02/02/2024","Long Island Glass","Holtsville",1,94,"Monster Gap",0,0,0,1,1
+"Keep On Growing","Cover","Derek and the Dominos",1,"01/27/2023","Blue Point Brewery","Patchogue","01/27/2023","Blue Point Brewery","Patchogue",1,129,"Monster Gap",0,0,0,1,1
+"Knockin' on Heaven's Door","Cover","Bob Dylan",1,"04/05/2023","Blue Point Brewery","Patchogue","04/05/2023","Blue Point Brewery","Patchogue",1,123,"Monster Gap",0,0,0,1,1
+"La Grange","Cover","ZZ Top",1,"11/30/2024","Industry Lounge & Gallery","Huntington","11/30/2024","Industry Lounge & Gallery","Huntington",1,60,"Monster Gap",0,0,0,1,1
+"Lady (Hear Me Tonight)","Cover","Modjo",1,"12/31/2024","Blue Point Brewery","Patchogue","12/31/2024","Blue Point Brewery","Patchogue",1,57,"Monster Gap",0,0,0,1,1
+"Layla","Cover","Derek and the Dominos",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,125,"Monster Gap",0,0,0,1,1
+"Levon","Cover","Elton John",1,"04/16/2025","Blue Point Brewery","Patchogue","04/16/2025","Blue Point Brewery","Patchogue",1,50,"Monster Gap",0,0,0,1,1
+"Life During Wartime","Cover","Talking Heads",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,11,"Regular",0,0,0,1,1
+"Melissa","Cover","The Allman Brothers Band",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,125,"Monster Gap",0,0,0,1,1
+"Mellow Mood","Cover","Bob Marley & The Wailers",1,"04/12/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",1,122,"Monster Gap",0,0,0,1,1
+"Midnight Moonlight","Cover","Old & In the Way",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,125,"Monster Gap",0,0,0,1,1
+"No One Left To Run With jam","Original","",1,"10/22/2023","Jamesport Farm Brewery","Riverhead","10/22/2023","Jamesport Farm Brewery","Riverhead",1,104,"Monster Gap",0,0,0,1,1
+"Oh! Sweet Nuthin'","Cover","The Velvet Underground",1,"11/25/2023","Industry Lounge & Gallery","Huntington","11/25/2023","Industry Lounge & Gallery","Huntington",1,100,"Monster Gap",0,0,0,1,1
+"One More Saturday Night","Cover","Bob Weir",1,"06/05/2023","89 North","Patchogue","06/05/2023","89 North","Patchogue",1,118,"Monster Gap",0,0,0,1,1
+"Pac-Man Theme (Remix)","Original","",1,"10/31/2023","Blue Point Brewery","Patchogue","10/31/2023","Blue Point Brewery","Patchogue",1,102,"Monster Gap",0,0,0,1,1
+"Primass","Original","",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,62,"Monster Gap",0,0,0,1,1
+"Primass (A Brief Reprise)","Original","",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,62,"Monster Gap",0,0,0,1,1
+"Psycho Killer","Cover","Talking Heads",1,"01/27/2023","Blue Point Brewery","Patchogue","01/27/2023","Blue Point Brewery","Patchogue",1,129,"Monster Gap",0,0,0,1,1
+"PYITE jam","Original","",1,"12/27/2025","Sayville Theater","Sayville","12/27/2025","Sayville Theater","Sayville",1,25,"Bust Out",0,0,0,1,1
+"Rapper's Delight","Cover","The Sugarhill Gang",1,"10/22/2024","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",1,63,"Monster Gap",0,0,0,1,1
+"Riders on the Storm jam","Original","",1,"10/28/2023","Beau’s Bar","Greenlawn","10/28/2023","Beau’s Bar","Greenlawn",1,103,"Monster Gap",0,0,0,1,1
+"Rock and Roll","Cover","Led Zeppelin",1,"02/27/2026","People's Pub","Bayport","02/27/2026","People's Pub","Bayport",1,19,"Regular",0,0,0,1,1
+"Runnin' Down a Dream","Cover","Tom Petty",1,"09/13/2025","Blue Point Brewery","Patchogue","09/13/2025","Blue Point Brewery","Patchogue",1,32,"Bust Out",0,0,0,1,1
+"Secret Jam","Original","",1,"06/27/2026","Arrowhead Ranch","Parksville","06/27/2026","Arrowhead Ranch","Parksville",1,8,"Regular",0,0,0,1,1
+"Simple jam","Original","",1,"03/28/2025","Beau’s Bar","Greenlawn","03/28/2025","Beau’s Bar","Greenlawn",1,51,"Monster Gap",0,0,0,1,1
+"Space/Jam","Original","",1,"08/26/2024","89 North","Patchogue","08/26/2024","89 North","Patchogue",1,71,"Monster Gap",0,0,0,1,1
+"Speak To Me","Original","",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,62,"Monster Gap",0,0,0,1,1
+"Star Wars (Main Theme)","Original","",1,"05/04/2024","Thatch Meadow Farm","Saint James","05/04/2024","Thatch Meadow Farm","Saint James",1,87,"Monster Gap",0,0,0,1,1
+"Sunshine Daydream","Cover","Grateful Dead",1,"10/22/2023","Jamesport Farm Brewery","Riverhead","10/22/2023","Jamesport Farm Brewery","Riverhead",1,104,"Monster Gap",0,0,0,1,1
+"Sunshine of Your Love","Cover","Cream",1,"07/20/2025","Blue Point Brewery","Patchogue","07/20/2025","Blue Point Brewery","Patchogue",1,40,"Bust Out",0,0,0,1,1
+"Terrapin Station","Cover","Grateful Dead",1,"04/12/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",1,122,"Monster Gap",0,0,0,1,1
+"Thank You (Falettinme Be Mice Elf Agin)","Cover","Sly & the Family Stone",1,"06/28/2026","Arrowhead Ranch","Parksville","06/28/2026","Arrowhead Ranch","Parksville",1,7,"Regular",0,0,0,1,1
+"The Other One","Cover","Grateful Dead",1,"06/05/2023","89 North","Patchogue","06/05/2023","89 North","Patchogue",1,118,"Monster Gap",0,0,0,1,1
+"The Weight","Cover","The Band",1,"10/20/2023","89 North","Patchogue","10/20/2023","89 North","Patchogue",1,105,"Monster Gap",0,0,0,1,1
+"The Wheel","Cover","Jerry Garcia",1,"05/08/2026","Blue Point Brewery","Patchogue","05/08/2026","Blue Point Brewery","Patchogue",1,11,"Regular",0,0,0,1,1
+"Tio Roberto","Original","",1,"02/18/2024","89 North","Patchogue","02/18/2024","89 North","Patchogue",1,92,"Monster Gap",0,0,0,1,1
+"ToddJam","Original","",1,"06/29/2025","Arrowhead Ranch","Parksville","06/29/2025","Arrowhead Ranch","Parksville",1,44,"Bust Out",0,0,0,1,1
+"Tweezer","Cover","Phish",1,"07/11/2026","The Lemon Squeeze","New Paltz","07/11/2026","The Lemon Squeeze","New Paltz",1,5,"Regular",0,0,0,1,1
+"Tweezer Reprise","Cover","Phish",1,"02/18/2024","89 North","Patchogue","02/18/2024","89 North","Patchogue",1,92,"Monster Gap",0,0,0,1,1
+"Twist jam","Original","",1,"09/07/2024","H.O.G. Farm","Brookhaven","09/07/2024","H.O.G. Farm","Brookhaven",1,67,"Monster Gap",0,0,0,1,1
+"Uncle Rob (ReReprise)","Original","",1,"01/27/2024","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",1,95,"Monster Gap",0,0,0,1,1
+"Uncle Todd","Original","",1,"06/22/2024","Arrowhead Ranch","Parksville","06/22/2024","Arrowhead Ranch","Parksville",1,80,"Monster Gap",0,0,0,1,1
+"Viola Lee Blues","Original","",1,"10/31/2023","Blue Point Brewery","Patchogue","10/31/2023","Blue Point Brewery","Patchogue",1,102,"Monster Gap",0,0,0,1,1
+"WakaWOW Pre-prise","Original","",1,"03/11/2023","89 North","Patchogue","03/11/2023","89 North","Patchogue",1,126,"Monster Gap",0,0,0,1,1
+"War Pigs","Cover","Black Sabbath",1,"06/28/2025","Arrowhead Ranch","Parksville","06/28/2025","Arrowhead Ranch","Parksville",1,45,"Bust Out",0,0,0,1,1
+"Waste","Cover","Phish",1,"04/12/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",1,122,"Monster Gap",0,0,0,1,1
+"West L.A. Fakeout","Original","",1,"02/21/2025","The Hollow Bar","Albany","02/21/2025","The Hollow Bar","Albany",1,53,"Monster Gap",0,0,0,1,1
+"Wheel Spin","Original","",1,"07/20/2025","Blue Point Brewery","Patchogue","07/20/2025","Blue Point Brewery","Patchogue",1,40,"Bust Out",0,0,0,1,1
+"When the Circus Comes","Cover","Los Lobos",1,"05/17/2024","People's Pub","Bayport","05/17/2024","People's Pub","Bayport",1,84,"Monster Gap",0,0,0,1,1
+"Whole Ocean Jam","Original","",1,"08/24/2024","Beau’s Bar","Greenlawn","08/24/2024","Beau’s Bar","Greenlawn",1,72,"Monster Gap",0,0,0,1,1
+"Wind Jam","Original","",1,"09/15/2023","Blue Point Brewery","Patchogue","09/15/2023","Blue Point Brewery","Patchogue",1,108,"Monster Gap",0,0,0,1,1
+"Wine Way Out","Original","",1,"02/29/2024","Birdies","Patchogue","02/29/2024","Birdies","Patchogue",1,91,"Monster Gap",0,0,0,1,1
+"Wipe Out","Cover","The Surfaris",1,"06/27/2024","Stella Blues","New Haven","06/27/2024","Stella Blues","New Haven",1,79,"Monster Gap",0,0,0,1,1
+"Wipeout","Original","",1,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","10/02/2023","Beach Club Estate","Lake Ronkonkoma",1,106,"Monster Gap",0,0,0,1,1
+"Yahoos & Triangles","Cover","The Refreshments",1,"11/22/2023","Bobbique","Patchogue","11/22/2023","Bobbique","Patchogue",1,101,"Monster Gap",0,0,0,1,1
+"Yet Another Jam","Original","",1,"09/06/2024","89 North","Patchogue","09/06/2024","89 North","Patchogue",1,68,"Monster Gap",0,0,0,1,1
+"You Really Got Me","Cover","The Kinks",1,"10/22/2024","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",1,63,"Monster Gap",0,0,0,1,1
