@@ -1,5 +1,56 @@
 [
   {
+    "id": "7b7e9aa8",
+    "versionId": "g30ff14f",
+    "eventDate": "31-08-2026",
+    "lastUpdated": "2026-09-02T04:41:58.509+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "13d3fd19",
+      "name": "Wonder Bar",
+      "city": {
+        "id": "5095281",
+        "name": "Asbury Park",
+        "state": "New Jersey",
+        "stateCode": "NJ",
+        "coords": {
+          "lat": 40.2203907,
+          "long": -74.0120817
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/wonder-bar-asbury-park-nj-usa-13d3fd19.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "CHICO"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "Day By Day"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "Michelle Chai opened the show. Dear Anna and Last Legs closed the show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/wonder-bar-asbury-park-nj-7b7e9aa8.html"
+  },
+  {
     "id": "5b7eb31c",
     "versionId": "g3b0fb0d8",
     "eventDate": "29-08-2026",
