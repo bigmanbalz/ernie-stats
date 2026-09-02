@@ -411,10 +411,31 @@ function restoreHistory(state) {
         return;
     }
 
+    if (state.type === "songbank-scope") {
+        window.songBankScope = {
+            type: state.scopeType,
+            key: state.key
+        };
+        renderSongBankScope();
+        return;
+    }
+
     if (state.type === "songbank-venue") {
         window.songBankVenue = state.key;
         renderSongBank();
+        return;
     }
+}
+
+// Initialize the current page as a named history state
+if (!history.state) {
+    history.replaceState(
+        {
+            type: "page",
+            page: "dashboard"
+        },
+        ""
+    );
 }
 
 window.addEventListener("popstate", event => {
@@ -1545,7 +1566,7 @@ function renderShowDetail(show) {
 
     });
 
-    document.getElementById("content").innerHTML = `
+    document.getElementById("app").innerHTML = `
 
         <section class="panel">
 
