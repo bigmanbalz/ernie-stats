@@ -1,5 +1,99 @@
 [
   {
+    "id": "1b7eed60",
+    "versionId": "g630f0ea3",
+    "eventDate": "04-09-2026",
+    "lastUpdated": "2026-09-05T06:21:58.788+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "The Harder They Come",
+              "cover": {
+                "mbid": "2caa54a7-b08c-41da-b892-3a41abe778be",
+                "name": "Jimmy Cliff",
+                "sortName": "Cliff, Jimmy",
+                "disambiguation": "Jamaican ska, rocksteady, reggae and soul musician",
+                "url": "https://www.setlist.fm/setlists/jimmy-cliff-7bd6cec4.html"
+              }
+            },
+            {
+              "name": "Rise",
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "California Stars",
+              "cover": {
+                "mbid": "3c3c2903-2107-4f79-aadc-319c118f35ba",
+                "name": "Billy Bragg & Wilco",
+                "sortName": "Bragg, Billy & Wilco",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/billy-bragg-and-wilco-3bd698b0.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Beautiful Buzz"
+            },
+            {
+              "name": "Crybaby",
+              "info": "w/ A Hole of Golf (Mike & Andrea vs. John); unfinished [->]"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "No Stone"
+            },
+            {
+              "name": "Wolfman's Brother",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "Last Time Played: 9-4-26 (123 shows)"
+            },
+            {
+              "name": "You and Me"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "DJ Moodmaker before & between sets. You and Me was aborted during last chorus due to fire alarm going off.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/blue-point-brewery-patchogue-ny-1b7eed60.html"
+  },
+  {
     "id": "7b7e9aa8",
     "versionId": "g30ff14f",
     "eventDate": "31-08-2026",
