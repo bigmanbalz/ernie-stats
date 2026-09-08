@@ -1,9 +1,89 @@
 [
   {
+    "id": "b7ec936",
+    "versionId": "g5b0c9fcc",
+    "eventDate": "05-09-2026",
+    "lastUpdated": "2026-09-07T22:05:37.842+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "53df87a1",
+      "name": "Camp Pa-Qua-Tuck",
+      "city": {
+        "id": "5112020",
+        "name": "Center Moriches",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.80038,
+          "long": -72.78982
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/camp-pa-qua-tuck-center-moriches-ny-usa-53df87a1.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Running on Empty",
+              "cover": {
+                "mbid": "88527d26-7496-47c5-8358-ebdb1868a90f",
+                "name": "Jackson Browne",
+                "sortName": "Browne, Jackson",
+                "disambiguation": "American singer-songwriter",
+                "url": "https://www.setlist.fm/setlists/jackson-browne-7bd6b280.html"
+              }
+            },
+            {
+              "name": "Hey Old Lady"
+            },
+            {
+              "name": "CHICO"
+            },
+            {
+              "name": "Summertime"
+            },
+            {
+              "name": "Hey You",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": "w/ Pigs excerpt; Ben’s Sax Debut; Last Time Played: 2022"
+            },
+            {
+              "name": "Stay Easy",
+              "info": ">"
+            },
+            {
+              "name": "Stay Easy House Remix",
+              "info": "w/ Take On Me, Don’t Stop Believin’ & Believe quotes"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "Closing set on the Flower Power Stage. Alex Diachok joined Ben on Keys for Hey You until the end of the show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/camp-pa-qua-tuck-center-moriches-ny-b7ec936.html"
+  },
+  {
     "id": "1b7eed60",
-    "versionId": "g630f0ea3",
+    "versionId": "g5b0c9fc4",
     "eventDate": "04-09-2026",
-    "lastUpdated": "2026-09-05T06:21:58.788+0000",
+    "lastUpdated": "2026-09-07T22:07:05.497+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -64,7 +144,7 @@
             },
             {
               "name": "Crybaby",
-              "info": "w/ A Hole of Golf (Mike & Andrea vs. John); unfinished [->]"
+              "info": "w/ A Hole of Golf (Mike & Alexa vs. John); unfinished [->]"
             },
             {
               "name": "Crescent Sun"
@@ -20586,5 +20666,919 @@
       ]
     },
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/beaus-bar-greenlawn-ny-3376a4b5.html"
+  },
+  {
+    "id": "537ecbf9",
+    "versionId": "g30c9583",
+    "eventDate": "22-12-2022",
+    "lastUpdated": "2026-09-08T03:39:17.787+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "63d7063b",
+      "name": "89 North",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/89-north-patchogue-ny-usa-63d7063b.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Stay Easy EP release show with Dysfunktone & Whaley.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/89-north-patchogue-ny-537ecbf9.html"
+  },
+  {
+    "id": "4b7ecbee",
+    "versionId": "g3b0c9478",
+    "eventDate": "23-11-2022",
+    "lastUpdated": "2026-09-08T03:42:21.109+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "6bd326b2",
+      "name": "The Warehouse",
+      "city": {
+        "id": "5107140",
+        "name": "Amityville",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6789893,
+          "long": -73.4170673
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/the-warehouse-amityville-ny-usa-6bd326b2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "With Nick & Brady but no Tony.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/the-warehouse-amityville-ny-4b7ecbee.html"
+  },
+  {
+    "id": "4b7ecbfe",
+    "versionId": "gb0c95b6",
+    "eventDate": "08-11-2022",
+    "lastUpdated": "2026-09-08T03:30:01.839+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Opening for Peace Pipe Gypsy.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-4b7ecbfe.html"
+  },
+  {
+    "id": "537ecbfd",
+    "versionId": "g30c95af",
+    "eventDate": "05-11-2022",
+    "lastUpdated": "2026-09-08T03:31:13.397+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Opening set at Blue Point's Cask Fest. Warped Tour Band closed the show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-537ecbfd.html"
+  },
+  {
+    "id": "4b7ecbf6",
+    "versionId": "g1b0c95b8",
+    "eventDate": "29-10-2022",
+    "lastUpdated": "2026-09-08T03:28:30.000+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bd0f1f2",
+      "name": "Beau’s Bar",
+      "city": {
+        "id": "5119377",
+        "name": "Greenlawn",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.86899,
+          "long": -73.36512
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Beau’s Halloween SpookFest 9000",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/beaus-bar-greenlawn-ny-4b7ecbf6.html"
+  },
+  {
+    "id": "437ecbf7",
+    "versionId": "g330c949d",
+    "eventDate": "18-10-2022",
+    "lastUpdated": "2026-09-08T04:08:16.040+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Toasted Tuesday with Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-437ecbf7.html"
+  },
+  {
+    "id": "537ecbf1",
+    "versionId": "g230c949f",
+    "eventDate": "15-10-2022",
+    "lastUpdated": "2026-09-08T04:07:08.133+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "3bdedcd8",
+      "name": "Port Jeff Brewing Company",
+      "city": {
+        "id": "5132013",
+        "name": "Port Jefferson",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.9464875,
+          "long": -73.0692732
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/port-jeff-brewing-company-port-jefferson-ny-usa-3bdedcd8.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Crybaby",
+              "info": "w/ Nick switching to Guitar during the jam [->]"
+            },
+            {
+              "name": "Keep On Growing",
+              "cover": {
+                "mbid": "2155a81a-f0c6-417a-9b16-2f86f98bb8bc",
+                "name": "Derek and the Dominos",
+                "sortName": "Derek and the Dominos",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/derek-and-the-dominos-1bd6ad54.html"
+              },
+              "info": "w/ Nick on Guitar & Lead Vocals"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "With Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/port-jeff-brewing-company-port-jefferson-ny-537ecbf1.html"
+  },
+  {
+    "id": "4b7ecbf2",
+    "versionId": "g130c95d1",
+    "eventDate": "09-10-2022",
+    "lastUpdated": "2026-09-08T03:24:56.131+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bd0f1f2",
+      "name": "Beau’s Bar",
+      "city": {
+        "id": "5119377",
+        "name": "Greenlawn",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.86899,
+          "long": -73.36512
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Outside in the lot. Line-up: John, Rob, Nick & Tony.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/beaus-bar-greenlawn-ny-4b7ecbf2.html"
+  },
+  {
+    "id": "437ecbeb",
+    "versionId": "gb0c958a",
+    "eventDate": "24-09-2022",
+    "lastUpdated": "2026-09-08T03:35:28.461+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "7bd7e6b8",
+      "name": "Arrowhead Ranch",
+      "city": {
+        "id": "5130607",
+        "name": "Parksville",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 41.8553669,
+          "long": -74.7596049
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/arrowhead-ranch-parksville-ny-usa-7bd7e6b8.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Equinox V",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/arrowhead-ranch-parksville-ny-437ecbeb.html"
+  },
+  {
+    "id": "537ecbe9",
+    "versionId": "gb0c958e",
+    "eventDate": "30-08-2022",
+    "lastUpdated": "2026-09-08T03:37:02.807+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "7bd62e00",
+      "name": "The Bitter End",
+      "city": {
+        "id": "5128581",
+        "name": "New York",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7142691,
+          "long": -74.0059729
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/the-bitter-end-new-york-ny-usa-7bd62e00.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/the-bitter-end-new-york-ny-537ecbe9.html"
+  },
+  {
+    "id": "537ecbe1",
+    "versionId": "g2b0c946a",
+    "eventDate": "08-07-2022",
+    "lastUpdated": "2026-09-08T03:47:54.441+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Crybaby"
+            },
+            {
+              "name": "Sand",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "with": {
+                "mbid": "64c08e7f-48ba-4a49-a18f-9ac648c8ac63",
+                "name": "Daniel Donato",
+                "sortName": "Donato, Daniel",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/daniel-donato-bc871e2.html"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "info": "With Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-537ecbe1.html"
+  },
+  {
+    "id": "537ecbc9",
+    "versionId": "g3b0c94bc",
+    "eventDate": "28-06-2022",
+    "lastUpdated": "2026-09-08T04:02:10.972+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "13df8995",
+      "name": "Birdies",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/birdies-patchogue-ny-usa-13df8995.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Dead & Co. Live Stream Party",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/birdies-patchogue-ny-537ecbc9.html"
+  },
+  {
+    "id": "5b7ecbd4",
+    "versionId": "g3b0c94e8",
+    "eventDate": "27-06-2022",
+    "lastUpdated": "2026-09-08T04:00:02.779+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "63df3a0f",
+      "name": "Pine Grove Inn",
+      "city": {
+        "id": "5116004",
+        "name": "East Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.76704,
+          "long": -72.99622
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/pine-grove-inn-east-patchogue-ny-usa-63df3a0f.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Dead Monday.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/pine-grove-inn-east-patchogue-ny-5b7ecbd4.html"
+  },
+  {
+    "id": "537ecbd1",
+    "versionId": "g230c9413",
+    "eventDate": "25-06-2022",
+    "lastUpdated": "2026-09-08T03:58:03.053+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "3d22157",
+      "name": "Flynn's Fire Island",
+      "city": {
+        "id": "5129600",
+        "name": "Ocean Beach",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6467664,
+          "long": -73.1570589
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/flynns-fire-island-ocean-beach-ny-usa-3d22157.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/flynns-fire-island-ocean-beach-ny-537ecbd1.html"
+  },
+  {
+    "id": "537ecbdd",
+    "versionId": "g2b0c9432",
+    "eventDate": "24-06-2022",
+    "lastUpdated": "2026-09-08T03:57:21.338+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "With Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-537ecbdd.html"
+  },
+  {
+    "id": "437ecbdf",
+    "versionId": "g2b0c943a",
+    "eventDate": "22-06-2022",
+    "lastUpdated": "2026-09-08T03:56:35.712+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "6bd326b2",
+      "name": "The Warehouse",
+      "city": {
+        "id": "5107140",
+        "name": "Amityville",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6789893,
+          "long": -73.4170673
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/the-warehouse-amityville-ny-usa-6bd326b2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Co-bill with Dysfunktone.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/the-warehouse-amityville-ny-437ecbdf.html"
+  },
+  {
+    "id": "5b7ecbe4",
+    "versionId": "g3b0c9450",
+    "eventDate": "12-06-2022",
+    "lastUpdated": "2026-09-08T03:52:33.149+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Pine Barrens Jam presents Sunday Funday. Laurie Anne Creus & Anne O'Rourke opened the show. Nick Balzano on Second Drumset for half the set.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-5b7ecbe4.html"
+  },
+  {
+    "id": "4b7ecbbe",
+    "versionId": "g430c9743",
+    "eventDate": "21-05-2022",
+    "lastUpdated": "2026-09-08T04:26:12.450+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "63df3a0f",
+      "name": "Pine Grove Inn",
+      "city": {
+        "id": "5116004",
+        "name": "East Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.76704,
+          "long": -72.99622
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/pine-grove-inn-east-patchogue-ny-usa-63df3a0f.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Swan River Jam",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/pine-grove-inn-east-patchogue-ny-4b7ecbbe.html"
+  },
+  {
+    "id": "537ecbb9",
+    "versionId": "g430c974b",
+    "eventDate": "20-05-2022",
+    "lastUpdated": "2026-09-08T04:25:06.845+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "73df3a0d",
+      "name": "JT's Farmhouse",
+      "city": {
+        "id": "5108191",
+        "name": "Bayport",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7384317,
+          "long": -73.0506656
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/jts-farmhouse-bayport-ny-usa-73df3a0d.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/jts-farmhouse-bayport-ny-537ecbb9.html"
+  },
+  {
+    "id": "437ecbb3",
+    "versionId": "g4b0c973a",
+    "eventDate": "20-04-2022",
+    "lastUpdated": "2026-09-08T04:27:36.047+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "3d549c3",
+      "name": "Bobbique",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/bobbique-patchogue-ny-usa-3d549c3.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Ernie's Nightcap (After-party for Lettuce at Blue Point & JGB at Patchogue Theater)",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/bobbique-patchogue-ny-437ecbb3.html"
+  },
+  {
+    "id": "4b7ecbaa",
+    "versionId": "g4b0c97ea",
+    "eventDate": "14-04-2022",
+    "lastUpdated": "2026-09-08T04:38:51.494+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "13dffd89",
+      "name": "Garden Social Beer Garden & Kitchen",
+      "city": {
+        "id": "5115959",
+        "name": "East Meadow",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6126036,
+          "long": -73.6554078
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/garden-social-beer-garden-and-kitchen-east-meadow-ny-usa-13dffd89.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Blue Point Legalize Wheat Launch Party",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/garden-social-beer-garden-and-kitchen-east-meadow-ny-4b7ecbaa.html"
+  },
+  {
+    "id": "7b7eca70",
+    "versionId": "g730c9665",
+    "eventDate": "06-04-2022",
+    "lastUpdated": "2026-09-08T05:00:07.276+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "6bd326b2",
+      "name": "The Warehouse",
+      "city": {
+        "id": "5107140",
+        "name": "Amityville",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6789893,
+          "long": -73.4170673
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/the-warehouse-amityville-ny-usa-6bd326b2.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Yesterday"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "Dead Man Walking"
+            },
+            {
+              "name": "Stay Easy"
+            },
+            {
+              "name": "Money Man"
+            },
+            {
+              "name": "Goin' the Wrong Way"
+            }
+          ]
+        }
+      ]
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/the-warehouse-amityville-ny-7b7eca70.html"
+  },
+  {
+    "id": "7b7eca74",
+    "versionId": "g630c965f",
+    "eventDate": "01-04-2022",
+    "lastUpdated": "2026-09-08T05:02:38.792+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bd0f1f2",
+      "name": "Beau’s Bar",
+      "city": {
+        "id": "5119377",
+        "name": "Greenlawn",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.86899,
+          "long": -73.36512
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/beaus-bar-greenlawn-ny-7b7eca74.html"
   }
 ]
