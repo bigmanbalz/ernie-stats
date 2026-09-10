@@ -20668,10 +20668,201 @@
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/beaus-bar-greenlawn-ny-3376a4b5.html"
   },
   {
+    "id": "7b7e3290",
+    "versionId": "g230cd83f",
+    "eventDate": "23-12-2022",
+    "lastUpdated": "2026-09-10T02:28:43.051+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "name": "Set 1:",
+          "song": [
+            {
+              "name": "Young Lust",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Jam",
+              "info": "w/ No Man In No Man's Land teases & quotes"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "Dead Man Walking",
+              "info": "->"
+            },
+            {
+              "name": "Sand",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ members of Jellyband joining one by one during the jam & The Band then leaving them to finish"
+            }
+          ]
+        },
+        {
+          "name": "Set 3:",
+          "song": [
+            {
+              "name": "Gotta Jibboo",
+              "tape": true,
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "As Moodmaker played Gotta Jibboo, The Band jammed along until Moodmaker faded out [->]"
+            },
+            {
+              "name": "Crybaby"
+            },
+            {
+              "name": "Angel From Montgomery",
+              "cover": {
+                "mbid": "e86492c1-0376-4df0-8042-8ba058c83960",
+                "name": "John Prine",
+                "sortName": "Prine, John",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/john-prine-7bd656f4.html"
+              },
+              "info": "w/ Cass House on Vocals"
+            },
+            {
+              "name": "Harvest Moon",
+              "cover": {
+                "mbid": "75167b8b-44e4-407b-9d35-effe87b223cf",
+                "name": "Neil Young",
+                "sortName": "Young, Neil",
+                "disambiguation": "Canadian singer, songwriter & musician",
+                "url": "https://www.setlist.fm/setlists/neil-young-6bd6b662.html"
+              },
+              "info": "w/ Cass House on Vocals"
+            },
+            {
+              "name": "Funky Bitch",
+              "cover": {
+                "mbid": "d2728d68-26f6-42b6-a490-ddae85b65d6d",
+                "name": "Son Seals",
+                "sortName": "Seals, Son",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/son-seals-3bd61020.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Drums",
+              "info": "->"
+            },
+            {
+              "name": "Another Jam",
+              "info": "w/ Mike Katzman & Kevin Griffin joining [->]"
+            },
+            {
+              "name": "Gotta Jibboo",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ John & Rob leaving during the jam and Jesse Smith & Jim Fontana joining [->]"
+            }
+          ]
+        },
+        {
+          "name": "Set 4: (Jellyband)",
+          "song": [
+            {
+              "name": "Midnight in Harlem",
+              "cover": {
+                "mbid": "e33e1ccf-a3b9-4449-a66a-0091e8f55a60",
+                "name": "Tedeschi Trucks Band",
+                "sortName": "Tedeschi Trucks Band",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/tedeschi-trucks-band-73d3bab1.html"
+              },
+              "info": "w/ Cass House on Vocals and Nick joining on Second Drumset"
+            }
+          ]
+        },
+        {
+          "encore": 1,
+          "song": [
+            {
+              "name": "One Way Out",
+              "cover": {
+                "mbid": "3b8403b6-72c8-4953-b966-5fc555923baf",
+                "name": "Sonny Boy Williamson",
+                "sortName": "Williamson, Sonny Boy",
+                "disambiguation": "Aleck “Sonny Boy Williamson” Miller, 1912–1965",
+                "url": "https://www.setlist.fm/setlists/sonny-boy-williamson-3bd69814.html"
+              },
+              "info": "w/ everyone from both bands except Jim"
+            },
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ everyone from both bands, plus Cass on Vocals"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "Blue Point's Festivus! Alternating sets with Jellyband. Band members swapped out song by song so there were no breaks between switching. Except for one in the middle of the 4 sets. DJ Moodmaker before, between and after sets.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-7b7e3290.html"
+  },
+  {
     "id": "537ecbf9",
-    "versionId": "g30c9583",
+    "versionId": "g3b0cd80c",
     "eventDate": "22-12-2022",
-    "lastUpdated": "2026-09-08T03:39:17.787+0000",
+    "lastUpdated": "2026-09-10T02:43:50.040+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -20699,16 +20890,57 @@
       "url": "https://www.setlist.fm/venue/89-north-patchogue-ny-usa-63d7063b.html"
     },
     "sets": {
-      "set": []
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Crybaby"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "Dead Man Walking"
+            },
+            {
+              "name": "Stay Easy"
+            },
+            {
+              "name": "Money Man",
+              "info": "w/ Rob Meza on Guitar"
+            }
+          ]
+        },
+        {
+          "encore": 1,
+          "song": [
+            {
+              "name": "Eyes of the World",
+              "info": "w/ Rob Meza & Logan Whaley on Guitar, David Wolfson on Vocals and Dakota Henry on Second Drumset"
+            },
+            {
+              "name": "Character Zero",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ Rob & David switching Bass & Vocals"
+            }
+          ]
+        }
+      ]
     },
-    "info": "Stay Easy EP release show with Dysfunktone & Whaley.",
+    "info": "Stay Easy EP release show with Dysfunktone & Whaley. Nick & Brady's first show as official members of The Band.",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/89-north-patchogue-ny-537ecbf9.html"
   },
   {
     "id": "4b7ecbee",
-    "versionId": "g3b0c9478",
+    "versionId": "g230cd89b",
     "eventDate": "23-11-2022",
-    "lastUpdated": "2026-09-08T03:42:21.109+0000",
+    "lastUpdated": "2026-09-10T03:01:32.306+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -20736,16 +20968,99 @@
       "url": "https://www.setlist.fm/venue/the-warehouse-amityville-ny-usa-6bd326b2.html"
     },
     "sets": {
-      "set": []
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Character Zero",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              }
+            },
+            {
+              "name": "Crescent Sun",
+              "info": "w/ The Other One jam"
+            },
+            {
+              "name": "Crybaby"
+            },
+            {
+              "name": "Funky Bitch",
+              "cover": {
+                "mbid": "d2728d68-26f6-42b6-a490-ddae85b65d6d",
+                "name": "Son Seals",
+                "sortName": "Seals, Son",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/son-seals-3bd61020.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Stash teases"
+            },
+            {
+              "name": "Stay Easy"
+            },
+            {
+              "name": "Money Man"
+            },
+            {
+              "name": "Deal",
+              "cover": {
+                "mbid": "1ecff755-607d-4130-9a8a-8873f27e5de5",
+                "name": "Jerry Garcia",
+                "sortName": "Garcia, Jerry",
+                "disambiguation": "guitarist / vocalist in Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/jerry-garcia-bd6adce.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Down With Disease ending"
+            }
+          ]
+        },
+        {
+          "encore": 1,
+          "song": [
+            {
+              "name": "Young Lust",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Dead Man Walking"
+            }
+          ]
+        }
+      ]
     },
     "info": "With Nick & Brady but no Tony.",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/the-warehouse-amityville-ny-4b7ecbee.html"
   },
   {
     "id": "4b7ecbfe",
-    "versionId": "gb0c95b6",
+    "versionId": "g30cd9c7",
     "eventDate": "08-11-2022",
-    "lastUpdated": "2026-09-08T03:30:01.839+0000",
+    "lastUpdated": "2026-09-10T01:53:42.422+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -20775,14 +21090,14 @@
     "sets": {
       "set": []
     },
-    "info": "Opening for Peace Pipe Gypsy.",
+    "info": "Opening for Peace Pipe Gypsy. Brady Wilkins on Percussion for whole show.",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-4b7ecbfe.html"
   },
   {
     "id": "537ecbfd",
-    "versionId": "g30c95af",
+    "versionId": "g430cdb77",
     "eventDate": "05-11-2022",
-    "lastUpdated": "2026-09-08T03:31:13.397+0000",
+    "lastUpdated": "2026-09-10T03:12:11.532+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -20810,9 +21125,57 @@
       "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
     },
     "sets": {
-      "set": []
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Money Man",
+              "info": "->"
+            },
+            {
+              "name": "Crybaby"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "Dead Man Walking"
+            },
+            {
+              "name": "Funky Bitch",
+              "cover": {
+                "mbid": "d2728d68-26f6-42b6-a490-ddae85b65d6d",
+                "name": "Son Seals",
+                "sortName": "Seals, Son",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/son-seals-3bd61020.html"
+              }
+            },
+            {
+              "name": "Yesterday"
+            },
+            {
+              "name": "Who's Ernie?"
+            },
+            {
+              "name": "Champagne Supernova",
+              "cover": {
+                "mbid": "39ab1aed-75e0-4140-bd47-540276886b60",
+                "name": "Oasis",
+                "sortName": "Oasis",
+                "disambiguation": "Noel & Liam Gallagher",
+                "url": "https://www.setlist.fm/setlists/oasis-bd6bd7e.html"
+              },
+              "info": ">"
+            },
+            {
+              "name": "Money Man"
+            }
+          ]
+        }
+      ]
     },
-    "info": "Opening set at Blue Point's Cask Fest. Warped Tour Band closed the show.",
+    "info": "Opening set at Blue Point's Cask Fest. Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show. Alex Diachok's last show with The Band. Warped Tour Band closed the show.",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-537ecbfd.html"
   },
   {
@@ -20854,9 +21217,9 @@
   },
   {
     "id": "437ecbf7",
-    "versionId": "g330c949d",
+    "versionId": "g530cdb2d",
     "eventDate": "18-10-2022",
-    "lastUpdated": "2026-09-08T04:08:16.040+0000",
+    "lastUpdated": "2026-09-10T03:34:30.758+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -20884,16 +21247,202 @@
       "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
     },
     "sets": {
-      "set": []
+      "set": [
+        {
+          "name": "Set 1:",
+          "song": [
+            {
+              "name": "Blaze On",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "incomplete/unfinished [->]"
+            },
+            {
+              "name": "You Sexy Thing",
+              "cover": {
+                "mbid": "a749130e-c2d8-4a7c-b740-908ea4574961",
+                "name": "Hot Chocolate",
+                "sortName": "Hot Chocolate",
+                "disambiguation": "70s and 80s British soul band",
+                "url": "https://www.setlist.fm/setlists/hot-chocolate-3d6bd47.html"
+              }
+            },
+            {
+              "name": "Crybaby"
+            },
+            {
+              "name": "Gotta Jibboo",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ Nick on Guitar & Kevin Griffin on Drums"
+            },
+            {
+              "name": "Bertha",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Nick on Guitar/Vocals & Kevin Griffin on Drums"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Kevin Griffin on Guitar/Vocals"
+            },
+            {
+              "name": "Breathe (In the Air)",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": "w/ Kevin Griffin on Guitar/Vocals [->]"
+            },
+            {
+              "name": "Breathe (Reprise)",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Set 2:",
+          "song": [
+            {
+              "name": "Sand",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "West L.A. Fadeaway",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Sand ending"
+            },
+            {
+              "name": "Angel From Montgomery",
+              "cover": {
+                "mbid": "e86492c1-0376-4df0-8042-8ba058c83960",
+                "name": "John Prine",
+                "sortName": "Prine, John",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/john-prine-7bd656f4.html"
+              },
+              "info": "w/ Cass House on Vocals"
+            },
+            {
+              "name": "Happy Birthday",
+              "info": ">"
+            },
+            {
+              "name": "Long Train Runnin'",
+              "cover": {
+                "mbid": "588dea29-eea3-456b-a815-3ee04f75c8e7",
+                "name": "The Doobie Brothers",
+                "sortName": "Doobie Brothers, The",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/the-doobie-brothers-63d6be43.html"
+              },
+              "info": "w/ Nick on Guitar/Vocals & Cass House on Background Vocals"
+            },
+            {
+              "name": "Money Man",
+              "info": "w/ Andy on Trumpet [->]"
+            },
+            {
+              "name": "Drums",
+              "info": "->"
+            },
+            {
+              "name": "Money Man"
+            },
+            {
+              "name": "Cayman Review",
+              "cover": {
+                "mbid": "d942f71b-09d3-406c-8f7d-c52eba3135c1",
+                "name": "Trey Anastasio",
+                "sortName": "Anastasio, Trey",
+                "disambiguation": "US jam band Phish lead singer",
+                "url": "https://www.setlist.fm/setlists/trey-anastasio-bd6adfa.html"
+              }
+            },
+            {
+              "name": "Heighty Hi",
+              "cover": {
+                "mbid": "5c601227-87b5-4c65-ad99-84f0eb9008ca",
+                "name": "Lee Michaels",
+                "sortName": "Michaels, Lee",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/lee-michaels-23d69877.html"
+              }
+            }
+          ]
+        },
+        {
+          "encore": 1,
+          "song": [
+            {
+              "name": "Wipe Out",
+              "cover": {
+                "mbid": "ea9889a3-539d-4549-bff3-cb721b989aa2",
+                "name": "The Surfaris",
+                "sortName": "Surfaris, The",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/the-surfaris-4bd66fe2.html"
+              }
+            }
+          ]
+        }
+      ]
     },
-    "info": "Toasted Tuesday with Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show.",
+    "info": "Toasted Tuesday with Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show. DJ Moodmaker before, between and after sets.",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/blue-point-brewery-patchogue-ny-437ecbf7.html"
   },
   {
     "id": "537ecbf1",
-    "versionId": "g230c949f",
+    "versionId": "g430cdbdf",
     "eventDate": "15-10-2022",
-    "lastUpdated": "2026-09-08T04:07:08.133+0000",
+    "lastUpdated": "2026-09-10T03:48:32.367+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -20925,6 +21474,70 @@
         {
           "song": [
             {
+              "name": "Funky Bitch",
+              "cover": {
+                "mbid": "d2728d68-26f6-42b6-a490-ddae85b65d6d",
+                "name": "Son Seals",
+                "sortName": "Seals, Son",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/son-seals-3bd61020.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Drums",
+              "info": "->"
+            },
+            {
+              "name": "That's What Love Will Make You Do",
+              "cover": {
+                "mbid": "37846227-55fb-444b-9cd7-dc06d5d20714",
+                "name": "Little Milton",
+                "sortName": "Little Milton",
+                "disambiguation": "US blues singer and guitarist Milton Campbell",
+                "url": "https://www.setlist.fm/setlists/little-milton-23d698db.html"
+              }
+            },
+            {
+              "name": "Crescent Sun",
+              "info": "->"
+            },
+            {
+              "name": "Tangled Up in Blue",
+              "cover": {
+                "mbid": "72c536dc-7137-4477-a521-567eeb840fa8",
+                "name": "Bob Dylan",
+                "sortName": "Dylan, Bob",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/bob-dylan-1bd6adb8.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Deal",
+              "cover": {
+                "mbid": "1ecff755-607d-4130-9a8a-8873f27e5de5",
+                "name": "Jerry Garcia",
+                "sortName": "Garcia, Jerry",
+                "disambiguation": "guitarist / vocalist in Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/jerry-garcia-bd6adce.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Down With Disease",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              }
+            },
+            {
+              "name": "Stay Easy"
+            },
+            {
               "name": "Crybaby",
               "info": "w/ Nick switching to Guitar during the jam [->]"
             },
@@ -20938,19 +21551,23 @@
                 "url": "https://www.setlist.fm/setlists/derek-and-the-dominos-1bd6ad54.html"
               },
               "info": "w/ Nick on Guitar & Lead Vocals"
+            },
+            {
+              "name": "Money Man",
+              "info": "w/ Mike's Song teases"
             }
           ]
         }
       ]
     },
-    "info": "With Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show.",
+    "info": "Fall Fest of AlesWith Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show. MJT opened the show & Black Country Beatnix closed the show",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/port-jeff-brewing-company-port-jefferson-ny-537ecbf1.html"
   },
   {
     "id": "4b7ecbf2",
-    "versionId": "g130c95d1",
+    "versionId": "g630cda87",
     "eventDate": "09-10-2022",
-    "lastUpdated": "2026-09-08T03:24:56.131+0000",
+    "lastUpdated": "2026-09-10T04:31:36.473+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -20978,9 +21595,304 @@
       "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
     },
     "sets": {
-      "set": []
+      "set": [
+        {
+          "name": "Set 1: (Outside)",
+          "song": [
+            {
+              "name": "Dead Man Walking"
+            },
+            {
+              "name": "Blaze On",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Funky Bitch",
+              "cover": {
+                "mbid": "d2728d68-26f6-42b6-a490-ddae85b65d6d",
+                "name": "Son Seals",
+                "sortName": "Seals, Son",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/son-seals-3bd61020.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Drums",
+              "info": "w/ Nick on Timbales & John on Nick's Drumset [->]"
+            },
+            {
+              "name": "That's What Love Will Make You Do",
+              "cover": {
+                "mbid": "37846227-55fb-444b-9cd7-dc06d5d20714",
+                "name": "Little Milton",
+                "sortName": "Little Milton",
+                "disambiguation": "US blues singer and guitarist Milton Campbell",
+                "url": "https://www.setlist.fm/setlists/little-milton-23d698db.html"
+              }
+            },
+            {
+              "name": "Crescent Sun",
+              "info": "w/ The Other One jam"
+            },
+            {
+              "name": "West L.A. Fadeaway",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Deal",
+              "cover": {
+                "mbid": "1ecff755-607d-4130-9a8a-8873f27e5de5",
+                "name": "Jerry Garcia",
+                "sortName": "Garcia, Jerry",
+                "disambiguation": "guitarist / vocalist in Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/jerry-garcia-bd6adce.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Down With Disease ending"
+            },
+            {
+              "name": "Whole Lotta Love",
+              "cover": {
+                "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3",
+                "name": "Led Zeppelin",
+                "sortName": "Led Zeppelin",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/led-zeppelin-13d6b509.html"
+              },
+              "info": "w/ Nick upfront on Vocals"
+            },
+            {
+              "name": "Crosseyed and Painless",
+              "cover": {
+                "mbid": "a94a7155-c79d-4409-9fcf-220cb0e4dc3a",
+                "name": "Talking Heads",
+                "sortName": "Talking Heads",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/talking-heads-3bd6b808.html"
+              },
+              "info": "w/ Nick on Vocals; John switching to Nick's drums & Nick picking up John's guitar during the jam"
+            }
+          ]
+        },
+        {
+          "name": "Set 2: (Outside)",
+          "song": [
+            {
+              "name": "Harvest Moon",
+              "cover": {
+                "mbid": "75167b8b-44e4-407b-9d35-effe87b223cf",
+                "name": "Neil Young",
+                "sortName": "Young, Neil",
+                "disambiguation": "Canadian singer, songwriter & musician",
+                "url": "https://www.setlist.fm/setlists/neil-young-6bd6b662.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Promontory Rider",
+              "cover": {
+                "mbid": "e9b419b5-ab8f-425c-8214-a7259e6efe10",
+                "name": "Robert Hunter",
+                "sortName": "Hunter, Robert",
+                "disambiguation": "American lyricist, non‐performing member of the Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/robert-hunter-3d6add7.html"
+              }
+            },
+            {
+              "name": "You Sexy Thing",
+              "cover": {
+                "mbid": "a749130e-c2d8-4a7c-b740-908ea4574961",
+                "name": "Hot Chocolate",
+                "sortName": "Hot Chocolate",
+                "disambiguation": "70s and 80s British soul band",
+                "url": "https://www.setlist.fm/setlists/hot-chocolate-3d6bd47.html"
+              }
+            },
+            {
+              "name": "Mountain Jam",
+              "cover": {
+                "mbid": "72359492-22be-4ed9-aaa0-efa434fb2b01",
+                "name": "The Allman Brothers Band",
+                "sortName": "Allman Brothers Band, The",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/the-allman-brothers-band-1bd6ad7c.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Turn On Your Love Light",
+              "cover": {
+                "mbid": "66ebc271-6a26-4fe7-848b-f217da119d92",
+                "name": "Bobby “Blue” Bland",
+                "sortName": "Bland, Bobby “Blue”",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/bobby-blue-bland-4bd7b36e.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Gotta Jibboo",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ Liz Reed jam; unfinished [->]"
+            },
+            {
+              "name": "You Sexy Thing (Reprise)"
+            },
+            {
+              "name": "Statesboro Blues",
+              "cover": {
+                "mbid": "81e02e29-e46a-49cb-bf13-d204cbe86daa",
+                "name": "Blind Willie McTell",
+                "sortName": "McTell, Blind Willie",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/blind-willie-mctell-63d62693.html"
+              }
+            },
+            {
+              "name": "Stay Easy"
+            },
+            {
+              "name": "Lola",
+              "cover": {
+                "mbid": "17b53d9f-5c63-4a09-a593-dde4608e0db9",
+                "name": "The Kinks",
+                "sortName": "Kinks, The",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/the-kinks-23d6ac37.html"
+              },
+              "info": "w/ Free teases [->]"
+            },
+            {
+              "name": "Heighty Hi",
+              "cover": {
+                "mbid": "5c601227-87b5-4c65-ad99-84f0eb9008ca",
+                "name": "Lee Michaels",
+                "sortName": "Michaels, Lee",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/lee-michaels-23d69877.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Blaze On",
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Paranoid",
+              "cover": {
+                "mbid": "5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
+                "name": "Black Sabbath",
+                "sortName": "Black Sabbath",
+                "disambiguation": "English heavy metal band",
+                "url": "https://www.setlist.fm/setlists/black-sabbath-33d6806d.html"
+              },
+              "info": "w/ Runnin' Down a Dream ending including Lola quotes"
+            },
+            {
+              "name": "Morning Dew",
+              "cover": {
+                "mbid": "f469afbc-132f-4a6a-b10b-bc31ab5288e2",
+                "name": "Bonnie Dobson",
+                "sortName": "Dobson, Bonnie",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/bonnie-dobson-3d7a1ef.html"
+              }
+            },
+            {
+              "name": "Who's Ernie?",
+              "info": "w/ speech by Beau convincing people to put money in the tip bucket for a 3rd set inside."
+            }
+          ]
+        },
+        {
+          "name": "Set 3: (Inside)",
+          "song": [
+            {
+              "name": "China Cat Sunflower",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Harry Hood jam",
+              "info": "->"
+            },
+            {
+              "name": "China Cat Sunflower",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Bertha teases & Feelin' Groovy jam [->]"
+            },
+            {
+              "name": "I Know You Rider",
+              "cover": {
+                "mbid": "9be7f096-97ec-4615-8957-8d40b5dcbc41",
+                "name": "[traditional]",
+                "sortName": "[traditional]",
+                "disambiguation": "special purpose artist",
+                "url": "https://www.setlist.fm/setlists/traditional-5bd2f7e4.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Roggae",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              }
+            },
+            {
+              "name": "Cayman Review",
+              "cover": {
+                "mbid": "d942f71b-09d3-406c-8f7d-c52eba3135c1",
+                "name": "Trey Anastasio",
+                "sortName": "Anastasio, Trey",
+                "disambiguation": "US jam band Phish lead singer",
+                "url": "https://www.setlist.fm/setlists/trey-anastasio-bd6adfa.html"
+              },
+              "info": "w/ Thank U Falettinme (Be Mice Elf Agin) jam"
+            }
+          ]
+        }
+      ]
     },
-    "info": "Outside in the lot. Line-up: John, Rob, Nick & Tony.",
+    "info": "John, Rob, Nick & Tony outside in the lot at Beau's. Then John, Rob & Nick moved inside for an unplanned 3rd set.",
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/beaus-bar-greenlawn-ny-4b7ecbf2.html"
   },
   {
@@ -21055,6 +21967,247 @@
       "set": []
     },
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/the-bitter-end-new-york-ny-537ecbe9.html"
+  },
+  {
+    "id": "7b7e3284",
+    "versionId": "g30cd9d3",
+    "eventDate": "27-07-2022",
+    "lastUpdated": "2026-09-10T01:49:45.681+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "63debaf3",
+      "name": "Jones Beach State Park",
+      "city": {
+        "id": "5143198",
+        "name": "Wantagh",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6837121,
+          "long": -73.5101258
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/jones-beach-state-park-wantagh-ny-usa-63debaf3.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "John, Rob & Nick in the lot for Phish w/ Kevin Griffin on Guitar & appearances by Andy on Trumpet. No documented setlist for this show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/jones-beach-state-park-wantagh-ny-7b7e3284.html"
+  },
+  {
+    "id": "737e3289",
+    "versionId": "g30cd9e3",
+    "eventDate": "26-07-2022",
+    "lastUpdated": "2026-09-10T01:48:16.343+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "63debaf3",
+      "name": "Jones Beach State Park",
+      "city": {
+        "id": "5143198",
+        "name": "Wantagh",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6837121,
+          "long": -73.5101258
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/jones-beach-state-park-wantagh-ny-usa-63debaf3.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "name": "Set 1:",
+          "song": [
+            {
+              "name": "That's What Love Will Make You Do",
+              "cover": {
+                "mbid": "37846227-55fb-444b-9cd7-dc06d5d20714",
+                "name": "Little Milton",
+                "sortName": "Little Milton",
+                "disambiguation": "US blues singer and guitarist Milton Campbell",
+                "url": "https://www.setlist.fm/setlists/little-milton-23d698db.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Jam",
+              "info": "->"
+            },
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Set 2:",
+          "song": [
+            {
+              "name": "Crosseyed and Painless",
+              "cover": {
+                "mbid": "a94a7155-c79d-4409-9fcf-220cb0e4dc3a",
+                "name": "Talking Heads",
+                "sortName": "Talking Heads",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/talking-heads-3bd6b808.html"
+              },
+              "info": "w/ Steve Remp on Vocals"
+            },
+            {
+              "name": "Young Lust",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Another Jam",
+              "info": "->"
+            },
+            {
+              "name": "Mountain Jam",
+              "cover": {
+                "mbid": "72359492-22be-4ed9-aaa0-efa434fb2b01",
+                "name": "The Allman Brothers Band",
+                "sortName": "Allman Brothers Band, The",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/the-allman-brothers-band-1bd6ad7c.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Going Down the Road Feeling Bad",
+              "cover": {
+                "mbid": "9be7f096-97ec-4615-8957-8d40b5dcbc41",
+                "name": "[traditional]",
+                "sortName": "[traditional]",
+                "disambiguation": "special purpose artist",
+                "url": "https://www.setlist.fm/setlists/traditional-5bd2f7e4.html"
+              }
+            },
+            {
+              "name": "Tangled Up in Blue",
+              "cover": {
+                "mbid": "72c536dc-7137-4477-a521-567eeb840fa8",
+                "name": "Bob Dylan",
+                "sortName": "Dylan, Bob",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/bob-dylan-1bd6adb8.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Yet Another Jam",
+              "info": "->"
+            },
+            {
+              "name": "Bertha",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              }
+            },
+            {
+              "name": "Whole Lotta Love",
+              "cover": {
+                "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3",
+                "name": "Led Zeppelin",
+                "sortName": "Led Zeppelin",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/led-zeppelin-13d6b509.html"
+              },
+              "info": "w/ Steve Remp on Drums & Nick on Vocals"
+            },
+            {
+              "name": "Franklin's Tower",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Steve Remp on Drums & Nick on Vocals"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "John, Rob & Nick in the lot for Phish. Set 3 was not documented.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/jones-beach-state-park-wantagh-ny-737e3289.html"
+  },
+  {
+    "id": "7b7e3294",
+    "versionId": "g7b0cde80",
+    "eventDate": "14-07-2022",
+    "lastUpdated": "2026-09-10T01:25:14.789+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "13df8995",
+      "name": "Birdies",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/birdies-patchogue-ny-usa-13df8995.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Alive After 5 After Party outside at Birdies. Brady Wilkins on Percussion and Nick Balzano on Second Drumset/Vocals for whole show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/birdies-patchogue-ny-7b7e3294.html"
   },
   {
     "id": "537ecbe1",
@@ -21580,5 +22733,440 @@
       "set": []
     },
     "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2022/beaus-bar-greenlawn-ny-7b7eca74.html"
+  },
+  {
+    "id": "1b7e396c",
+    "versionId": "g3b0cf4e4",
+    "eventDate": "30-10-2021",
+    "lastUpdated": "2026-09-09T04:21:40.603+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bd0f1f2",
+      "name": "Beau’s Bar",
+      "city": {
+        "id": "5119377",
+        "name": "Greenlawn",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.86899,
+          "long": -73.36512
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/beaus-bar-greenlawn-ny-1b7e396c.html"
+  },
+  {
+    "id": "137e3961",
+    "versionId": "g2b0cf4d6",
+    "eventDate": "04-09-2021",
+    "lastUpdated": "2026-09-09T04:25:07.177+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bdf357a",
+      "name": "The Salty Bastard",
+      "city": {
+        "id": "5114554",
+        "name": "Davis Park",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.683988,
+          "long": -73.004831
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/the-salty-bastard-davis-park-ny-usa-bdf357a.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Played upon Blue Point's boat The Salty Bastard on the bay at Davis Park.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/the-salty-bastard-davis-park-ny-137e3961.html"
+  },
+  {
+    "id": "137e3959",
+    "versionId": "g3b0cf4ac",
+    "eventDate": "22-08-2021",
+    "lastUpdated": "2026-09-09T04:30:55.158+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "13df3579",
+      "name": "Jackson's",
+      "city": {
+        "id": "5113412",
+        "name": "Commack",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.8428759,
+          "long": -73.2928943
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/jacksons-commack-ny-usa-13df3579.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/jacksons-commack-ny-137e3959.html"
+  },
+  {
+    "id": "1b7e3964",
+    "versionId": "g330cf4bd",
+    "eventDate": "20-08-2021",
+    "lastUpdated": "2026-09-09T04:27:59.613+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/blue-point-brewery-patchogue-ny-1b7e3964.html"
+  },
+  {
+    "id": "37e3967",
+    "versionId": "g3b0cf4b8",
+    "eventDate": "19-08-2021",
+    "lastUpdated": "2026-09-09T04:27:27.350+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "6bd3be0e",
+      "name": "Downtown",
+      "city": {
+        "id": "5133926",
+        "name": "Riverhead",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.9170435,
+          "long": -72.6620402
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/downtown-riverhead-ny-usa-6bd3be0e.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "Alive on 25 at the Peconic County Brewing Stage.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/downtown-riverhead-ny-37e3967.html"
+  },
+  {
+    "id": "37e395f",
+    "versionId": "g3b0cf498",
+    "eventDate": "23-07-2021",
+    "lastUpdated": "2026-09-09T04:32:47.002+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "53d387dd",
+      "name": "Jones Beach Bandshell",
+      "city": {
+        "id": "5143198",
+        "name": "Wantagh",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6837121,
+          "long": -73.5101258
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/jones-beach-bandshell-wantagh-ny-usa-53d387dd.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/jones-beach-bandshell-wantagh-ny-37e395f.html"
+  },
+  {
+    "id": "37e394b",
+    "versionId": "g4b0cf776",
+    "eventDate": "06-06-2021",
+    "lastUpdated": "2026-09-09T04:40:11.934+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bd0f1f2",
+      "name": "Beau’s Bar",
+      "city": {
+        "id": "5119377",
+        "name": "Greenlawn",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.86899,
+          "long": -73.36512
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "info": "In the back lot at Beau's",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/beaus-bar-greenlawn-ny-37e394b.html"
+  },
+  {
+    "id": "1b7e3940",
+    "versionId": "g5b0cf754",
+    "eventDate": "02-04-2021",
+    "lastUpdated": "2026-09-09T04:46:55.640+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "3bd1f048",
+      "name": "K.J. Farrell's Bar & Grill",
+      "city": {
+        "id": "5108707",
+        "name": "Bellmore",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6687125,
+          "long": -73.5270709
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/kj-farrells-bar-and-grill-bellmore-ny-usa-3bd1f048.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/kj-farrells-bar-and-grill-bellmore-ny-1b7e3940.html"
+  },
+  {
+    "id": "37e396f",
+    "versionId": "g230cf4ef",
+    "eventDate": "31-01-2021",
+    "lastUpdated": "2026-09-09T04:19:33.570+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bd0f1f2",
+      "name": "Beau’s Bar",
+      "city": {
+        "id": "5119377",
+        "name": "Greenlawn",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.86899,
+          "long": -73.36512
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/beaus-bar-greenlawn-ny-37e396f.html"
+  },
+  {
+    "id": "137e3945",
+    "versionId": "g5b0cf74c",
+    "eventDate": "03-01-2021",
+    "lastUpdated": "2026-09-09T04:48:11.852+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "3bd1f048",
+      "name": "K.J. Farrell's Bar & Grill",
+      "city": {
+        "id": "5108707",
+        "name": "Bellmore",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6687125,
+          "long": -73.5270709
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/kj-farrells-bar-and-grill-bellmore-ny-usa-3bd1f048.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2021/kj-farrells-bar-and-grill-bellmore-ny-137e3945.html"
+  },
+  {
+    "id": "37e393b",
+    "versionId": "g430cf747",
+    "eventDate": "26-12-2020",
+    "lastUpdated": "2026-09-09T04:48:47.204+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bd0f1f2",
+      "name": "Beau’s Bar",
+      "city": {
+        "id": "5119377",
+        "name": "Greenlawn",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.86899,
+          "long": -73.36512
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2020/beaus-bar-greenlawn-ny-37e393b.html"
+  },
+  {
+    "id": "1b7e390c",
+    "versionId": "g5b0cf7c4",
+    "eventDate": "31-12-2019",
+    "lastUpdated": "2026-09-09T05:10:26.946+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "bd0f1f2",
+      "name": "Beau’s Bar",
+      "city": {
+        "id": "5119377",
+        "name": "Greenlawn",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.86899,
+          "long": -73.36512
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/beaus-bar-greenlawn-ny-usa-bd0f1f2.html"
+    },
+    "sets": {
+      "set": []
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2019/beaus-bar-greenlawn-ny-1b7e390c.html"
   }
 ]
