@@ -91,6 +91,7 @@ Song,Type,Cover Artist,Total Plays,First Played,First Venue,First City,Last Play
 "Stay Easy House Remix","Original","",5,"02/27/2026","People's Pub","Bayport","09/05/2026","Camp Pa-Qua-Tuck","Center Moriches",5,0,"Regular",2,4.3,9,4,4
 "The Harder They Come","Cover","Jimmy Cliff",5,"04/12/2023","Blue Point Brewery","Patchogue","09/04/2026","Blue Point Brewery","Patchogue",5,1,"Regular",3,29.8,89,3,3
 "Access Me","Cover","Phish",4,"02/27/2026","People's Pub","Bayport","06/27/2026","Arrowhead Ranch","Parksville",4,10,"Regular",1,2.7,5,4,4
+"Better Days","Original","",4,"07/15/2018","Shorefront Park","Patchogue","05/17/2024","People's Pub","Bayport",4,86,"Monster Gap",4,31.3,83,4,3
 "Carini","Cover","Phish",4,"05/20/2023","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",4,65,"Monster Gap",21,17.7,21,2,2
 "Down With Disease","Cover","Phish",4,"10/15/2022","Port Jeff Brewing Company","Port Jefferson","08/24/2024","Beau’s Bar","Greenlawn",4,74,"Monster Gap",11,21.3,47,4,4
 "Down With Disease ending","Original","",4,"10/09/2022","Beau’s Bar","Greenlawn","06/27/2024","Stella Blues","New Haven",4,81,"Monster Gap",37,19.3,37,3,3
@@ -101,7 +102,6 @@ Song,Type,Cover Artist,Total Plays,First Played,First Venue,First City,Last Play
 "Wolfman's Brother","Cover","Phish",4,"03/10/2023","Industry Lounge & Gallery","Huntington","09/04/2026","Blue Point Brewery","Patchogue",4,1,"Regular",1,41.7,123,2,2
 "Aisle 8","Original","",3,"12/27/2023","Sayville Theater","Sayville","02/29/2024","Birdies","Patchogue",3,93,"Monster Gap",2,2,2,3,3
 "Another Jam","Original","",3,"07/26/2022","Jones Beach State Park","Wantagh","09/06/2024","89 North","Patchogue",3,70,"Monster Gap",11,37,63,3,2
-"Better Days","Original","",3,"12/27/2023","Sayville Theater","Sayville","05/17/2024","People's Pub","Bayport",3,86,"Monster Gap",4,5.5,7,3,3
 "Blaze On","Cover","Phish",3,"10/09/2022","Beau’s Bar","Greenlawn","08/30/2024","Blue Point Brewery","Patchogue",3,72,"Monster Gap",1,34,67,2,2
 "Breakdown","Cover","Tom Petty and the Heartbreakers",3,"06/10/2023","Blue Point Brewery","Patchogue","03/28/2025","Beau’s Bar","Greenlawn",3,53,"Monster Gap",17,32,47,2,2
 "Cayman Review","Cover","Trey Anastasio",3,"10/09/2022","Beau’s Bar","Greenlawn","05/20/2023","Blue Point Brewery","Patchogue",3,121,"Monster Gap",1,9.5,18,2,2
@@ -118,6 +118,7 @@ Song,Type,Cover Artist,Total Plays,First Played,First Venue,First City,Last Play
 "Uncle Rob (Reprise)","Original","",3,"12/01/2023","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",3,97,"Monster Gap",1,1,1,2,2
 "Voodoo Child","Cover","The Jimi Hendrix Experience",3,"10/28/2023","Beau’s Bar","Greenlawn","08/08/2025","Black Oak Tavern","Oneonta",3,39,"Bust Out",51,32,51,2,2
 "Whipping Post","Cover","The Allman Brothers Band",3,"08/10/2023","Birdies","Patchogue","10/28/2023","Beau’s Bar","Greenlawn",3,105,"Monster Gap",5,3,5,3,2
+"Yesterday","Original","",3,"07/15/2018","Shorefront Park","Patchogue","11/05/2022","Blue Point Brewery","Patchogue",3,138,"Monster Gap",23,21.5,23,3,2
 "You Sexy Thing (Reprise)","Original","",3,"10/09/2022","Beau’s Bar","Greenlawn","02/29/2024","Birdies","Patchogue",3,93,"Monster Gap",39,23.5,39,3,3
 "(A Swingin') Thank You To Brian","Original","",2,"04/05/2023","Blue Point Brewery","Patchogue","04/12/2023","Blue Point Brewery","Patchogue",2,124,"Monster Gap",0,0,0,1,1
 "Don't Let Me Down","Cover","The Beatles",2,"04/12/2023","Blue Point Brewery","Patchogue","04/16/2025","Blue Point Brewery","Patchogue",2,52,"Monster Gap",0,71,71,1,1
@@ -137,8 +138,8 @@ Song,Type,Cover Artist,Total Plays,First Played,First Venue,First City,Last Play
 "Thrill Is Gone","Cover","B.B. King",2,"06/27/2024","Stella Blues","New Haven","04/09/2026","89 North","Patchogue",2,17,"Regular",0,63,63,2,2
 "Time","Cover","Pink Floyd",2,"10/31/2024","Sayville Theater","Sayville","11/26/2025","The Warehouse","Amityville",2,28,"Bust Out",0,35,35,2,2
 "Wilson intro","Original","",2,"05/20/2023","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",2,97,"Monster Gap",0,23,23,1,1
+"Wine Way Out","Original","",2,"07/15/2018","Shorefront Park","Patchogue","02/29/2024","Birdies","Patchogue",2,93,"Monster Gap",0,89,89,2,1
 "Wipe Out","Cover","The Surfaris",2,"10/18/2022","Blue Point Brewery","Patchogue","06/27/2024","Stella Blues","New Haven",2,81,"Monster Gap",0,58,58,2,2
-"Yesterday","Original","",2,"04/06/2022","The Warehouse","Amityville","11/05/2022","Blue Point Brewery","Patchogue",2,138,"Monster Gap",0,20,20,2,2
 "Yet Another Jam","Original","",2,"07/26/2022","Jones Beach State Park","Wantagh","09/06/2024","89 North","Patchogue",2,70,"Monster Gap",0,75,75,2,2
 """Heroes""","Cover","David Bowie",1,"11/30/2024","Industry Lounge & Gallery","Huntington","11/30/2024","Industry Lounge & Gallery","Huntington",1,62,"Monster Gap",0,0,0,1,1
 "(A Swingin') Birthday Announcment","Original","",1,"01/27/2024","Blue Point Brewery","Patchogue","01/27/2024","Blue Point Brewery","Patchogue",1,97,"Monster Gap",0,0,0,1,1
@@ -199,6 +200,7 @@ Song,Type,Cover Artist,Total Plays,First Played,First Venue,First City,Last Play
 "Midnight Moonlight","Cover","Old & In the Way",1,"03/29/2023","Blue Point Brewery","Patchogue","03/29/2023","Blue Point Brewery","Patchogue",1,127,"Monster Gap",0,0,0,1,1
 "No One Left To Run With jam","Original","",1,"10/22/2023","Jamesport Farm Brewery","Riverhead","10/22/2023","Jamesport Farm Brewery","Riverhead",1,106,"Monster Gap",0,0,0,1,1
 "Oh! Sweet Nuthin'","Cover","The Velvet Underground",1,"11/25/2023","Industry Lounge & Gallery","Huntington","11/25/2023","Industry Lounge & Gallery","Huntington",1,102,"Monster Gap",0,0,0,1,1
+"Oh! Yeah","Original","",1,"02/24/2019","89 North","Patchogue","02/24/2019","89 North","Patchogue",1,177,"Monster Gap",0,0,0,1,1
 "One More Saturday Night","Cover","Bob Weir",1,"06/05/2023","89 North","Patchogue","06/05/2023","89 North","Patchogue",1,120,"Monster Gap",0,0,0,1,1
 "Pac-Man Theme (Remix)","Original","",1,"10/31/2023","Blue Point Brewery","Patchogue","10/31/2023","Blue Point Brewery","Patchogue",1,104,"Monster Gap",0,0,0,1,1
 "Primass","Original","",1,"10/31/2024","Sayville Theater","Sayville","10/31/2024","Sayville Theater","Sayville",1,64,"Monster Gap",0,0,0,1,1
@@ -239,7 +241,6 @@ Song,Type,Cover Artist,Total Plays,First Played,First Venue,First City,Last Play
 "When the Circus Comes","Cover","Los Lobos",1,"05/17/2024","People's Pub","Bayport","05/17/2024","People's Pub","Bayport",1,86,"Monster Gap",0,0,0,1,1
 "Whole Ocean Jam","Original","",1,"08/24/2024","Beau’s Bar","Greenlawn","08/24/2024","Beau’s Bar","Greenlawn",1,74,"Monster Gap",0,0,0,1,1
 "Wind Jam","Original","",1,"09/15/2023","Blue Point Brewery","Patchogue","09/15/2023","Blue Point Brewery","Patchogue",1,110,"Monster Gap",0,0,0,1,1
-"Wine Way Out","Original","",1,"02/29/2024","Birdies","Patchogue","02/29/2024","Birdies","Patchogue",1,93,"Monster Gap",0,0,0,1,1
 "Wipeout","Original","",1,"10/02/2023","Beach Club Estate","Lake Ronkonkoma","10/02/2023","Beach Club Estate","Lake Ronkonkoma",1,108,"Monster Gap",0,0,0,1,1
 "Yahoos & Triangles","Cover","The Refreshments",1,"11/22/2023","Bobbique","Patchogue","11/22/2023","Bobbique","Patchogue",1,103,"Monster Gap",0,0,0,1,1
 "You Really Got Me","Cover","The Kinks",1,"10/22/2024","Blue Point Brewery","Patchogue","10/22/2024","Blue Point Brewery","Patchogue",1,65,"Monster Gap",0,0,0,1,1
