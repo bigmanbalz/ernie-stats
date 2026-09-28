@@ -1,5 +1,187 @@
 [
   {
+    "id": "737f8ab5",
+    "versionId": "g7b0a8694",
+    "eventDate": "21-09-2026",
+    "lastUpdated": "2026-09-23T06:01:22.695+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "63d7063b",
+      "name": "89 North",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/89-north-patchogue-ny-usa-63d7063b.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "name": "Set 1:",
+          "song": [
+            {
+              "name": "Scarlet Begonias",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ China Cat Sunflower teases by John; unfinished [->]"
+            },
+            {
+              "name": "Qué Lástima",
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "I Know You Rider",
+              "cover": {
+                "mbid": "9be7f096-97ec-4615-8957-8d40b5dcbc41",
+                "name": "[traditional]",
+                "sortName": "[traditional]",
+                "disambiguation": "special purpose artist",
+                "url": "https://www.setlist.fm/setlists/traditional-5bd2f7e4.html"
+              }
+            },
+            {
+              "name": "Colorado Town"
+            },
+            {
+              "name": "Franklin's Tower",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Blue Sky teases"
+            },
+            {
+              "name": "Jack Straw",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Set 2:",
+          "song": [
+            {
+              "name": "Mighty High",
+              "cover": {
+                "mbid": "13140835-12e8-4208-a5c2-76992802381e",
+                "name": "Mighty Clouds of Joy",
+                "sortName": "Mighty Clouds of Joy",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/mighty-clouds-of-joy-7bd6660c.html"
+              }
+            },
+            {
+              "name": "Burning Roses",
+              "info": "Debut Cover [->]"
+            },
+            {
+              "name": "The Wheel",
+              "cover": {
+                "mbid": "1ecff755-607d-4130-9a8a-8873f27e5de5",
+                "name": "Jerry Garcia",
+                "sortName": "Garcia, Jerry",
+                "disambiguation": "guitarist / vocalist in Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/jerry-garcia-bd6adce.html"
+              },
+              "info": "w/ Roggae jam & Valentine teases [->]"
+            },
+            {
+              "name": "Burning Roses"
+            },
+            {
+              "name": "Peggy-O",
+              "cover": {
+                "mbid": "9be7f096-97ec-4615-8957-8d40b5dcbc41",
+                "name": "[traditional]",
+                "sortName": "[traditional]",
+                "disambiguation": "special purpose artist",
+                "url": "https://www.setlist.fm/setlists/traditional-5bd2f7e4.html"
+              },
+              "info": "Last Time Played: 2.17.25 (52 shows)"
+            },
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Get Down",
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "w/ Bathtub Gin teases by John; unfinished [->]"
+            },
+            {
+              "name": "One More Saturday Night",
+              "cover": {
+                "mbid": "c8a63580-9e6b-4852-bf93-c09760035e76",
+                "name": "Bob Weir",
+                "sortName": "Weir, Bob",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/bob-weir-bd6add6.html"
+              },
+              "info": "Last Time Played: 6.5.23 (120 shows)"
+            }
+          ]
+        },
+        {
+          "encore": 1,
+          "song": [
+            {
+              "name": "Summertime",
+              "info": "w/ Mississippi Half Step Uptown Toodeloo teases & quotes"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "NOTES: Dead Monday! Show was played as a 4-piece. Brady was under the weather.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/89-north-patchogue-ny-737f8ab5.html"
+  },
+  {
     "id": "b7ec936",
     "versionId": "g5b0c9fcc",
     "eventDate": "05-09-2026",
