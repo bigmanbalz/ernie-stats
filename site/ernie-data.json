@@ -1,5 +1,114 @@
 [
   {
+    "id": "3b7c7050",
+    "versionId": "g1b36e1e8",
+    "eventDate": "20-10-2026",
+    "lastUpdated": "2026-10-24T06:09:03.499+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "5bd58bc8",
+      "name": "Blue Point Brewery",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/blue-point-brewery-patchogue-ny-usa-5bd58bc8.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Heighty Hi",
+              "cover": {
+                "mbid": "5c601227-87b5-4c65-ad99-84f0eb9008ca",
+                "name": "Lee Michaels",
+                "sortName": "Michaels, Lee",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/lee-michaels-23d69877.html"
+              },
+              "info": "incomplete/unfinished [->]"
+            },
+            {
+              "name": "Blaze On",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "LTP: 8.23.24 (73 shows)"
+            },
+            {
+              "name": "Money Man",
+              "info": "w/ Thunderstruck teases; no WakaWOW jam and no third verse"
+            },
+            {
+              "name": "Burning Roses"
+            },
+            {
+              "name": "Bubbles"
+            },
+            {
+              "name": "Eminence Front",
+              "cover": {
+                "mbid": "9fdaa16b-a6c4-4831-b87c-bc9ca8ce7eaa",
+                "name": "The Who",
+                "sortName": "Who, The",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/the-who-bd6bd2a.html"
+              },
+              "info": "LTP: 12.27.23 (100 Shows)"
+            },
+            {
+              "name": "Feel Free"
+            },
+            {
+              "name": "Beautiful Buzz",
+              "info": "->"
+            },
+            {
+              "name": "Sand",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "incomplete/unfinished [->]"
+            },
+            {
+              "name": "Beautiful Buzz"
+            },
+            {
+              "name": "No Rest"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "Toasted Tuesday w/s/g DJ Moodmaker",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/blue-point-brewery-patchogue-ny-3b7c7050.html"
+  },
+  {
     "id": "737f8ab5",
     "versionId": "g7b0a8694",
     "eventDate": "21-09-2026",
@@ -9954,9 +10063,9 @@
   },
   {
     "id": "3376d489",
-    "versionId": "g3313e889",
+    "versionId": "gb36195a",
     "eventDate": "30-08-2024",
-    "lastUpdated": "2026-04-06T04:14:39.194+0000",
+    "lastUpdated": "2026-10-26T02:57:57.145+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -9997,7 +10106,7 @@
                 "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
                 "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
               },
-              "info": "Debut Cover; incomplete [->]"
+              "info": "incomplete [->]"
             },
             {
               "name": "Funky Bitch",
@@ -21747,9 +21856,9 @@
   },
   {
     "id": "4b7ecbf2",
-    "versionId": "g630cda87",
+    "versionId": "g3361953",
     "eventDate": "09-10-2022",
-    "lastUpdated": "2026-09-10T04:31:36.473+0000",
+    "lastUpdated": "2026-10-26T02:59:27.334+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -21793,7 +21902,7 @@
                 "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
                 "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
               },
-              "info": "->"
+              "info": "Debut Cover [->]"
             },
             {
               "name": "Funky Bitch",
