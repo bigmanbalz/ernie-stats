@@ -1,5 +1,335 @@
 [
   {
+    "id": "2b7d8886",
+    "versionId": "g2b37c0f2",
+    "eventDate": "31-10-2026",
+    "lastUpdated": "2026-11-02T07:17:34.324+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "2bdea492",
+      "name": "People's Pub",
+      "city": {
+        "id": "5108191",
+        "name": "Bayport",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7384317,
+          "long": -73.0506656
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/peoples-pub-bayport-ny-usa-2bdea492.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "name": "Set 1:",
+          "song": [
+            {
+              "name": "Hey Old Lady"
+            },
+            {
+              "name": "Lonely Star"
+            },
+            {
+              "name": "Access Me",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ Jump On It teases & Another Brick in the Walk jam; inc./unf. [->]"
+            },
+            {
+              "name": "Get Down"
+            },
+            {
+              "name": "CHICO",
+              "info": "w/ Bubbles teases"
+            }
+          ]
+        },
+        {
+          "name": "Set 2:",
+          "song": [
+            {
+              "name": "Primass",
+              "info": "including the entirety of My Way sung by NosferROBtu with Ben on Keys; John, Nick & Brady left stage"
+            },
+            {
+              "name": "A Thousand Faces",
+              "info": "w/ The Ocean teases [->]"
+            },
+            {
+              "name": "Sand",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "w/ Jump On It teases [->]"
+            },
+            {
+              "name": "Psycho Killer",
+              "cover": {
+                "mbid": "a94a7155-c79d-4409-9fcf-220cb0e4dc3a",
+                "name": "Talking Heads",
+                "sortName": "Talking Heads",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/talking-heads-3bd6b808.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Time",
+              "cover": {
+                "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+                "name": "Pink Floyd",
+                "sortName": "Pink Floyd",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/pink-floyd-13d6adc5.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Day By Day"
+            },
+            {
+              "name": "Aisle 8",
+              "info": "[6] w/ Sunshine of Your Love excerpt; unfinished; LTP 2.2.24 (94 shows) [->]"
+            },
+            {
+              "name": "Dead Man Walking",
+              "info": "w/ Jump On It teases"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "During A Thousand Faces, 5 long necked “figures” with white masks entered & weaved through the crowd.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/peoples-pub-bayport-ny-2b7d8886.html"
+  },
+  {
+    "id": "337d8891",
+    "versionId": "g2337c00b",
+    "eventDate": "24-10-2026",
+    "lastUpdated": "2026-11-02T07:07:01.444+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "23d12413",
+      "name": "Dharma Bums",
+      "city": {
+        "id": "5203197",
+        "name": "New Hope",
+        "state": "Pennsylvania",
+        "stateCode": "PA",
+        "coords": {
+          "lat": 40.3642728,
+          "long": -74.9512785
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/dharma-bums-new-hope-pa-usa-23d12413.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "name": "Set 1:",
+          "song": [
+            {
+              "name": "Thrill Is Gone",
+              "cover": {
+                "mbid": "dcb03ce3-67a5-4eb3-b2d1-2a12d93a38f3",
+                "name": "B.B. King",
+                "sortName": "King, B.B.",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/bb-king-2bd698fe.html"
+              },
+              "info": "incomplete/unfinished [->]"
+            },
+            {
+              "name": "That's What Love Will Make You Do",
+              "cover": {
+                "mbid": "37846227-55fb-444b-9cd7-dc06d5d20714",
+                "name": "Little Milton",
+                "sortName": "Little Milton",
+                "disambiguation": "US blues singer and guitarist Milton Campbell",
+                "url": "https://www.setlist.fm/setlists/little-milton-23d698db.html"
+              }
+            },
+            {
+              "name": "Beautiful Buzz"
+            },
+            {
+              "name": "Jack Straw",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": ">"
+            },
+            {
+              "name": "Crescent Sun",
+              "info": "w/ The Other One jam [>]"
+            },
+            {
+              "name": "Jack Straw",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Mountain Jam",
+              "cover": {
+                "mbid": "72359492-22be-4ed9-aaa0-efa434fb2b01",
+                "name": "The Allman Brothers Band",
+                "sortName": "Allman Brothers Band, The",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/the-allman-brothers-band-1bd6ad7c.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Crescent Sun"
+            },
+            {
+              "name": "Pluto"
+            },
+            {
+              "name": "Deal",
+              "cover": {
+                "mbid": "1ecff755-607d-4130-9a8a-8873f27e5de5",
+                "name": "Jerry Garcia",
+                "sortName": "Garcia, Jerry",
+                "disambiguation": "guitarist / vocalist in Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/jerry-garcia-bd6adce.html"
+              },
+              "info": "w/ Down with Disease jam"
+            },
+            {
+              "name": "Colorado Town"
+            }
+          ]
+        },
+        {
+          "name": "Set 2:",
+          "song": [
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Also sprach Zarathustra, op. 30",
+              "cover": {
+                "mbid": "4cb43d82-824e-4034-b03d-1a98f36f6e16",
+                "name": "Richard Strauss",
+                "sortName": "Strauss, Richard",
+                "disambiguation": "German composer",
+                "url": "https://www.setlist.fm/setlists/richard-strauss-3d4ddcb.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Shakedown Street",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Get Down",
+              "info": "w/ No Man In No Man's Land teases [->]"
+            },
+            {
+              "name": "Weekapaug Groove",
+              "cover": {
+                "mbid": "e01646f2-2a04-450d-8bf2-0d993082e058",
+                "name": "Phish",
+                "sortName": "Phish",
+                "disambiguation": "American rock band formed in Burlington, Vermont, in 1983",
+                "url": "https://www.setlist.fm/setlists/phish-13d6ad51.html"
+              },
+              "info": "->"
+            },
+            {
+              "name": "Promontory Rider",
+              "cover": {
+                "mbid": "e9b419b5-ab8f-425c-8214-a7259e6efe10",
+                "name": "Robert Hunter",
+                "sortName": "Hunter, Robert",
+                "disambiguation": "American lyricist, non‐performing member of the Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/robert-hunter-3d6add7.html"
+              },
+              "info": "w/ I'm Your Captain teases & quotes"
+            },
+            {
+              "name": "No Rest",
+              "info": "->"
+            },
+            {
+              "name": "Get Down"
+            },
+            {
+              "name": "Qué Lástima"
+            }
+          ]
+        },
+        {
+          "encore": 1,
+          "song": [
+            {
+              "name": "CHICO",
+              "info": "w/ Free jam"
+            }
+          ]
+        }
+      ]
+    },
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/dharma-bums-new-hope-pa-337d8891.html"
+  },
+  {
     "id": "3b7c7050",
     "versionId": "g1b36e1e8",
     "eventDate": "20-10-2026",
