@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   update-stats:
@@ -55,3 +56,9 @@ jobs:
           git add database/ernie-data.json site/ernie-data.json reports/Songs.csv site/Songs.csv
           git commit -m "Update live band stats data"
           git push
+
+      - name: Trigger website deployment
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main --repo "$GITHUB_REPOSITORY"
