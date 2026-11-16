@@ -1,5 +1,96 @@
 [
   {
+    "id": "137d5d2d",
+    "versionId": "g43358f4b",
+    "eventDate": "13-11-2026",
+    "lastUpdated": "2026-11-15T03:52:28.301+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "13df8995",
+      "name": "Birdies",
+      "city": {
+        "id": "5130672",
+        "name": "Patchogue",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.7656539,
+          "long": -73.0151084
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/birdies-patchogue-ny-usa-13df8995.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Crybaby",
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Tangled Up in Blue",
+              "cover": {
+                "mbid": "72c536dc-7137-4477-a521-567eeb840fa8",
+                "name": "Bob Dylan",
+                "sortName": "Dylan, Bob",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/bob-dylan-1bd6adb8.html"
+              },
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "No Stone",
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "Rise",
+              "info": "w/ Happy Birthday to Ashley & A Hole Of Golf: Ben vs. Ashley; unfinished [->]"
+            },
+            {
+              "name": "Mighty Great Escape",
+              "info": "unfinished [->]"
+            },
+            {
+              "name": "You and Me",
+              "info": ">"
+            },
+            {
+              "name": "My Own Worst Enemy",
+              "cover": {
+                "mbid": "5ccb9a53-092d-4806-b337-470a582893d7",
+                "name": "Lit",
+                "sortName": "Lit",
+                "disambiguation": "rock band",
+                "url": "https://www.setlist.fm/setlists/lit-6bd6b6ee.html"
+              }
+            }
+          ]
+        },
+        {
+          "encore": 1,
+          "song": [
+            {
+              "name": "No Rest"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "The Ernie Invitational #7 w/s/g Residual Groove",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/birdies-patchogue-ny-137d5d2d.html"
+  },
+  {
     "id": "2b7d8886",
     "versionId": "g2b37c0f2",
     "eventDate": "31-10-2026",
