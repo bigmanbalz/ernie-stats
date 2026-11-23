@@ -366,6 +366,10 @@ function navigation() {
                 Song Bank
             </button>
 
+            <button onclick="showPage('roulette')">
+                Song Roulette
+            </button>
+
         </nav>
     `;
 }
@@ -497,6 +501,186 @@ function showPage(page, addHistory = true) {
         renderSongBankScopeHome();
         return;
     }
+
+    if (page === "roulette") {
+        renderRoulette();
+        return;
+    }
+}
+
+
+/* ==================================================
+   SONG ROULETTE
+================================================== */
+
+function getRoulettePools() {
+
+    const orderedShows = [...shows].sort(
+        (a, b) => parseDate(b.eventDate) - parseDate(a.eventDate)
+    );
+
+    const recentNames = new Set();
+
+    orderedShows.slice(0, 2).forEach(show => {
+        (show.sets?.set || []).forEach(set => {
+            (set.song || []).forEach(song => {
+                if (song.name?.trim()) {
+                    recentNames.add(song.name.trim());
+                }
+            });
+        });
+    });
+
+    const stats = new Map();
+
+    orderedShows.forEach(show => {
+        const allSets = show.sets?.set || [];
+
+        const lastSet = [...allSets].reverse().find(
+            set => (set.song || []).some(song => song.name?.trim())
+        );
+
+        if (lastSet) {
+            const lastSongs = (lastSet.song || []).filter(
+                song => song.name?.trim()
+            );
+            const finalName = lastSongs[lastSongs.length - 1].name.trim();
+            if (!stats.has(finalName)) {
+                stats.set(finalName, {
+                    name: finalName, plays: 0, cover: false,
+                    opener: false, closer: false
+                });
+            }
+            stats.get(finalName).closer = true;
+        }
+
+        allSets.forEach(set => {
+
+            const entries = (set.song || []).filter(
+                song => song.name?.trim()
+            );
+
+            entries.forEach(song => {
+                const name = song.name.trim();
+
+                if (!stats.has(name)) {
+                    stats.set(name, {
+                        name,
+                        plays: 0,
+                        cover: false,
+                        opener: false,
+                        closer: false
+                    });
+                }
+
+                const item = stats.get(name);
+                item.plays++;
+                if (song.cover) item.cover = true;
+            });
+
+            if (entries.length) {
+                stats.get(entries[0].name.trim()).opener = true;
+            }
+        });
+    });
+
+    const eligible = [...stats.values()].filter(
+        song => song.plays >= 5 &&
+            !recentNames.has(song.name) &&
+            !song.name.includes("jam")
+    );
+
+    return {
+        originals: eligible.filter(song => !song.cover),
+        covers: eligible.filter(song => song.cover),
+        openers: eligible.filter(song => song.opener),
+        closers: eligible.filter(song => song.closer)
+    };
+}
+
+function renderRoulette() {
+
+    const pools = getRoulettePools();
+
+    document.getElementById("app").innerHTML = `
+        ${navigation()}
+
+        <section class="roulette-page">
+            <h1>Song Roulette</h1>
+            <p>Can't decide what to play? Give it a spin.</p>
+
+            <div class="roulette-buttons">
+                <button onclick="spinRoulette('originals')">Originals</button>
+                <button onclick="spinRoulette('covers')">Covers</button>
+                <button onclick="spinRoulette('openers')">Set Openers</button>
+                <button onclick="spinRoulette('closers')">Show Closers</button>
+            </div>
+
+            <div id="roulette-result" aria-live="polite">
+                Pick a category to get started.
+            </div>
+
+            <p class="roulette-rules">
+                5+ plays · Not played in the last 2 shows
+            </p>
+        </section>
+    `;
+
+    window.roulettePools = pools;
+}
+
+function spinRoulette(category) {
+
+    const pool = window.roulettePools?.[category] || [];
+    const result = document.getElementById("roulette-result");
+
+    if (!result) return;
+
+    if (!pool.length) {
+        result.textContent = "No eligible songs in this category.";
+        return;
+    }
+
+    if (window.rouletteSpinning) return;
+
+    window.rouletteSpinning = true;
+
+    const winner = pool[Math.floor(Math.random() * pool.length)];
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) {
+        result.textContent = winner.name;
+        window.rouletteSpinning = false;
+        return;
+    }
+
+    const started = performance.now();
+    let lastUpdate = 0;
+
+    function animate(now) {
+
+        const elapsed = now - started;
+        const progress = Math.min(elapsed / 3000, 1);
+        const interval = 45 + Math.pow(progress, 3) * 400;
+
+        if (elapsed >= 3000) {
+            result.textContent = winner.name;
+            window.rouletteSpinning = false;
+            return;
+        }
+
+        if (now - lastUpdate >= interval) {
+            const random = pool[Math.floor(Math.random() * pool.length)];
+            result.textContent = random.name;
+            lastUpdate = now;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
 }
 
 /* ==================================================
