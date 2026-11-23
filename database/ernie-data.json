@@ -1,9 +1,120 @@
 [
   {
+    "id": "5b7afbec",
+    "versionId": "g1b32f954",
+    "eventDate": "22-11-2026",
+    "lastUpdated": "2026-11-23T07:37:24.223+0000",
+    "artist": {
+      "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
+      "name": "Ernie & The Band",
+      "sortName": "Ernie & Band, The",
+      "disambiguation": "",
+      "url": "https://www.setlist.fm/setlists/ernie-and-the-band-43fae74b.html"
+    },
+    "venue": {
+      "id": "6bd326b2",
+      "name": "The Warehouse",
+      "city": {
+        "id": "5107140",
+        "name": "Amityville",
+        "state": "New York",
+        "stateCode": "NY",
+        "coords": {
+          "lat": 40.6789893,
+          "long": -73.4170673
+        },
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "url": "https://www.setlist.fm/venue/the-warehouse-amityville-ny-usa-6bd326b2.html"
+    },
+    "sets": {
+      "set": [
+        {
+          "song": [
+            {
+              "name": "Bertha",
+              "cover": {
+                "mbid": "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
+                "name": "Grateful Dead",
+                "sortName": "Grateful Dead",
+                "disambiguation": "",
+                "url": "https://www.setlist.fm/setlists/grateful-dead-bd6ad4a.html"
+              },
+              "info": "unfinished / incomplete [->]"
+            },
+            {
+              "name": "Colorado Town"
+            },
+            {
+              "name": "Bubbles"
+            },
+            {
+              "name": "Qué Lástima"
+            },
+            {
+              "name": "Jam"
+            },
+            {
+              "name": "Get Down",
+              "info": "w/ Eleanor Rigby teases [->]"
+            },
+            {
+              "name": "Promontory Rider",
+              "cover": {
+                "mbid": "e9b419b5-ab8f-425c-8214-a7259e6efe10",
+                "name": "Robert Hunter",
+                "sortName": "Hunter, Robert",
+                "disambiguation": "American lyricist, non‐performing member of the Grateful Dead",
+                "url": "https://www.setlist.fm/setlists/robert-hunter-3d6add7.html"
+              }
+            },
+            {
+              "name": "Stay Easy",
+              "info": ">"
+            },
+            {
+              "name": "Beautiful Buzz"
+            },
+            {
+              "name": "Don't Let Me Down",
+              "cover": {
+                "mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
+                "name": "The Beatles",
+                "sortName": "Beatles, The",
+                "disambiguation": "UK rock band, “The Fab Four”",
+                "url": "https://www.setlist.fm/setlists/the-beatles-23d6a88b.html"
+              },
+              "info": "LTP: 4.16.25 (57 shows)"
+            },
+            {
+              "name": "Dear Mr. Fantasy",
+              "cover": {
+                "mbid": "9fadfba9-ecae-4383-a4d8-47b043cea19a",
+                "name": "Traffic",
+                "sortName": "Traffic",
+                "disambiguation": "English rock band",
+                "url": "https://www.setlist.fm/setlists/traffic-13d6ada9.html"
+              },
+              "info": "Debut Cover w/ Hey Jude teases [->]"
+            },
+            {
+              "name": "Get Down"
+            }
+          ]
+        }
+      ]
+    },
+    "info": "NOTES: Jam started without John while he grabbed a guitar with 6 strings. Tiger Rose & Wiggum closed the show.",
+    "url": "https://www.setlist.fm/setlist/ernie-and-the-band/2026/the-warehouse-amityville-ny-5b7afbec.html"
+  },
+  {
     "id": "137d5d2d",
-    "versionId": "g43358f4b",
+    "versionId": "gb3539a6",
     "eventDate": "13-11-2026",
-    "lastUpdated": "2026-11-15T03:52:28.301+0000",
+    "lastUpdated": "2026-11-17T08:13:25.623+0000",
     "artist": {
       "mbid": "9589937a-535c-4dae-b2c4-112d9b4588c8",
       "name": "Ernie & The Band",
@@ -73,7 +184,8 @@
                 "sortName": "Lit",
                 "disambiguation": "rock band",
                 "url": "https://www.setlist.fm/setlists/lit-6bd6b6ee.html"
-              }
+              },
+              "info": "LTP: 2.22.25 (58 shows)"
             }
           ]
         },
